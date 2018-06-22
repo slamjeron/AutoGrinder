@@ -27,9 +27,10 @@ class GuiCon(object):
         mn = Menue(self.startStatments)
         mn.start()
         self.pl.playSpeed = 1
-        mfile = open('currentFile' + '.txt', 'rb')
-        self.fileName = pickle.load(mfile)
+
         try:
+            mfile = open('currentFile' + '.txt', 'rb')
+            self.fileName = pickle.load(mfile)
             self.openRecord()
         except FileNotFoundError:
             print('')
@@ -416,14 +417,6 @@ class PlayThread(Thread):
                 index = 0
             if recording:
                 self.millsec += 1
-
-    @property
-    def array(self):
-        return self.array
-
-    @array.setter
-    def array(self, value):
-        self._array = value
 
 
 class Menue(Thread):

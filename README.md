@@ -52,17 +52,6 @@ this code determines what happens when you type a key or click the mouse
             print('playing intems = false')
             self.play()
 
-        elif key == self._stopCommand:
-            self.stop()
-        elif recording:
-            lis = [2, self.pl.millsec, None, key]
-            self._clickList.append(lis)
-            self.pl.millsec = 0
-            print(key)
-        elif playing == True:
-            # any item with the name of self.***key is a String holding a key name
-            if self.slowerKey == key:
-                self.pl.slowing = True
 
 
 
@@ -75,20 +64,49 @@ to work with linux. and eventuily this program will do more than just repeat wha
 do the grinding for 'DarkOrbit'
 
 ## Installation
-<a href="linux-AutoGrinder/build//octet-stream,DATA" download="advancedAutoGrinder">TITLE</a>
+to install my program click <a href="linux-AutoGrinder/autogrinder2/dist/advanstAutoGrinder.zip" download="advancedAutoGrinder">advansed auto grinder</a> then unzip the file then double click on the folder and then
+right click inside the folder, click Open in Turminal, then type sudo ./advanstAutoGrinder then a terminal window should open.
 Provide code examples and explanations of how to get the project.
 
 ## API Reference
-
-Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
+to build my program i used pynput to get user input, pyautogui to simulate user input, Pickle to save my programs information
+and that is all I used.
 
 ## Tests
+this will start the program
+def main():
+    con = GuiCon()
+    con.start()
+    return 0
 
-Describe and show how to run the tests with code examples.
+
+main()
+
+this code keeps track of user input
+
+    def on_click(self, x, y, button, pressed):
+        print (x,y)
+
+
+    def on_key_press(self, key_code):
+        print (key_code)
+and those are the main functions
 
 ## Contributors
 
-Let people know how they can dive into the project, include important links to things like issue trackers, irc, twitter accounts if applicable.
+my program has many key comands that you will need to know
+in both the advanstAutoGrinder and the comandcontroler i have the folowing hot keys,
+"-" key will increas the speed of the next action "+" key will decreas the speed of the next action,
+"Q" will stop the recording and play back "R" starts recording "P" starts playing back your recording
+"ESC" will stop the program though to compleat the the closing proses you must ither close the program or
+type somthing in the turminal.
+
+#comands for advanstAutoGrinder
+"0" key will paus play back so you can edit the curent action right erow key will make you go to the privous action left
+erow key will make you go to the next action. curently you may not resume the play back you must press "Q" them "P" to start
+the sequence over. when paused type 2 too add a click to the curent index. too replace an action type 3 and where ever your curser
+is it will click there next time the record is played.
+
 
 ## License
 

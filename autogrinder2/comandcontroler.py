@@ -27,9 +27,10 @@ class GuiCon(object):
         mn = Menue(self.startStatments)
         mn.start()
         self.fileName = 'default'
-        mfile = open('currentFile' + '.txt', 'rb')
-        self.fileName = pickle.load(mfile)
+
         try:
+            mfile = open('currentFile' + '.txt', 'rb')
+            self.fileName = pickle.load(mfile)
             self.openRecord()
         except FileNotFoundError:
             print('')
