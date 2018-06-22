@@ -1,10 +1,7 @@
 from threading import Thread, Event
-import threading
 from pynput import keyboard, mouse
 from pyautogui import *
 import pickle
-
-import sys
 
 recording = False
 playing = False
