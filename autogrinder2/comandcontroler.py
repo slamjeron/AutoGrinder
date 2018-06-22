@@ -9,23 +9,11 @@ playing = False
 
 
 class GuiCon(object):
+    _stRecordCommand: str
+
     def __init__(self):
 
         self._clickList = list()
-        self._stopCommand = 'q'
-        self._stRecordCommand = 'r'
-        self._playRec = 'p'
-        self._endComand = 'esc'
-        self.fileName = 'default'
-
-        self.pauseKey = ''
-        self.resumeKey = ''
-        self.slowerKey = '+'
-        self.speedKey = '-'
-        self.clickKey = ''
-        self.dellKey = ''
-        self.nextKey = ''
-        self.backKey = ''
 
         self.ex = False
         self.up = False
@@ -38,11 +26,24 @@ class GuiCon(object):
 
         mn = Menue(self.startStatments)
         mn.start()
+        self.fileName = 'default'
         try:
             self.openRecord()
         except FileNotFoundError:
             print('')
-        self.pl.playSpeed = 60
+        self._stopCommand = 'q'
+        self._stRecordCommand = 'r'
+        self._playRec = 'p'
+        self._endComand = 'esc'
+
+        self.pauseKey = ''
+        self.resumeKey = ''
+        self.slowerKey = '+'
+        self.speedKey = '-'
+        self.clickKey = ''
+        self.dellKey = ''
+        self.nextKey = ''
+        self.backKey = ''
 
     def startStatments(self):
         while self.active:

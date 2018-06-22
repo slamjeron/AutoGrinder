@@ -11,6 +11,7 @@ Make sure the API you are showing off is obvious, and that your code is short an
 to record what the user dose i use the library pynput witch can acces an use input then i place it in a list.
 to use pynput call
 
+
 this code determines what happens when you type a key or click the mouse
 
     def on_click(self, x, y, button, pressed):
@@ -27,7 +28,7 @@ this code determines what happens when you type a key or click the mouse
             else:
                 self.up = True
 
-    def OnKeyPress(self, keyCode):
+    def on_key_press(self, keyCode):
         global recording
         global playing
         key = str(keyCode).strip('\'')
@@ -40,6 +41,9 @@ this code determines what happens when you type a key or click the mouse
             self.record()
         elif key == self._playRec and recording == False and playing == False:
             print('play key hit')
+
+            #self.pl is the Player class a thread that plays the recording and keeps track of time.
+            #the commands below help the player class know what to do.
             self.pl.slowing = False
             self.pl.speedUp = False
             self.pl.delete = False
@@ -56,33 +60,22 @@ this code determines what happens when you type a key or click the mouse
             self.pl.millsec = 0
             print(key)
         elif playing == True:
+            # any item with the name of self.***key is a String holding a key name
             if self.slowerKey == key:
                 self.pl.slowing = True
-            if self.speedKey == key:
-                self.pl.speedUp = True
-            if self.pauseKey == key:
-                self.pl.pause = True
-                print('trying pause')
-            if self.resumeKey == key:
-                self.pl.pause == False
-            if self.dellKey == key and self.pl.pause:
-                self.pl.delete = True
-            if self.clickKey == key and self.pl.pause:
-                self.pl.insertClick = True
-            if self.nextKey == key and self.pl.pause:
-                self.pl.next = True
-            if self.backKey == key and self.pl.pause:
-                self.pl.previous = True
-            if self.replaceKey == key and self.pl.pause:
-                self.pl.replace = True
+
 
 
 ## Motivation
 
 A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
+I built this program to remove repetitive tasks from my life i curently use a java program i built to play a game caled
+dark orbit but when i got new computers I set them up with ubuntu and for the life of me i could not get the program
+to work with linux. and eventuily this program will do more than just repeat what was recorded. so I can have it efectivly
+do the grinding for 'DarkOrbit'
 
 ## Installation
-
+<a href="linux-AutoGrinder/build//octet-stream,DATA" download="advancedAutoGrinder">TITLE</a>
 Provide code examples and explanations of how to get the project.
 
 ## API Reference

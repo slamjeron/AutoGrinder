@@ -1,4 +1,3 @@
-
 import pickle
 from threading import Thread, Event
 
@@ -13,21 +12,7 @@ class GuiCon(object):
     def __init__(self):
 
         self._clickList = list()
-        self._stopCommand = 'q'
-        self._stRecordCommand = 'r'
-        self._playRec = 'p'
-        self._endComand = 'esc'
         self.fileName = 'default'
-        
-        self.pauseKey = '0'
-        self.resumeKey = '1'
-        self.slowerKey = '+'
-        self.speedKey = '-'
-        self.clickKey = '2'
-        self.replaceKey = '3'
-        self.dellKey = 'delete'
-        self.nextKey = 'right'
-        self.backKey = 'left'
 
         self.ex = False
         self.up = False
@@ -45,16 +30,36 @@ class GuiCon(object):
             self.openRecord()
         except FileNotFoundError:
             print('')
+        self._stopCommand = 'q'
+        self._stRecordCommand = 'r'
+        self._playRec = 'p'
+        self._endComand = 'esc'
 
+        self.pauseKey = '0'
+        self.resumeKey = '1'
+        self.slowerKey = '+'
+        self.speedKey = '-'
+        self.clickKey = '2'
+        self.replaceKey = '3'
+        self.dellKey = 'delete'
+        self.nextKey = 'right'
+        self.backKey = 'left'
+
+    def start(self, parent=None):
+        # begins my program
+        with keyboard.Listener(on_press=self.on_key_press) as self.keylis:
+            with mouse.Listener(on_click=self.on_click) as self.mouse_listener:
+                self.mouse_listener.join()
+        print('ending program\n enter any value to end the program')
 
     def startStatments(self):
+
         while self.active:
             if self.active:
-                print(
-                    'End: -1\nHelp: 1\nChang Repeat Amount: 3\nreset record: 4\nchange fileName and location: 5\nChange speed: 6\n'
-                    'view record: 7\n')
+                print('End: -1\nHelp: 1\nChang Repeat Amount: 3\nreset record: 4\nchange fileName and location: 5\n'
+                      'Change speed: 6\nview record: 7\n')
                 select = input('selection: ')
-                if self.active == False:
+                if not self.active:
                     return
                 try:
                     select = int(select)
@@ -99,6 +104,7 @@ class GuiCon(object):
 
 
                 elif select == 5:
+                    print('your curint files name is ', self.fileName)
                     txt = input('input the new text file name: ')
                     self.fileName = txt
                     try:
@@ -131,19 +137,14 @@ class GuiCon(object):
                 print()
 
     def printRecord(self):
-        if len(self.pl._array) > 0:
-            for li in self.pl._array:
+        comand = ''
+        if len(self.pl.array) > 0:
+            for li in self.pl.array:
                 if li[0] == 0:
                     comand = 'left click'
                 elif li[0] == 2:
                     comand = 'key Press'
                 print('comand=', comand, '  delay=', li[1], '   mouse point=', li[2], '   key button=', li[3])
-
-    def start(self, parent=None):
-        with keyboard.Listener(on_press=self.OnKeyPress) as self.keylis:
-            with mouse.Listener(on_click=self.on_click) as self.mouse_listener:
-                self.mouse_listener.join()
-        print('ending program\n enter any value to end the program')
 
     def stopAll(self):
         global recording
@@ -155,7 +156,6 @@ class GuiCon(object):
         self.keylis.stop()
         self.stopFla.set()
         self.active = False
-        self.menEvent.set()
 
     def stop(self):
         global playing
@@ -163,21 +163,28 @@ class GuiCon(object):
         playing = False
         recording = False
         print('pausing')
-        self.saveRecord()
+        self.save_record()
 
-    def saveRecord(self):
+    def save_record(self):
+        """
+        saves the record
+        """
         mfile = open(self.fileName + '.txt', 'wb')
-        obj = [self.pl._array, self._stopCommand, self._stRecordCommand, self._playRec, self._endComand, self.rep,
+        obj = [self.pl.array, self._stopCommand, self._stRecordCommand, self._playRec, self._endComand, self.rep,
                self.pl.playSpeed]
         pickle.dump(obj, mfile)
         print('saved')
+        mfile = open('currentFile' + '.txt', 'wb')
+        pickle.dump(self.fileName, mfile)
         mfile.close()
 
     def openRecord(self):
 
         mfile = open(self.fileName + '.txt', 'rb')
-        self.pl._array, self._stopCommand, self._stRecordCommand, self._playRec, self._endComand, self.rep, self.pl.playSpeed = pickle.load(
+        self.pl.array, self._stopCommand, self._stRecordCommand, self._playRec, self._endComand, self.rep, self.pl.playSpeed = pickle.load(
             mfile)
+        mfile = open('currentFile' + '.txt', 'rb')
+        self.fileName = pickle.load(mfile)
         mfile.close()
 
         self.pl.rep = int(self.rep)
@@ -204,26 +211,30 @@ class GuiCon(object):
 
     def resetRecord(self):
         print('reseting clicks')
-        self.pl._array = list()
+        self.pl.array = list()
 
     def on_click(self, x, y, button, pressed):
         global recording
-
-        if recording == True:
+        # gets when the mouse clicks on the screen and records it
+        if recording:
             if pressed:
-                if self.up == True:
+                if self.up:
                     self.up = False
                     pnt = int(x), int(y)
                     lis = [0, self.pl.getMilsec(), pnt, '']
-                    self.pl._array.append(lis)
+                    self.pl.array.append(lis)
                     self.pl.millsec = 0
             else:
                 self.up = True
 
-    def OnKeyPress(self, keyCode):
+    def on_key_press(self, key_code):
+        """
+        determins what keys do and records them
+
+        """
         global recording
         global playing
-        key = str(keyCode).strip('\'')
+        key = str(key_code).strip('\'')
         key = str(key).replace('Key.', '')
         if key == self._endComand:
 
@@ -233,6 +244,9 @@ class GuiCon(object):
             self.record()
         elif key == self._playRec and recording == False and playing == False:
             print('play key hit')
+            # self.pl is the Player class a thread that plays the recording and keeps track of time.
+            # the commands below help the player class know what to do.
+
             self.pl.slowing = False
             self.pl.speedUp = False
             self.pl.delete = False
@@ -248,7 +262,8 @@ class GuiCon(object):
             self._clickList.append(lis)
             self.pl.millsec = 0
             print(key)
-        elif playing == True:
+        elif playing:
+            # any item with the name of self.***key is a String holding a key name
             if self.slowerKey == key:
                 self.pl.slowing = True
             if self.speedKey == key:
@@ -257,7 +272,7 @@ class GuiCon(object):
                 self.pl.pause = True
                 print('trying pause')
             if self.resumeKey == key:
-                self.pl.pause == False
+                self.pl.pause = False
             if self.dellKey == key and self.pl.pause:
                 self.pl.delete = True
             if self.clickKey == key and self.pl.pause:
@@ -271,12 +286,16 @@ class GuiCon(object):
 
 
 class PlayThread(Thread):
+    """
+    playes you recording and keeps track of time
+
+    """
     def __init__(self, event, array, rep):
         Thread.__init__(self)
         self.stopped = event
         self.millsec = 0
 
-        self._array = list()
+        self.array = list()
         self.rep = rep
         self.cnt = 0
         self.playSpeed = 0
@@ -287,7 +306,7 @@ class PlayThread(Thread):
         self.pause = False
         self.next = False
         self.previous = False
-        self.replace=False
+        self.replace = False
 
     def getMilsec(self):
         return self.millsec
@@ -303,29 +322,29 @@ class PlayThread(Thread):
 
             if playing:
 
-                arrlen = len(self._array)
+                arrlen = len(self.array)
                 if index < arrlen:
                     try:
-                        if self._array[index][1]<500:
-                            self._array[index][1]=600
-                        if self.millsec > self._array[index][1] - ((self.playSpeed / 100) * self._array[index][1]):
+                        if self.array[index][1] < 500:
+                            self.array[index][1] = 600
+                        if self.millsec > self.array[index][1] - ((self.playSpeed / 100) * self.array[index][1]):
 
-                            if self._array[index][0] == 0:
-                                click(self._array[index][2])
+                            if self.array[index][0] == 0:
+                                click(self.array[index][2])
 
-                            elif self._array[index][0] == 2:
-                                str = self._array[index][3]
+                            elif self.array[index][0] == 2:
+                                str = self.array[index][3]
 
                             index += 1
                             self.millsec = 0
                         else:
                             if self.pause == False:
                                 if self.slowing:
-                                    self._array[index][1] += 1000
+                                    self.array[index][1] += 1000
                                     print('slowing down')
                                     self.slowing = False
                                 if self.speedUp:
-                                    self._array[index][1] -= 100
+                                    self.array[index][1] -= 100
                                     print('speeding up')
                                     self.speedUp = False
                                 self.millsec += 1
@@ -333,10 +352,10 @@ class PlayThread(Thread):
 
                                 if self.delete:
                                     try:
-                                        del self._array[index]
+                                        del self.array[index]
                                     except IndexError:
                                         index -= 1
-                                        moveTo(self._array[index][2])
+                                        moveTo(self.array[index][2])
 
                                     print('deleting')
                                     self.delete = False
@@ -344,16 +363,16 @@ class PlayThread(Thread):
                                     pnt = position()
                                     lis = [0, 2000, pnt, '']
 
-                                    self._array.insert(index + 1, lis)
+                                    self.array.insert(index + 1, lis)
                                     self.millsec = 0
                                     print('adding click')
                                     self.insertClick = False
-                                    index+=1
+                                    index += 1
                                 if self.replace:
                                     pnt = position()
-                                    lis = [0, self._array[index][1], pnt, '']
+                                    lis = [0, self.array[index][1], pnt, '']
 
-                                    self._array[index]=lis
+                                    self.array[index] = lis
                                     self.millsec = 0
                                     print('replacing click')
                                     self.replace = False
@@ -361,10 +380,10 @@ class PlayThread(Thread):
                                 if self.next:
                                     index += 1
                                     try:
-                                        moveTo(self._array[index][2])
+                                        moveTo(self.array[index][2])
                                     except IndexError:
                                         index -= 1
-                                        moveTo(self._array[index][2])
+                                        moveTo(self.array[index][2])
                                     self.millsec = 0
                                     print('index: ', index)
                                     self.next = False
@@ -372,10 +391,10 @@ class PlayThread(Thread):
                                     index -= 1
 
                                     try:
-                                        moveTo(self._array[index][2])
+                                        moveTo(self.array[index][2])
                                     except IndexError:
                                         index = 0
-                                    print('index: ',index)
+                                    print('index: ', index)
                                     self.millsec = 0
                                     self.previous = False
                     except IndexError:
@@ -395,6 +414,14 @@ class PlayThread(Thread):
                 index = 0
             if recording:
                 self.millsec += 1
+
+    @property
+    def array(self):
+        return self.array
+
+    @array.setter
+    def array(self, value):
+        self._array = value
 
 
 class Menue(Thread):
