@@ -1,3 +1,4 @@
+
 import pickle
 from threading import Thread, Event
 
@@ -13,7 +14,7 @@ class GuiCon(object):
 
         self._clickList = list()
         self._stopCommand = 'q'
-        self._stRecordCommand = 'f11'
+        self._stRecordCommand = 'r'
         self._playRec = 'p'
         self._endComand = 'esc'
         self.fileName = 'default'
@@ -190,19 +191,6 @@ class GuiCon(object):
         recording = True
         print('recording')
 
-    def on_click(self, x, y, button, pressed):
-        global recording
-        if recording == True:
-            if pressed:
-                if self.up == True:
-                    self.up = False
-                    pnt = int(x), int(y)
-                    lis = [0, self.pl.getMilsec(), pnt, '']
-                    self.pl._array.append(lis)
-                    self.pl.millsec = 0
-            else:
-                self.up = True
-
     def play(self, rep=0):
         global playing
         global recording
@@ -217,6 +205,20 @@ class GuiCon(object):
     def resetRecord(self):
         print('reseting clicks')
         self.pl._array = list()
+
+    def on_click(self, x, y, button, pressed):
+        global recording
+
+        if recording == True:
+            if pressed:
+                if self.up == True:
+                    self.up = False
+                    pnt = int(x), int(y)
+                    lis = [0, self.pl.getMilsec(), pnt, '']
+                    self.pl._array.append(lis)
+                    self.pl.millsec = 0
+            else:
+                self.up = True
 
     def OnKeyPress(self, keyCode):
         global recording

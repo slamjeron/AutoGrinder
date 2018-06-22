@@ -1,0 +1,5 @@
+six
+pytool
+
+[etcd]
+python-etcd

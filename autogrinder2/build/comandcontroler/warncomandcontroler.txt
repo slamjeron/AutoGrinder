@@ -1,0 +1,34 @@
+missing module named nt - imported by os, ntpath, shutil, pathlib, /home/nerd/Documents/linux-AutoGrinder/autogrinder2/comandcontroler.py
+missing module named 'org.python' - imported by pickle, /home/nerd/Documents/linux-AutoGrinder/autogrinder2/comandcontroler.py, xml.sax
+excluded module named _frozen_importlib - imported by importlib, importlib.abc, /home/nerd/Documents/linux-AutoGrinder/autogrinder2/comandcontroler.py
+missing module named _frozen_importlib_external - imported by importlib._bootstrap, importlib, importlib.abc, /home/nerd/Documents/linux-AutoGrinder/autogrinder2/comandcontroler.py
+missing module named _winreg - imported by platform, /home/nerd/Documents/linux-AutoGrinder/autogrinder2/comandcontroler.py
+missing module named _scproxy - imported by urllib.request
+missing module named java - imported by platform, /home/nerd/Documents/linux-AutoGrinder/autogrinder2/comandcontroler.py
+missing module named 'java.lang' - imported by platform, /home/nerd/Documents/linux-AutoGrinder/autogrinder2/comandcontroler.py, xml.sax._exceptions
+missing module named vms_lib - imported by platform, /home/nerd/Documents/linux-AutoGrinder/autogrinder2/comandcontroler.py
+missing module named winreg - imported by platform, mimetypes, /home/nerd/Documents/linux-AutoGrinder/autogrinder2/comandcontroler.py, urllib.request
+missing module named msvcrt - imported by subprocess, /home/nerd/Documents/linux-AutoGrinder/autogrinder2/comandcontroler.py, getpass
+missing module named _winapi - imported by subprocess, /home/nerd/Documents/linux-AutoGrinder/autogrinder2/comandcontroler.py
+missing module named _dummy_threading - imported by dummy_threading, /home/nerd/Documents/linux-AutoGrinder/autogrinder2/comandcontroler.py
+missing module named org - imported by copy, /home/nerd/Documents/linux-AutoGrinder/autogrinder2/comandcontroler.py
+runtime module named six.moves - imported by pynput._util, Xlib.threaded
+missing module named StringIO - imported by six
+missing module named FCNTL - imported by Xlib.support.unix_connect
+missing module named CoreFoundation - imported by pynput._util.darwin
+missing module named objc - imported by pynput._util.darwin
+missing module named 'ctypes.macholib' - imported by ctypes.util
+missing module named AppKit - imported by pyautogui._pyautogui_osx, pynput.mouse._darwin
+missing module named Quartz - imported by pyautogui._pyautogui_osx, pynput.keyboard._darwin, pynput._util.darwin, pynput.mouse._darwin
+missing module named PIL._imagingagg - imported by PIL, PIL.ImageDraw
+missing module named numpy - imported by pyscreeze
+missing module named cv2 - imported by pyscreeze
+missing module named olefile - imported by PIL.MicImagePlugin, PIL.FpxImagePlugin
+missing module named UserDict - imported by PIL.PdfParser
+missing module named Tkinter - imported by pymsgbox, PIL.ImageTk
+missing module named 'PySide.QtCore' - imported by PIL.ImageQt
+missing module named 'PyQt4.QtCore' - imported by PIL.ImageQt
+missing module named 'PyQt5.QtCore' - imported by PIL.ImageQt
+missing module named pathlib2 - imported by PIL.Image
+missing module named cffi - imported by PIL.Image, PIL.PyAccess, PIL.ImageTk
+missing module named __builtin__ - imported by PIL.Image

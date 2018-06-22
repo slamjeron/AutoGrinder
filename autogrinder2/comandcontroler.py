@@ -13,7 +13,7 @@ class GuiCon(object):
 
         self._clickList = list()
         self._stopCommand = 'q'
-        self._stRecordCommand = 'f11'
+        self._stRecordCommand = 'r'
         self._playRec = 'p'
         self._endComand = 'esc'
         self.fileName = 'default'
@@ -309,7 +309,7 @@ class PlayThread(Thread):
 
                             elif self._array[index][0] == 2:
                                 str = self._array[index][3]
-
+                                press(str)
                             index += 1
                             self.millsec = 0
                         else:
@@ -324,8 +324,7 @@ class PlayThread(Thread):
                                     self.speedUp = False
                                 self.millsec += 1
                             else:
-                                if self.millsec==1:
-                                    moveTo(self._array[index][2])
+
                                 if self.delete:
                                     try:
                                         del self._array[index]
