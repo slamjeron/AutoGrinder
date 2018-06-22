@@ -1,10 +1,8 @@
-from threading import Thread, Event
-import threading
-from pynput import keyboard, mouse
-from pyautogui import *
 import pickle
+from threading import Thread, Event
 
-import sys
+from pyautogui import *
+from pynput import keyboard, mouse
 
 recording = False
 playing = False
@@ -22,8 +20,8 @@ class GuiCon(object):
 
         self.pauseKey = ''
         self.resumeKey = ''
-        self.slowerKey = ''
-        self.speedKey = ''
+        self.slowerKey = '+'
+        self.speedKey = '-'
         self.clickKey = ''
         self.dellKey = ''
         self.nextKey = ''
@@ -63,7 +61,10 @@ class GuiCon(object):
                     print('the current Hot Keys\nkey "', self._stRecordCommand, '" starts Recording\nKey "',
                           self._playRec,
                           '" Starts Playing bacqk your mouse clicks and key stroks\nKey "', self._stopCommand,
-                          '" stops recording and play back\nKey "', self._endComand, '" stops the program')
+                          '" stops recording and play back\nKey "', self._endComand, '" stops the program\n\n'
+                                                                                     'to increase the time it takes to play part of the recording type the "',
+                          self.slowerKey,
+                          '" key to decrease the time it takes to play the recording type the "', self.speedKey, '" ')
                 elif select == 99:
                     print('the current Hot Keys\nkey "', self._playRec, '" starts Recording: 1\nKey "', self._playRec,
                           '" Starts Playing back your mouse clicks and key stroks: 2\nKey "', self._stopCommand,

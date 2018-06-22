@@ -1,7 +1,8 @@
-from threading import Thread, Event
-from pynput import keyboard, mouse
-from pyautogui import *
 import pickle
+from threading import Thread, Event
+
+from pyautogui import *
+from pynput import keyboard, mouse
 
 recording = False
 playing = False
@@ -103,7 +104,7 @@ class GuiCon(object):
                         self.openRecord()
                     except FileNotFoundError:
                         print('')
-                    self.resetRecord()
+
                 elif select == 6:
                     num = input('enter the play back speed 1 is normal speed 20 is 20% faster input 80 for the fastest '
                                 'speed and normal is the slowest: ')
