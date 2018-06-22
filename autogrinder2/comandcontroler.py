@@ -27,6 +27,8 @@ class GuiCon(object):
         mn = Menue(self.startStatments)
         mn.start()
         self.fileName = 'default'
+        mfile = open('currentFile' + '.txt', 'rb')
+        self.fileName = pickle.load(mfile)
         try:
             self.openRecord()
         except FileNotFoundError:
@@ -100,6 +102,7 @@ class GuiCon(object):
 
 
                 elif select == 5:
+                    print('curint file is ', self.fileName)
                     txt = input('input the new text file name: ')
                     self.fileName = txt
                     try:
@@ -172,6 +175,8 @@ class GuiCon(object):
                self.pl.playSpeed]
         pickle.dump(obj, mfile)
         print('saved')
+        mfile = open('currentFile' + '.txt', 'wb')
+        pickle.dump(self.fileName, mfile)
         mfile.close()
 
     def openRecord(self):
@@ -179,6 +184,7 @@ class GuiCon(object):
         mfile = open(self.fileName + '.txt', 'rb')
         self.pl._array, self._stopCommand, self._stRecordCommand, self._playRec, self._endComand, self.rep, self.pl.playSpeed = pickle.load(
             mfile)
+
         mfile.close()
 
         self.pl.rep = int(self.rep)

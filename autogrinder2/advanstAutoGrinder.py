@@ -1,3 +1,4 @@
+# coding=utf-8
 import pickle
 from threading import Thread, Event
 
@@ -26,6 +27,8 @@ class GuiCon(object):
         mn = Menue(self.startStatments)
         mn.start()
         self.pl.playSpeed = 1
+        mfile = open('currentFile' + '.txt', 'rb')
+        self.fileName = pickle.load(mfile)
         try:
             self.openRecord()
         except FileNotFoundError:
@@ -45,7 +48,7 @@ class GuiCon(object):
         self.nextKey = 'right'
         self.backKey = 'left'
 
-    def start(self, parent=None):
+    def start(self):
         # begins my program
         with keyboard.Listener(on_press=self.on_key_press) as self.keylis:
             with mouse.Listener(on_click=self.on_click) as self.mouse_listener:
@@ -183,8 +186,7 @@ class GuiCon(object):
         mfile = open(self.fileName + '.txt', 'rb')
         self.pl.array, self._stopCommand, self._stRecordCommand, self._playRec, self._endComand, self.rep, self.pl.playSpeed = pickle.load(
             mfile)
-        mfile = open('currentFile' + '.txt', 'rb')
-        self.fileName = pickle.load(mfile)
+
         mfile.close()
 
         self.pl.rep = int(self.rep)
