@@ -64,7 +64,7 @@ to work with linux. and eventuily this program will do more than just repeat wha
 do the grinding for 'DarkOrbit'
 
 ## Installation
-to install my program click <a href="linux-AutoGrinder/autogrinder2/dist/advanstAutoGrinder.zip" download="advancedAutoGrinder">advansed auto grinder</a> then unzip the file then double click on the folder and then
+to install my program click <a href="https://github.com/slamjeron/linux-AutoGrinder/raw/master/autogrinder2/dist/advanstAutoGrinder.zip" download="advancedAutoGrinder">advansed auto grinder</a> then unzip the file then double click on the folder and then
 right click inside the folder, click Open in Turminal, then type sudo ./advanstAutoGrinder then a terminal window should open.
 Provide code examples and explanations of how to get the project.
 
