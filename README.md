@@ -1,15 +1,12 @@
 ### linux-AutoGrinder
 ## Synopsis
 
-the purpos of this program "auto grinder" is to automate repetitive tasks on the computer wether it be for games or buisnes applications i use this program for a game caled "Darkorbit"
+The purpos of "Auto Grinder" is to automate repetitive tasks on the computer. Built for games or buisnes applications, I have used it to play a game caled "Darkorbit".
 
 ## Code Example
 
-Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example.
-Make sure the API you are showing off is obvious, and that your code is short and concise.
-
-to record what the user dose i use the library pynput witch can acces an use input then i place it in a list.
-to use pynput call
+to record what the user dose i use the library pynput code witch can acces an use input then i place it in a list.
+to use pynput call 
 
 
 this code determines what happens when you type a key or click the mouse
