@@ -57,9 +57,8 @@ this code determines what happens when you type a key or click the mouse
 Auto Grinder was created to remove repetitive tasks from my life.  I curently use a java program I built to play a game caled Dark Orbit. When I got a new computers I set them up with ubuntu, and for the life of me i could not get the program I had developed to work with the linux operating system.
 
 ## Installation
-To install Auto Grinder, click <a href="https://github.com/slamjeron/linux-AutoGrinder/raw/master/autogrinder2/dist/advanstAutoGrinder.zip" download="advancedAutoGrinder">advansed auto grinder</a> then unzip the file then double click on the folder and then
+To install Auto Grinder, click <a href="https://github.com/slamjeron/linux-AutoGrinder/raw/master/autogrinder2/dist/advanstAutoGrinder.zip" download="advancedAutoGrinder">advansed auto grinder</a>, unzip the file, double click on the folder and then
 right click inside the folder, click Open in Turminal, then type sudo ./advanstAutoGrinder then a terminal window should open.
-Provide code examples and explanations of how to get the project.
 
 ## API Reference
 to build my program i used pynput to get user input, pyautogui to simulate user input, Pickle to save my programs information
