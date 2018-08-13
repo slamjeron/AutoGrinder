@@ -54,10 +54,8 @@ this code determines what happens when you type a key or click the mouse
 
 ## Motivation
 
-A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
-I built this program to remove repetitive tasks from my life i curently use a java program i built to play a game caled
-dark orbit but when i got new computers I set them up with ubuntu and for the life of me i could not get the program
-to work with linux. and eventuily this program will do more than just repeat what was recorded. so I can have it efectivly
+I built this program to remove repetitive tasks from my life. I curently use a java program, I built to play a game caled
+dark orbit. when i got new computers I set them up with ubuntu, and for the life of me i could not get the program I had developed to work with the linux operating system. eventuily this program will do more than just repeat what was recorded
 do the grinding for 'DarkOrbit'
 
 ## Installation
