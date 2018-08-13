@@ -54,12 +54,12 @@ this code determines what happens when you type a key or click the mouse
 
 ## Motivation
 
-I built this program to remove repetitive tasks from my life. I curently use a java program, I built to play a game caled
+I built Auto Grinder to remove repetitive tasks from my life. I curently use a java program, I built to play a game caled
 dark orbit. when i got new computers I set them up with ubuntu, and for the life of me i could not get the program I had developed to work with the linux operating system. eventuily this program will do more than just repeat what was recorded
 do the grinding for 'DarkOrbit'
 
 ## Installation
-to install my program click <a href="https://github.com/slamjeron/linux-AutoGrinder/raw/master/autogrinder2/dist/advanstAutoGrinder.zip" download="advancedAutoGrinder">advansed auto grinder</a> then unzip the file then double click on the folder and then
+to install Auto Grinder click <a href="https://github.com/slamjeron/linux-AutoGrinder/raw/master/autogrinder2/dist/advanstAutoGrinder.zip" download="advancedAutoGrinder">advansed auto grinder</a> then unzip the file then double click on the folder and then
 right click inside the folder, click Open in Turminal, then type sudo ./advanstAutoGrinder then a terminal window should open.
 Provide code examples and explanations of how to get the project.
 
@@ -96,7 +96,7 @@ in both the advanstAutoGrinder and the comandcontroler i have the folowing hot k
 "ESC" will stop the program though to compleat the the closing proses you must ither close the program or
 type somthing in the turminal.
 
-#comands for advanstAutoGrinder
+# comands for advanstAutoGrinder
 "0" key will paus play back so you can edit the curent action right erow key will make you go to the privous action left
 erow key will make you go to the next action. curently you may not resume the play back you must press "Q" them "P" to start
 the sequence over. when paused type 2 too add a click to the curent index. too replace an action type 3 and where ever your curser
