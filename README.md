@@ -110,4 +110,4 @@ is it will click there next time the record is played.
 
 ## License
 
-A short snippet describing the license (MIT, Apache, etc.)
+this program is an open sorce program.
