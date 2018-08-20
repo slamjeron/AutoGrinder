@@ -5,10 +5,10 @@ The purpose of "Auto Grinder" is to automate repetitive tasks on the computer. B
 
 ## Code Example
 
-To record what the user dose I use the library pynput which can access and use input then I place it in a list to be played back later.
+To record what the user does I use the library pynput which can access and use input then I place it in a list to be played back later.
 
 
-this code determines what happens when you type a key or click the mouse using the library pynput.
+This code determines what happens when you type a key or click the mouse using the library pynput.
 
     def on_click(self, x, y, button, pressed):
         global recording
@@ -63,7 +63,7 @@ right click inside the folder, click Open in Turminal, then type sudo ./advanstA
 To build Auto Grind I used pynput to get user input, pyautogui to simulate user input, Pickle to save my programs information.
 
 ## Tests
-this will start the program
+This will start the program
 def main():
     con = GuiCon()
     con.start()
@@ -91,11 +91,11 @@ in both the advanstAutoGrinder and the comandcontroler the following hot keys ar
 "ESC" will stop the program though to complete the closing proses you must ether close the program or type something in the terminal.
 
 # commands for advanstAutoGrinder
-"0" key will paus play back so you can edit the current action right arrow key will make you go to the pervious action left
+"0" Key will paus play back so you can edit the current action right arrow key will make you go to the pervious action left
 arrow key will make you go to the next action. currently you may not resume the play back you must press "Q" then "P" to start
 the sequence over. when paused type 2 too add a click to the current index. too replace an action type 3 and where ever your curser is it will click their next time the record is played.
 
 
 ## License
 
-this program is an open source program.
+This program is an open source program.
