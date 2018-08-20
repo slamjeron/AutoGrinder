@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['advanstAutoGrinder.py'],
-             pathex=['/home/nerd/Documents/linux-AutoGrinder/autogrinder2'],
+             pathex=['/home/nerd/Downloads/AutoGrinder-master/autogrinder2'],
              binaries=[],
              datas=[],
              hiddenimports=[],
