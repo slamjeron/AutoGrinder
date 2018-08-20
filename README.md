@@ -5,7 +5,7 @@ The purpose of "Auto Grinder" is to automate repetitive tasks on the computer. B
 
 ## Code Example
 
-To record what the user does I use the library pynput which can access and use input then I place it in a list to be played back later.
+To record what the user does I use the library pynput which can access and use input then I place it in a list to be played back at a later time.
 
 
 This code determines what happens when you type a key or click the mouse using the library pynput.
@@ -53,7 +53,7 @@ This code determines what happens when you type a key or click the mouse using t
 
 ## Motivation
 
-Auto Grinder was created to remove repetitive tasks from my life.  I currently use a java program I built to play a game called Dark Orbit. When I got new computers, I set them up with Ubuntu, and for the life of me I could not get the program I had developed to work with the Linux operating system.
+Auto Grinder was created to remove repetitive tasks from my life.  I currently use a java program I built to play a game called Dark Orbit. When I got new computers, I set them up with Ubuntu, and for the life of me I could not get the program I had developed to work with the Linux operating system. To fix this I decided to develop an application specifically for Linux.
 
 ## Installation
 To install Auto Grinder, click <a href="https://github.com/slamjeron/linux-AutoGrinder/raw/master/autogrinder2/dist/advanstAutoGrinder.zip" download="advancedAutoGrinder">advansed auto grinder</a>, unzip the file, double click on the folder and then
