@@ -57,7 +57,7 @@ Auto Grinder was created to remove repetitive tasks from my life.  I currently u
 
 ## Installation
 To install Auto Grinder, click <a href="https://github.com/slamjeron/linux-AutoGrinder/raw/master/autogrinder2/dist/advanstAutoGrinder.zip" download="advancedAutoGrinder">advansed auto grinder</a>, unzip the file, double click on the folder and then
-right click inside the folder, click Open in Turminal, then type sudo ./advanstAutoGrinder press enter then a terminal window should open. Then you are free to record and play macros. This program will only work on a Linux operating system. Tested most with the Ubuntu operating system.
+right click inside the folder, click Open in turminal, then type sudo ./advanstAutoGrinder press enter then a terminal window should open, when it dose you are free to record and play macros using the hot keys provided. This program will only work on a Linux operating system. Tested most with the Ubuntu operating system.
 
 ## API Reference
 To build Auto Grind I used pynput to get user input, pyautogui to simulate user input, Pickle to save my programs information.
