@@ -243,7 +243,7 @@ class GuiCon(object):
 
             self.stopAll()
             return False
-        elif key == self._stRecordCommand and recording == False and playing == False:
+        elif key == self._stRecordCommand and not recording and not playing :
             self.record()
         elif key == self._playRec and recording == False and playing == False:
             print('play key hit')
@@ -262,7 +262,7 @@ class GuiCon(object):
             self.stop()
         elif recording:
             lis = [2, self.pl.millsec, None, key]
-            self._clickList.append(lis)
+            self.pl.array.append(lis)
             self.pl.millsec = 0
             print(key)
         elif playing:
@@ -337,6 +337,7 @@ class PlayThread(Thread):
 
                             elif self.array[index][0] == 2:
                                 str = self.array[index][3]
+                                press(str)
 
                             index += 1
                             self.millsec = 0

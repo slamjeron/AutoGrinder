@@ -232,6 +232,7 @@ class GuiCon(object):
         global playing
         key = str(keyCode).strip('\'')
         key = str(key).replace('Key.', '')
+
         if key == self._endComand:
 
             self.stopAll()
@@ -252,7 +253,7 @@ class GuiCon(object):
             self.stop()
         elif recording:
             lis = [2, self.pl.millsec, None, key]
-            self._clickList.append(lis)
+            self.pl._array.append(lis)
             self.pl.millsec = 0
             print(key)
         elif playing == True:
