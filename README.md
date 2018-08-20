@@ -1,11 +1,11 @@
 ### linux-AutoGrinder
 ## Synopsis
 
-The purpos of "Auto Grinder" is to automate repetitive tasks on the computer. Built for games or buisnes applications, I have used it to play a game caled "Darkorbit".
+The purpose of "Auto Grinder" is to automate repetitive tasks on the computer. Built for games or business applications, I have used it to play a game called "Dark Orbit".
 
 ## Code Example
 
-to record what the user dose i use the library pynput code witch can acces an use input then i place it in a list.
+To record what the user dose I use the library pynput which can access and use input then I place it in a list.
 to use pynput call 
 
 
@@ -54,14 +54,14 @@ this code determines what happens when you type a key or click the mouse
 
 ## Motivation
 
-Auto Grinder was created to remove repetitive tasks from my life.  I curently use a java program I built to play a game caled Dark Orbit. When I got a new computers I set them up with ubuntu, and for the life of me i could not get the program I had developed to work with the linux operating system.
+Auto Grinder was created to remove repetitive tasks from my life.  I currently use a java program I built to play a game called Dark Orbit. When I got new computers, I set them up with Ubuntu, and for the life of me I could not get the program I had developed to work with the Linux operating system.
 
 ## Installation
 To install Auto Grinder, click <a href="https://github.com/slamjeron/linux-AutoGrinder/raw/master/autogrinder2/dist/advanstAutoGrinder.zip" download="advancedAutoGrinder">advansed auto grinder</a>, unzip the file, double click on the folder and then
-right click inside the folder, click Open in Turminal, then type sudo ./advanstAutoGrinder then a terminal window should open.
+right click inside the folder, click Open in Turminal, then type sudo ./advanstAutoGrinder press enter then a terminal window should open. Then you are free to record and play macros.
 
 ## API Reference
-To build Auto Grind i used pynput to get user input, pyautogui to simulate user input, Pickle to save my programs information.
+To build Auto Grind I used pynput to get user input, pyautogui to simulate user input, Pickle to save my programs information.
 
 ## Tests
 this will start the program
@@ -85,19 +85,18 @@ these are the main functions
 
 ## Contributors
 
-Auto Grinder has many key comands that you will need to know
-in both the advanstAutoGrinder and the comandcontroler the folowing hot keys are active,
-"-" key will increas the speed of the next action "+" key will decreas the speed of the next action,
+Auto Grinder has many key commands that you will need to know
+in both the advanstAutoGrinder and the comandcontroler the following hot keys are active,
+"-" key will increase the speed of the next action "+" key will decrees the speed of the next action,
 "Q" will stop the recording and play back "R" starts recording "P" starts playing back your recording
-"ESC" will stop the program though to compleat the the closing proses you must ither close the program or
-type somthing in the turminal.
+"ESC" will stop the program though to complete the closing proses you must ether close the program or type something in the terminal.
 
-# comands for advanstAutoGrinder
-"0" key will paus play back so you can edit the curent action right erow key will make you go to the privous action left
-erow key will make you go to the next action. curently you may not resume the play back you must press "Q" then "P" to start
-the sequence over. when paused type 2 too add a click to the curent index. too replace an action type 3 and where ever your curser is it will click there next time the record is played.
+# commands for advanstAutoGrinder
+"0" key will paus play back so you can edit the current action right arrow key will make you go to the pervious action left
+arrow key will make you go to the next action. currently you may not resume the play back you must press "Q" then "P" to start
+the sequence over. when paused type 2 too add a click to the current index. too replace an action type 3 and where ever your curser is it will click their next time the record is played.
 
 
 ## License
 
-this program is an open sorce program.
+this program is an open source program.
