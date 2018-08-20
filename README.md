@@ -85,15 +85,16 @@ these are the main functions
 ## Program Hot Keys
 
 Auto Grinder has many key commands that you will need to know
-in both the advanstAutoGrinder and the comandcontroler the following hot keys are active,
-"-" key will increase the speed of the next action "+" key will decrees the speed of the next action,
-"Q" will stop the recording and play back "R" starts recording "P" starts playing back your recording
-"ESC" will stop the program though to complete the closing proses you must ether close the program or type something in the terminal.
+in both the advanstAutoGrinder and the comandcontroler. The following hot keys are active:
+* "-" key will increase the speed of the next action 
+* "+" key will decrease the speed of the next action
+* "Q" will stop the recording and play back 
+* "R" starts recording "P" starts playing back your recording
+* "ESC" will stop the program. To complete the closing process you must ether close the program or type something in the terminal.
 
-# commands for advanstAutoGrinder
-"0" Key will paus play back so you can edit the current action right arrow key will make you go to the pervious action left
-arrow key will make you go to the next action. Currently you may not resume the play back you must press "Q" then "P" to start
-the sequence over. When paused type 2 too add a click to the current index. Too replace an action type 3 and where ever your curser is it will click their next time the record is played.
+# Commands for advanstAutoGrinder
+"0" Key will pause play back so you can edit the current action right arrow key will make you go to the previous action left
+arrow key will make you go to the next action. Currently, you may not resume the play back you must press "Q" then "P" to start the sequence over. When paused, type "2" to add a click to the current index. To replace an action, type "3" and where ever your curser is it will click their next time the record is played.
 
 
 ## License
