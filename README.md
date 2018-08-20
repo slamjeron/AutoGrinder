@@ -89,7 +89,8 @@ in both the advanstAutoGrinder and the comandcontroler. The following hot keys a
 * "-" key will increase the speed of the next action 
 * "+" key will decrease the speed of the next action
 * "Q" will stop the recording and play back 
-* "R" starts recording "P" starts playing back your recording
+* "R" starts recording 
+* "P" starts playing back your recording
 * "ESC" will stop the program. To complete the closing process you must ether close the program or type something in the terminal.
 
 # Commands for advanstAutoGrinder
