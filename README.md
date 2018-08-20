@@ -5,7 +5,7 @@ The purpose of "Auto Grinder" is to automate repetitive tasks on the computer. B
 
 ## Code Example
 
-To record what the user dose I use the library pynput which can access and use input then I place it in a list.
+To record what the user dose I use the library pynput which can access and use input then I place it in a list to be played back later.
 
 
 this code determines what happens when you type a key or click the mouse using the library pynput.
