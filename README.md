@@ -1,7 +1,7 @@
 ### linux-AutoGrinder
 ## Synopsis
 
-The purpose of "Auto Grinder" is to automate repetitive tasks on the computer. Built for games or business applications, I have used it to play a game called "Dark Orbit".
+The purpose of "Auto Grinder" is to automate repetitive tasks on the computer. Built for games or business applications, I have used it to play a game called "Dark Orbit". This program will only work on a Linux operating system. Tested most with the Ubuntu operating system.
 
 ## Code Example
 
@@ -57,7 +57,7 @@ Auto Grinder was created to remove repetitive tasks from my life.  I currently u
 
 ## Installation
 To install Auto Grinder, click <a href="https://github.com/slamjeron/linux-AutoGrinder/raw/master/autogrinder2/dist/advanstAutoGrinder.zip" download="advancedAutoGrinder">advansed auto grinder</a>, unzip the file, double click on the folder and then
-right click inside the folder, click Open in Turminal, then type sudo ./advanstAutoGrinder press enter then a terminal window should open. Then you are free to record and play macros.
+right click inside the folder, click Open in Turminal, then type sudo ./advanstAutoGrinder press enter then a terminal window should open. Then you are free to record and play macros. This program will only work on a Linux operating system. Tested most with the Ubuntu operating system.
 
 ## API Reference
 To build Auto Grind I used pynput to get user input, pyautogui to simulate user input, Pickle to save my programs information.
