@@ -82,7 +82,7 @@ this code keeps track of user input
         print (key_code)
 these are the main functions
 
-## Contributors
+## Program Hot Keys
 
 Auto Grinder has many key commands that you will need to know
 in both the advanstAutoGrinder and the comandcontroler the following hot keys are active,
