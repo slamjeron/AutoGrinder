@@ -61,8 +61,7 @@ To install Auto Grinder, click <a href="https://github.com/slamjeron/linux-AutoG
 right click inside the folder, click Open in Turminal, then type sudo ./advanstAutoGrinder then a terminal window should open.
 
 ## API Reference
-to build my program i used pynput to get user input, pyautogui to simulate user input, Pickle to save my programs information
-and that is all I used.
+To build Auto Grind i used pynput to get user input, pyautogui to simulate user input, Pickle to save my programs information.
 
 ## Tests
 this will start the program
@@ -82,12 +81,12 @@ this code keeps track of user input
 
     def on_key_press(self, key_code):
         print (key_code)
-and those are the main functions
+these are the main functions
 
 ## Contributors
 
-my program has many key comands that you will need to know
-in both the advanstAutoGrinder and the comandcontroler i have the folowing hot keys,
+Auto Grinder has many key comands that you will need to know
+in both the advanstAutoGrinder and the comandcontroler the folowing hot keys are active,
 "-" key will increas the speed of the next action "+" key will decreas the speed of the next action,
 "Q" will stop the recording and play back "R" starts recording "P" starts playing back your recording
 "ESC" will stop the program though to compleat the the closing proses you must ither close the program or
@@ -95,9 +94,8 @@ type somthing in the turminal.
 
 # comands for advanstAutoGrinder
 "0" key will paus play back so you can edit the curent action right erow key will make you go to the privous action left
-erow key will make you go to the next action. curently you may not resume the play back you must press "Q" them "P" to start
-the sequence over. when paused type 2 too add a click to the curent index. too replace an action type 3 and where ever your curser
-is it will click there next time the record is played.
+erow key will make you go to the next action. curently you may not resume the play back you must press "Q" then "P" to start
+the sequence over. when paused type 2 too add a click to the curent index. too replace an action type 3 and where ever your curser is it will click there next time the record is played.
 
 
 ## License
