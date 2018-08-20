@@ -6,10 +6,9 @@ The purpose of "Auto Grinder" is to automate repetitive tasks on the computer. B
 ## Code Example
 
 To record what the user dose I use the library pynput which can access and use input then I place it in a list.
-to use pynput call 
 
 
-this code determines what happens when you type a key or click the mouse
+this code determines what happens when you type a key or click the mouse using the library pynput.
 
     def on_click(self, x, y, button, pressed):
         global recording
