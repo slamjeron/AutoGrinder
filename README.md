@@ -92,8 +92,8 @@ in both the advanstAutoGrinder and the comandcontroler the following hot keys ar
 
 # commands for advanstAutoGrinder
 "0" Key will paus play back so you can edit the current action right arrow key will make you go to the pervious action left
-arrow key will make you go to the next action. currently you may not resume the play back you must press "Q" then "P" to start
-the sequence over. when paused type 2 too add a click to the current index. too replace an action type 3 and where ever your curser is it will click their next time the record is played.
+arrow key will make you go to the next action. Currently you may not resume the play back you must press "Q" then "P" to start
+the sequence over. when paused type 2 too add a click to the current index. Too replace an action type 3 and where ever your curser is it will click their next time the record is played.
 
 
 ## License
