@@ -328,8 +328,7 @@ class PlayThread(Thread):
                 arrlen = len(self.array)
                 if index < arrlen:
                     try:
-                        if self.array[index][1] < 500:
-                            self.array[index][1] = 600
+
                         if self.millsec > self.array[index][1] - ((self.playSpeed / 100) * self.array[index][1]):
 
                             if self.array[index][0] == 0:
