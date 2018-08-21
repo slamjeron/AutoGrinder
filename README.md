@@ -56,8 +56,8 @@ This code determines what happens when you type a key or click the mouse using t
 Auto Grinder was created to remove repetitive tasks from my life.  I currently use a java program I built to play a game called Dark Orbit. When I got new computers, I set them up with Ubuntu, and for the life of me I could not get the program I had developed to work with the Linux operating system. To fix this I decided to develop an application specifically for Linux.
 
 ## Installation
-To install Auto Grinder, click <a href="https://github.com/slamjeron/linux-AutoGrinder/raw/master/autogrinder2/dist/advanstAutoGrinder.zip" download="advancedAutoGrinder">advansed auto grinder</a>, unzip the file, double click on the folder and then
-right click inside the folder, click Open in turminal, then type sudo ./AdvancedAutoGrinder press enter then a terminal window should open, when it dose you are free to record and play macros using the hot keys provided. This program will only work on a Linux operating system. Tested most with the Ubuntu operating system.
+To install Auto Grinder, click <a href="https://github.com/slamjeron/AutoGrinder/raw/master/autogrinder2/dist/AdvancedAutoGrinder.zip" download="advancedAutoGrinder">Advanced Auto Grinder</a>, unzip the file, double click on the folder and then
+right click inside the folder, click Open in terminal, then type sudo ./AdvancedAutoGrinder press enter then a terminal window should open, when it dose you are free to record and play macros using the hot keys provided. This program will only work on a Linux operating system. Tested most with the Ubuntu operating system.
 to get to the instalation file go to autogrinder2/dist/AdvancedAutoGrinder.
 
 ## API Reference
@@ -86,15 +86,15 @@ these are the main functions
 ## Program Hot Keys
 
 Auto Grinder has many key commands that you will need to know
-in both the advanstAutoGrinder and the comandcontroler. The following hot keys are active:
+in both the AdvancedAutoGrinder and the commandcontroller. The following hot keys are active:
 * "-" key will increase the speed of the next action 
 * "+" key will decrease the speed of the next action
 * "Q" will stop the recording and play back 
 * "R" starts recording 
 * "P" starts playing back your recording
-* "ESC" will stop the program. To complete the closing process you must ether close the program or type something in the terminal.
+* "ESC" will stop the program. To complete the closing process, you must ether close the program or type something in the terminal.
 
-# Commands for advanstAutoGrinder
+# Commands for AdvancedAutoGrinder
 "0" Key will pause play back so you can edit the current action right arrow key will make you go to the previous action left
 arrow key will make you go to the next action. Currently, you may not resume the play back you must press "Q" then "P" to start the sequence over. When paused, type "2" to add a click to the current index. To replace an action, type "3" and where ever your curser is it will click their next time the record is played.
 
@@ -102,3 +102,4 @@ arrow key will make you go to the next action. Currently, you may not resume the
 ## License
 
 This program is an open source program.
+
