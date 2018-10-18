@@ -8,20 +8,21 @@ from Gui2.MainControler import playControls
 class mainPage(tkinter.Tk):
     def __init__(self, playcon):
         tkinter.Tk.__init__(self)
+        self.recordingBox = tkinter.Listbox(self)
         self.addTopButtons(playcon)
         self.config(height=200, width=400)
         self.pack_propagate(0)
-        centerItems=tkinter.Frame(self)
-        self.recordingBox = tkinter.Listbox(self)
+
         self.recordingBox.config(selectmode=tkinter.EXTENDED)
+
         scrollbar = tkinter.Scrollbar(self.recordingBox, orient="vertical")
         self.recordingBox.config(yscrollcommand=scrollbar.set)
         scrollbar.config(command=self.recordingBox.yview)
         scrollbar.pack(side="right", fill="y")
         self.recordingBox.pack(expand=1, fill=tkinter.BOTH)
 
-        for i in range(30):
-            self.recordingBox.insert(i,'item'+str(i))
+        for i in range(2):
+            self.recordingBox.insert(i,str(i))
 
         bottomControls = tkinter.Frame(self)
         bottomControls.pack()
@@ -57,7 +58,7 @@ class mainPage(tkinter.Tk):
         stopBtn.grid(row=0, column=1)
         delBtn = tkinter.Button(btnPane, text='delete', command=playCon.delete)
         delBtn.grid(row=0, column=4)
-        delBtn = tkinter.Button(btnPane, text='edit selected')
+        delBtn = tkinter.Button(btnPane, text='edit selected',command=lambda : playcon.editselect([self.recordingBox.get(idx) for idx in self.recordingBox.curselection()]))
         delBtn.grid(row=0, column=5)
 
     def bottomPage(self):
