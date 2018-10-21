@@ -1,7 +1,7 @@
 import tkinter
 
 from autoGrind.controlers.MainControler import playControls
-
+import threading
 # menu bar
 
 class mainPage(tkinter.Tk):
@@ -34,8 +34,11 @@ class mainPage(tkinter.Tk):
         nextPage.grid(row=2, column=2)
         self.bottomPage()
         self.title('Auto Grinder')
+        def close():
+            self.destroy()
+            playcon.close()
+        self.protocol("WM_DELETE_WINDOW", close)
         playcon.showList()
-        self.mainloop()
 
     def addTopButtons(self, playCon):
         test = "play"
@@ -78,3 +81,8 @@ class mainPage(tkinter.Tk):
 if __name__ == '__main__':
     playcon = playControls()
     main = mainPage(playcon)
+    thread= threading.Thread(target=playcon.hook.startHook)
+    thread.start()
+    main.mainloop()
+
+

@@ -1,4 +1,5 @@
 from pynput import keyboard, mouse
+from threading import Thread
 '''
 to record we need to have a key and mouse hook
 i will also need to be able to have the user create hot keys
@@ -17,11 +18,8 @@ class recorder(object):
         self.array=list()
         self.millsec = 0
         self.index=0
-
-    def startHook(self):
-        with keyboard.Listener(on_press=self.on_key_press, on_release=self.on_key_relaese) as self.keylis:
-            with mouse.Listener(on_click=self.on_click) as self.mouse_listener:
-                self.mouse_listener.join()
+        timerThread= Thread(target=self.timeCounter)
+        timerThread.start()
 
     def on_click(self, x, y, button, pressed):
         if self.recording:
@@ -29,23 +27,21 @@ class recorder(object):
                 if self.up:
                     self.up = False
                     pnt = [int(x), int(y)]
-                    self.addToRecord(1,pnt,'')
+                    self.addToRecord(0,pnt,'')
                     self.millsec = 0
 
             else:
                 self.up = True
 
     def kill(self):
-        self.mouse_listener.stop()
-        self.keylis.stop()
+        self.programOn=False
 
     def timeCounter(self):
-        if self.programOn == False:
-            return
-        if self.recording:
-            self.millsec +=1
-        else:
-            self.millsec = 0
+        while self.programOn :
+            if self.recording:
+                self.millsec +=1
+            else:
+                self.millsec = 0
 
     def on_key_press(self, key_code):
         """
@@ -58,43 +54,38 @@ class recorder(object):
 
         if self.recording:
             self.recordKey(key_code)
-        self.hotkeys(key_code)
 
-    def on_key_relaese(self, key_code):
-        if self.programOn ==False:
-            return
-        """
-        determins what keys do and records them
-        """
-        key_code = self.formatKeyIn(key_code)
-        self.hotkeyrel(key_code)
 
-    def hotkeys(self,key):
-        return
-
-    def hotkeyrel(self,key):
-        return
-
-    def showInfo(self,action):
+    def showRecordedItem(self,list):
         return
 
     def recordKey(self,key_code):
-        self.addToRecord(5, '', key_code)
+        self.addToRecord(4, '', key_code)
 
+    def startRecording(self):
+        print('recording')
 
+        self.recording=True
+
+    def stop(self):
+        print('stoping')
+        self.recording=False
 
     def addToRecord(self,action,pnt,key):
-        milSec = self.millsec
-        lis = list()
-        lis = [action, milSec, pnt, key]
-        self.array.append(lis)
-        if pnt is not None:
-            pnt=str(pnt)
-        else:
-            pnt= str("")
-        # self.addRecTtem(self.index,lis)
-        self.index+=1
-        self.showInfo(lis)
+        if self.recording:
+            if self.millsec>0:
+                milSec = round(self.millsec/1000,2)
+
+                lis = [action, milSec, pnt, key]
+                self.array.append(lis)
+                if pnt is not None:
+                    pnt=str(pnt)
+                else:
+                    pnt= str("")
+                # self.addRecTtem(self.index,lis)
+                self.index+=1
+                print(lis)
+                self.showRecordedItem(lis)
 
     def formatKeyIn(self,key_code):
         try:
@@ -106,5 +97,4 @@ class recorder(object):
 
 if __name__ == '__main__':
     rec = recorder()
-    rec.recording=True
     rec.startHook()

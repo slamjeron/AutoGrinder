@@ -74,16 +74,12 @@ class editPage(tkinter.Frame):
         getkeyStrockbtn = tkinter.Button(keyframe, text='get key stroke')
         getkeyStrockbtn.grid(row=1, column=0,rowspan=5,columnspan=3)
 
-
-
-
-
         botomFrame = tkinter.Frame(self)
         botomFrame.grid(row=5, column=0,sticky='we', columnspan=8)
         botomFrame.grid_columnconfigure(2, weight=1)
         botonCenter=tkinter.Frame(botomFrame)
         botonCenter.pack()
-        savebtn = tkinter.Button(botonCenter, text='Save',command=lambda :self.editcon.saveComand(self.recVar.get(),delayEnt.get(),[pointXEnt.get(),pointYEnt.get()],keyEnt.get()))
+        savebtn = tkinter.Button(botonCenter, text='Save',command=lambda :self.editcon.saveComand(self.recVar.get(),delayEnt.get(),[pointXEnt.get(),pointYEnt.get()],keyEnt.get(),editlines.get()))
         savebtn.pack(side=tkinter.LEFT)
 
         delbtn = tkinter.Button(botonCenter, text='Delete')

@@ -17,8 +17,11 @@ class editCon():
     def saveComand(self,action,timeDelay,point,keyevent,linsEdit):
         actions={'Left Click':'1', 'Right Click':'2', 'Drag Start':'3',
                            'Drag Stop':'4', 'Type':'5', 'Color Stall':'6', 'Color Condition':'7','name groop':'8'}
+        self.linesToEdit = list()
+        for item in linsEdit.split(','):
+            print(item)
+            self.linesToEdit.append(int(item))
 
-        self.linesToEdit=int(linsEdit.split(','))
         if action =='Same':
             print('')
         else:
@@ -31,17 +34,22 @@ class editCon():
             for line in self.linesToEdit:
                 self.recording[line][1]=int(timeDelay)
 
-        if point[0] == 'Same':
-            print('')
+        if point[0] =='Same':
+            pass
         else:
             for line in self.linesToEdit:
-                self.recording[line][1] = int(point[0])
+                self.recording[line][2][0]=int(point[0])
+        if point[1] =='Same':
+            pass
+        else:
+            for line in self.linesToEdit:
+                self.recording[line][2][1]=int(point[1])
 
-        if point[1] == 'Same':
-            print('')
+        if keyevent=='Same':
+            pass
         else:
             for line in self.linesToEdit:
-                self.recording[line][1] = int(point[0])
+                self.recording[line][3]=keyevent
 
         self.close()
         self.update()
