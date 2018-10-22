@@ -1,5 +1,6 @@
 from pynput import keyboard, mouse
 from threading import Thread
+import time
 '''
 to record we need to have a key and mouse hook
 i will also need to be able to have the user create hot keys
@@ -16,10 +17,8 @@ class recorder(object):
         self.programOn=True
         self.up=True
         self.array=list()
-        self.millsec = 0
+        self.secondes = time.time()
         self.index=0
-        timerThread= Thread(target=self.timeCounter)
-        timerThread.start()
 
     def on_click(self, x, y, button, pressed):
         if self.recording:
@@ -28,7 +27,6 @@ class recorder(object):
                     self.up = False
                     pnt = [int(x), int(y)]
                     self.addToRecord(0,pnt,'')
-                    self.millsec = 0
 
             else:
                 self.up = True
@@ -36,12 +34,6 @@ class recorder(object):
     def kill(self):
         self.programOn=False
 
-    def timeCounter(self):
-        while self.programOn :
-            if self.recording:
-                self.millsec +=1
-            else:
-                self.millsec = 0
 
     def on_key_press(self, key_code):
         """
@@ -64,8 +56,9 @@ class recorder(object):
 
     def startRecording(self):
         print('recording')
-
         self.recording=True
+        print(time.time() - self.secondes)
+        self.secondes=time.time()
 
     def stop(self):
         print('stoping')
@@ -73,8 +66,11 @@ class recorder(object):
 
     def addToRecord(self,action,pnt,key):
         if self.recording:
-            if self.millsec>0:
-                milSec = round(self.millsec/1000,2)
+            diff=  time.time()-self.secondes
+            diff = round(diff,2)
+            if diff>0:
+
+                milSec = diff
 
                 lis = [action, milSec, pnt, key]
                 self.array.append(lis)
@@ -86,6 +82,8 @@ class recorder(object):
                 self.index+=1
                 print(lis)
                 self.showRecordedItem(lis)
+                self.secondes = time.time()
+
 
     def formatKeyIn(self,key_code):
         try:
@@ -94,7 +92,3 @@ class recorder(object):
             key_code = '{0}'.format(key_code)
         key = str(key_code).replace('Key.', '')
         return key
-
-if __name__ == '__main__':
-    rec = recorder()
-    rec.startHook()

@@ -24,7 +24,7 @@ class HotKeys():
     def __init__(self):
         self.presedKey = ''
         self.heldKey=''
-        self.playhotkeys=hotkeycon("ctrl","p")
+        self.playhotkeys=hotkeycon("","1")
         self.stophotkeys = hotkeycon("", "q")
         self.pausehotkeys = hotkeycon("ctrl", "w")
         self.rechotkeys = hotkeycon("ctrl", "r")

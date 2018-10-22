@@ -32,7 +32,7 @@ class editCon():
             print('')
         else:
             for line in self.linesToEdit:
-                self.recording[line][1]=int(timeDelay)
+                self.recording[line][1]=float(timeDelay)
 
         if point[0] =='Same':
             pass

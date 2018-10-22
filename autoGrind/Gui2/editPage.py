@@ -1,23 +1,8 @@
 import tkinter
+
+from autoGrind.Gui2.myent import myEnt
 from autoGrind.controlers.editPageCon import editCon
-class myEnt(tkinter.Entry):
-    def __init__(self,parent,text=''):
-        tkinter.Entry.__init__(self,parent)
-        self.text=text
-        self.insert(0, text)
-        self.bind('<FocusIn>', self.emptytext)
-        self.bind('<FocusOut>', self.lostFocus)
-        return
 
-    def emptytext(self,event):
-        self.delete(0, 'end')
-
-    def lostFocus(self,event):
-        try:
-            int(self.get())
-        except ValueError:
-            self.delete(0, 'end')
-            self.insert(0, self.text)
 
 class editPage(tkinter.Frame):
     def __init__(self, parent):
@@ -44,19 +29,19 @@ class editPage(tkinter.Frame):
         self.recVar.set('Same')
         lbl2 = tkinter.Label(self, text='time delay')
         lbl2.grid(row=1, column=2)
-        delayEnt=myEnt(self,'Same')
+        delayEnt= myEnt(self, 'Same')
         delayEnt.grid(row=1,column=3)
         delayEnt.config(width=7)
         pntFrame=tkinter.Frame(self)
         pntFrame.grid(row=1,column=4,rowspan=2)
         lbl3 = tkinter.Label(pntFrame, text='Point X')
         lbl3.grid(row=0, column=0)
-        pointXEnt = myEnt(pntFrame,'Same')
+        pointXEnt = myEnt(pntFrame, 'Same')
         pointXEnt.grid(row=0, column=1)
         pointXEnt.config(width=6)
         lbl3 = tkinter.Label(pntFrame, text='Point y')
         lbl3.grid(row=0, column=2)
-        pointYEnt = myEnt(pntFrame,'Same')
+        pointYEnt = myEnt(pntFrame, 'Same')
         pointYEnt.grid(row=0, column=3)
         pointYEnt.config(width=6)
         getpointbtn = tkinter.Button(pntFrame, text='   get point   ')

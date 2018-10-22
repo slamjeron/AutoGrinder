@@ -43,9 +43,15 @@ class MyMenu():
         openResentMb.add_command(label='recent file')
         fileMenu.add_command(label="Exit", command=self.onExit)
 
+        def addResentFile(label,command):
+            openResentMb.add_command(label=label,command=command)
+
+        self.addResentFile =addResentFile
         self.menuBar.add_cascade(label='View', menu=viewMenu)
         viewMenu.add_command(label='Editing page', command=self.onEditingPage)
         viewMenu.add_command(label='Hot key page', command=self.onHotKeyPage)
         viewMenu.add_command(label='record settings', command=self.onRecordSettings)
         editMenue= tkinter.Menu(self.menuBar)
         editMenue.add_command(label="edit all", command=self.editAll)
+    def addResentFile(self,label,command):
+        return
