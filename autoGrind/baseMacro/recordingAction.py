@@ -1,27 +1,36 @@
 from pynput import keyboard, mouse
 from threading import Thread
 import time
+from autoGrind.controlers.pageBluePrint import mainPagebuttonBluePrint
 '''
 to record we need to have a key and mouse hook
 i will also need to be able to have the user create hot keys
 '''
-class recorder(object):
+class recorder(mainPagebuttonBluePrint):
 
 
 
+
+    def record(self, redy=False):
+        if redy:
+            print('isRecording')
+            self.isRecording = True
+            print(time.time() - self.secondes)
+            self.secondes = time.time()
+            self.recording=self.getRecording()
 
     def __init__(self):
         object.__init__(self)
         print('recorder ready')
-        self.recording = False
+        self.isRecording = False
         self.programOn=True
         self.up=True
-        self.array=list()
+        self.recording=list()
         self.secondes = time.time()
         self.index=0
 
     def on_click(self, x, y, button, pressed):
-        if self.recording:
+        if self.isRecording:
             if pressed:
                 if self.up:
                     self.up = False
@@ -44,7 +53,7 @@ class recorder(object):
         if self.programOn == False:
             return
 
-        if self.recording:
+        if self.isRecording:
             self.recordKey(key_code)
 
 
@@ -54,18 +63,13 @@ class recorder(object):
     def recordKey(self,key_code):
         self.addToRecord(4, '', key_code)
 
-    def startRecording(self):
-        print('recording')
-        self.recording=True
-        print(time.time() - self.secondes)
-        self.secondes=time.time()
-
-    def stop(self):
+    def stopRecording(self):
         print('stoping')
-        self.recording=False
+        self.setRecording(self.recording)
+        self.isRecording=False
 
     def addToRecord(self,action,pnt,key):
-        if self.recording:
+        if self.isRecording:
             diff=  time.time()-self.secondes
             diff = round(diff,2)
             if diff>0:
@@ -73,7 +77,7 @@ class recorder(object):
                 milSec = diff
 
                 lis = [action, milSec, pnt, key]
-                self.array.append(lis)
+                self.recording.append(lis)
                 if pnt is not None:
                     pnt=str(pnt)
                 else:
@@ -81,7 +85,7 @@ class recorder(object):
                 # self.addRecTtem(self.index,lis)
                 self.index+=1
                 print(lis)
-                self.showRecordedItem(lis)
+                self.showLine(lis)
                 self.secondes = time.time()
 
 

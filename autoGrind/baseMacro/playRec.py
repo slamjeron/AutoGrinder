@@ -1,18 +1,19 @@
 
 from pyautogui import *
 from threading import Thread
+from autoGrind.controlers.pageBluePrint import mainPagebuttonBluePrint
 import time
 """ 
 use key comands to control actions
 """
 
 
-class RecPlayer():
+class RecPlayer(mainPagebuttonBluePrint):
     def __init__(self):
         self.index = 0
         self.milsec2 = 0
         self.recording = list()
-        self.playing = False
+        self.isplaying = False
         self.pause = False
         self.end=False
         self.secondes = time.time()
@@ -22,67 +23,80 @@ class RecPlayer():
         self.loopAmount=1
         self.loops = 0
 
-    def play(self):
-        self.playing = True
-        self.pause = False
-        self.secondes = time.time()
-        if self.looping:
-            if self.loopAmount=="loop":
-                self.loopAmount=-1
+    def play(self,redy):
+        if redy:
+            self.recording=self.getRecording()
+            print(self.recording)
+            self.secondes = time.time()
+            self.index=0
+            self.curentsec=1
+            if self.looping:
+                if self.loopAmount=="loop":
+                    self.loopAmount=-1
+                else:
+                    self.loopAmount=float(self.loopAmount)
             else:
-                self.loopAmount=float(self.loopAmount)
-        else:
-            self.loopAmount=1
-        self.loops = 0
+                self.loopAmount=1
+            self.loops = 0
+            self.recording[self.index][1]
+        self.isplaying = True
+        self.pause = False
+
 
     def kill(self):
         self.end=True
 
     def stop(self):
-        self.playing=False
+        self.isplaying=False
         return
 
-    def recoreder(self):
-        return
 
 
     def player(self):
-        rec = self.recording
+
 
         while self.end is False:
             time.sleep(0.001)
-            if self.playing:
+            if self.isplaying:
                 if self.pause is False:
 
-                    if len(rec) <= 1:
-                        self.playing = False
+                    if len(self.recording) <= 1:
+                        self.isplaying = False
+                    sec = time.time() - self.secondes
+                    sec = round(sec, 2)
+
 
                     try:
                         sec=time.time() - self.secondes
                         sec =round(sec,2)
-                        if sec >= rec[self.index][1]:
+                        if sec >= self.recording[self.index][1]:
 
-                            if rec[self.index][0] == 0:
-                                click(rec[self.index][2][0], rec[self.index][2][1])
+                            if self.recording[self.index][0] == 0:
+                                click(self.recording[self.index][2][0], self.recording[self.index][2][1])
                                 self.index += 1
-                            if rec[self.index][0] == 4:
-                                press(rec[self.index][3])
+                            if self.recording[self.index][0] == 4:
+                                press(self.recording[self.index][3])
                                 self.index += 1
                             self.secondes = time.time()
                     except:
                         if self.loopAmount==-1:
                             self.index=0
+                            self.curentsec=0
                         elif self.loops<self.loopAmount:
                             self.loops+=1
                             self.index=0
+                            self.curentsec=0
                         else:
-                            self.playing = False
+                            self.isplaying = False
                             self.loops=0
+                    if self.curentsec<sec:
+                        self.displayCurentInfo(str(sec)+'next action time='+str(self.recording[self.index][1]))
+                        self.curentsec+=1
 
 
 
-                    if self.index > len(rec) - 1:
-                        self.playing = False
+                    if self.index > len(self.recording) - 1:
+                        self.isplaying = False
             else:
                 self.index = 0
                 self.milsec2=0

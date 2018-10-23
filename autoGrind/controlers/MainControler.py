@@ -1,46 +1,24 @@
-from tkinter import Toplevel,filedialog
+from tkinter import Toplevel
 from autoGrind.Gui2.editPage import editPage as ed
 from autoGrind.baseMacro.globalHook import myHook
 from autoGrind.baseMacro.hotkeys import HotKeys
 from autoGrind.baseMacro.recordingAction import recorder
 from autoGrind.baseMacro.playRec import RecPlayer
-import pickle
-from  os.path import exists
-class openSave(object):
-    def __init__(self):
-        object.__init__(self)
-        self.diolog=filedialog
-    def save_record(self, userInfo,programInfo, fileName=None):
-        """
-        saves the record
-        """
-        print(fileName)
-        if fileName==None:
-            fileName=self.diolog.asksaveasfilename(filetypes =(("auto grinder file", "*.grind"),("All Files","*.grind")))
-        mfile = open(fileName, 'wb')
 
-        pickle.dump(userInfo, mfile)
-        ufile=open('proFile.grind','wb')
-        pickle.dump(programInfo,ufile)
-        return fileName
-        mfile.close()
+from autoGrind.controlers.pageBluePrint import mainPagebuttonBluePrint
 
-    def openPro(self):
-        info=list()
-        if exists('./proFile.grind'):
-            mfile = open('proFile.grind', 'rb')
-            info = pickle.load(mfile)
-        return info
 
-    def openRecord(self,fileName=None):
-        if fileName ==None:
-            fileName = self.diolog.askopenfilename(filetypes =(("auto grinder file", "*.grind"),("All Files","*.grind")))
-        mfile = open(fileName, 'rb')
-        info = pickle.load(mfile)
-        mfile.close()
-        return info
+class playControls(mainPagebuttonBluePrint):
 
-class playControls():
+    def displayCurentInfo(self, text):
+        self.recInfo.set(text)
+        return
+
+    def getRecording(self):
+        return self.recordList
+
+    def setRecording(self, list):
+        self.recordList=list
 
     def __init__(self):
         self.recordList = list()
@@ -48,8 +26,12 @@ class playControls():
 
         self.main = None
         rec=recorder()
-
-        rec.array=self.recordList
+        self.recInfo=None
+        record=rec.record
+        rec.getRecording=self.getRecording
+        rec.setRecording=self.setRecording
+        rec.showLine=self.showLine
+        rec.displayCurentInfo=self.displayCurentInfo
 
         self.myMenue = object()
         self.editkey = rec.on_key_press
@@ -60,23 +42,25 @@ class playControls():
         hotkey=HotKeys()
         self.checkLoopStatus=None
         player=RecPlayer()
-        player.recording=self.recordList
+        player.getRecording=self.getRecording
+        player.displayCurentInfo=self.displayCurentInfo
         def delete():
-            self.recordList.clear()
+            del self.recordList[:]
+            self.curline=0
             self.showList()
         self.delete=delete
 
         def startrec():
-            if not rec.recording and not player.playing:
-                rec.startRecording()
+            print(not rec.isRecording and not player.isplaying)
+            rec.record((not rec.isRecording and  not player.isplaying))
+
         def playrec():
-            if not rec.recording and not player.playing:
-                print('playing')
-                player.looping,player.loopAmount=self.checkLoopStatus()
-                player.play()
+            print('should play')
+            player.looping,player.loopAmount=self.checkLoopStatus()
+            player.play(not rec.isRecording and not player.isplaying)
 
         def stop():
-            rec.stop()
+            rec.stopRecording()
             player.stop()
         self.stop=stop
         hotkey.playhotkeys.playmethod = playrec
@@ -84,64 +68,14 @@ class playControls():
         hotkey.stophotkeys.playmethod=stop
         self.hotkeyPress=hotkey.hotkeys
         self.hotkeyRelease=hotkey.hotkeyrel
-        rec.showRecordedItem=self.showline
         self.record=startrec
         self.play=playrec
         self.rec=rec
         self.curline=0
         self.player=player
-    def setMenue(self):
-        opsave = openSave()
-        self.filename = ''
 
-
-        def onSave():
-            if self.filename is not '':
-                profiles=[self.recentFiles]
-                userFiles=[self.recordList]
-                opsave.save_record(userFiles,profiles, self.filename)
-            else:
-                self.filename =opsave.save_record(self.recordList,None)
-
-            if self.filename in self.recentFiles:
-                pass
-            else:
-                self.recentFiles.append(self.filename)
-                self.myMenue.addResentFile(self.filename,lambda :openSave.openRecord(self.filename))
-            print('Saving code')
-
-        def onSaveAs():
-            print('Saving as')
-            if self.filename in self.recentFiles:
-                pass
-            else:
-                self.recentFiles.append(self.filename)
-                self.myMenue.addResentFile(self.filename, lambda: openSave.openRecord(self.filename))
-            self.filename = opsave.save_record(self.recordList)
-
-        def onOpen():
-            print('opening dialogue')
-            self.recordList=opsave.openRecord()
-            self.showList()
-
-        def onEditingPage(self):
-            print('showing Editing Page')
-
-        def onHotKeyPage(self):
-            print('showing Editing Page')
-
-        def onRecordSettings(self):
-            print('showing rec settings editor')
-
-
-        self.myMenue.onSave = onSave
-        self.recentFiles = opsave.openPro()
-        for files in self.recentFiles:
-            self.myMenue.addResentFile(files, lambda: opsave.openRecord(files))
-        self.myMenue.onSaveAs = onSaveAs
-        self.myMenue.onOpen=onOpen
-
-    def showline(self,line):
+    def showLine(self,line):
+        print('should show')
         self.taskBox.insert(self.curline, self.formatItem(self.curline, line))
         self.curline+=1
     def close(self):
@@ -176,8 +110,6 @@ class playControls():
         self.hotkeyRelease(nkey)
 
     def recRelease(self, key):
-
-
         return
 
     def hotkeyRelease(self, key):
@@ -207,17 +139,6 @@ class playControls():
             self.setStartBTNText('Pause')
         return
 
-    def stop(self):
-        print('stopping')
-        return
-
-    def delete(self):
-        print('deleating')
-        return
-
-    def record(self):
-        print('recording')
-        return
 
     def setStartBTNText(self, text):
         return

@@ -63,11 +63,11 @@ class GuiCon(object):
                     print('the current Hot Keys\nkey "', self._stRecordCommand, '" starts Recording\nKey "',
                           self._playRec,
                           '" Starts Playing back your mouse clicks and key strokes\nKey "', self._stopCommand,
-                          '" stops recording and play back\nKey "', self._endComand, '" stops the program')
+                          '" stops isRecording and play back\nKey "', self._endComand, '" stops the program')
                 elif select == 99:
                     print('the current Hot Keys\nkey "', self._playRec, '" starts Recording: 1\nKey "', self._playRec,
                           '" Starts Playing back your mouse clicks and key strokes: 2\nKey "', self._stopCommand,
-                          '" stops recording and play back:3\nKey "', self._endComand, '" end the program: 4')
+                          '" stops isRecording and play back:3\nKey "', self._endComand, '" end the program: 4')
                     keysel = input('select:')
                     try:
                         keysel = int(keysel)
@@ -172,7 +172,7 @@ class GuiCon(object):
         global recording
         self.up = True
         recording = True
-        print('recording')
+        print('isRecording')
     def play(self, rep=0):
         global playing
         global recording
@@ -182,7 +182,7 @@ class GuiCon(object):
         if rep > 0:
             self.pl.rep = rep
         self.pl.cnt = 0
-        print('playing record')
+        print('isplaying record')
     def resetRecord(self):
         print('reseting clicks')
         self.pl.array = list()
@@ -214,7 +214,7 @@ class GuiCon(object):
             self.record()
         elif key == self._playRec and recording == False and playing == False:
             print('play key hit')
-            # self.pl is the Player class a thread that plays the recording and keeps track of time.
+            # self.pl is the Player class a thread that plays the isRecording and keeps track of time.
             # the commands below help the player class know what to do.
             self.pl.slowing = False
             self.pl.speedUp = False
@@ -251,7 +251,7 @@ class GuiCon(object):
                 self.pl.replace = True
 class PlayThread(Thread):
     """
-    plays you’r recording and keeps track of time
+    plays you’r isRecording and keeps track of time
     """
     def __init__(self, event, array, rep):
         Thread.__init__(self)

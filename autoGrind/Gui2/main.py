@@ -18,8 +18,6 @@ class mainPage(tkinter.Tk):
 
         myMenue=MyMenu(self)
 
-        playcon.myMenue=myMenue
-        playcon.setMenue()
         myMenue.set()
         self.addTopButtons()
         self.config(height=200, width=400)
@@ -93,6 +91,7 @@ class mainPage(tkinter.Tk):
         self.recInfo = tkinter.StringVar()
         label = tkinter.Label(bottomframe, textvariable=self.recInfo)
         self.recInfo.set('action')
+        playcon.recInfo=self.recInfo
         label.pack()
 
 

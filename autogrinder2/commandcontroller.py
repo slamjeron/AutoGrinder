@@ -65,14 +65,14 @@ class GuiCon(object):
                     print('the current Hot Keys\nkey "', self._stRecordCommand, '" starts Recording\nKey "',
                           self._playRec,
                           '" Starts Playing bacqk your mouse clicks and key stroks\nKey "', self._stopCommand,
-                          '" stops recording and play back\nKey "', self._endComand, '" stops the program\n\n'
-                                                                                     'to increase the time it takes to play part of the recording type the "',
+                          '" stops isRecording and play back\nKey "', self._endComand, '" stops the program\n\n'
+                                                                                     'to increase the time it takes to play part of the isRecording type the "',
                           self.slowerKey,
-                          '" key to decrease the time it takes to play the recording type the "', self.speedKey, '" ')
+                          '" key to decrease the time it takes to play the isRecording type the "', self.speedKey, '" ')
                 elif select == 99:
                     print('the current Hot Keys\nkey "', self._playRec, '" starts Recording: 1\nKey "', self._playRec,
                           '" Starts Playing back your mouse clicks and key stroks: 2\nKey "', self._stopCommand,
-                          '" stops recording and play back:3\nKey "', self._endComand, '" end the program: 4')
+                          '" stops isRecording and play back:3\nKey "', self._endComand, '" end the program: 4')
 
                     keysel = input('select:')
                     try:
@@ -197,7 +197,7 @@ class GuiCon(object):
 
         self.up = True
         recording = True
-        print('recording')
+        print('isRecording')
 
     def on_click(self, x, y, button, pressed):
         global recording
@@ -221,7 +221,7 @@ class GuiCon(object):
         if rep > 0:
             self.pl.rep = rep
         self.pl.cnt = 0
-        print('playing record')
+        print('isplaying record')
 
     def resetRecord(self):
         print('reseting clicks')
@@ -246,7 +246,7 @@ class GuiCon(object):
             self.pl.delete = False
             self.pl.insertClick = False
             self.pl.pause = False
-            print('playing intems = false')
+            print('isplaying intems = false')
             self.play()
 
         elif key == self._stopCommand:
