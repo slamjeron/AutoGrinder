@@ -4,12 +4,13 @@ from autoGrind.controlers.MainControler import playControls
 import threading
 from autoGrind.Gui2.menue import MyMenu
 from autoGrind.Gui2.myent import myEnt
+from autoGrind.controlers.pageBluePrint import mainPagebuttonBluePrint
 
 
 # menu bar
 
 class mainPage(tkinter.Tk):
-    def __init__(self, playcon):
+    def __init__(self, playcon=mainPagebuttonBluePrint):
         tkinter.Tk.__init__(self)
         self.recordingBox = tkinter.Listbox(self)
         self.playcon=playcon
@@ -17,7 +18,9 @@ class mainPage(tkinter.Tk):
         playcon.main=self
 
         myMenue=MyMenu(self)
-
+        myMenue.con.getRecording = self.playcon.getRecording
+        myMenue.con.setRecording = self.playcon.setRecording
+        myMenue.con.showAll = self.playcon.showAll
         myMenue.set()
         self.addTopButtons()
         self.config(height=200, width=400)
@@ -42,13 +45,14 @@ class mainPage(tkinter.Tk):
         nextPage = tkinter.Button(bottomControlsIner, text='next')
         nextPage.grid(row=2, column=2)
 
+
         self.bottomPage()
         self.title('Auto Grinder')
         def close():
             self.destroy()
             playcon.close()
         self.protocol("WM_DELETE_WINDOW", close)
-        playcon.showList()
+        playcon.showAll()
 
     def addTopButtons(self):
         test = "play"

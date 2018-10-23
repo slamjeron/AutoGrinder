@@ -24,7 +24,8 @@ class mainPagebuttonBluePrint():
     def showLine(self,list):
         return
 
-    def showAll(self,list2d):
+    def showAll(self):
+        print('showing all')
         return
 
     def record(self,redy=False):

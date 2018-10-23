@@ -47,7 +47,7 @@ class playControls(mainPagebuttonBluePrint):
         def delete():
             del self.recordList[:]
             self.curline=0
-            self.showList()
+            self.showAll()
         self.delete=delete
 
         def startrec():
@@ -121,10 +121,10 @@ class playControls(mainPagebuttonBluePrint):
         act = actions[int(l)]
 
 
-        return str(index) + '| action =' + act + '| time delay = ' + str(list[1]) + '| Point = ' + str(
-            list[2]) + '|Key Press = ' + list[3]
+        return str(index) + '| act =' + act + '| delay = ' + str(list[1]) + '| pnt = ' + str(
+            list[2]) + '|Key = ' + list[3]
 
-    def showList(self):
+    def showAll(self):
         self.taskBox.delete(0, 'end')
         lineNum = 0
         for line in self.recordList:
@@ -156,9 +156,11 @@ class playControls(mainPagebuttonBluePrint):
             print(var)
         self.newWindow = Toplevel(self.main)
         self.edit = ed(self.newWindow)
-        self.edit.editcon.recording = self.recordList
-        self.edit.editcon.linesToEdit = selectedIndex
-        self.edit.editcon.showEditLines()
-        self.edit.editcon.update = self.showList
+        editcon=self.edit.editcon
+        editcon.linesToEdit=selectedIndex
+        editcon.showEditLines()
+        editcon.showAll=self.showAll
+        editcon.getRecording=self.getRecording
+        editcon.setRecording=self.setRecording
         self.edit.pack()
         return
