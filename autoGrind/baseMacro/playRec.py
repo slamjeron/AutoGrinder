@@ -37,7 +37,7 @@ class RecPlayer(mainPagebuttonBluePrint):
                     self.loopAmount=float(self.loopAmount)
             else:
                 self.loopAmount=1
-            self.loops = 0
+            self.loops = 1
             self.recording[self.index][1]
         self.isplaying = True
         self.pause = False
@@ -79,10 +79,16 @@ class RecPlayer(mainPagebuttonBluePrint):
                                 self.index += 1
                             self.secondes = time.time()
                     except:
+                        try:
+                            int(self.loopAmount)
+                        except:
+                            self.loopAmount=1
                         if self.loopAmount==-1:
                             self.index=0
                             self.curentsec=0
+
                         elif self.loops<self.loopAmount:
+                            print('loops='+str(self.loops))
                             self.loops+=1
                             self.index=0
                             self.curentsec=0
