@@ -1,14 +1,32 @@
+from autoGrind.controlers.editPageBluePrint import bluePrint
 from autoGrind.controlers.pageBluePrint import mainPagebuttonBluePrint
+import threading
+import  pyautogui as mouse
+import time
+class editCon(mainPagebuttonBluePrint,bluePrint):
 
 
-class editCon(mainPagebuttonBluePrint):
     def __init__(self):
-        object.__init__(self)
+
         self.recording=list()
         self.linesToEdit=list()
         self.enterlines=None
         self.close=None
         self.update=None
+
+    def delete_act(self):
+        lines=''
+        lines =self.getlines()
+        super().delete_act()
+        self.recording= self.getRecording()
+        for item in lines.split(','):
+            print(item)
+            self.linesToEdit.append(int(item))
+        for line in self.linesToEdit:
+            if len(self.recording)>line:
+                del self.recording[line]
+        self.showAll()
+        self.close()
 
     def showEditLines(self):
         strin=','.join(map(str,self.linesToEdit))
@@ -63,3 +81,30 @@ class editCon(mainPagebuttonBluePrint):
         self.showAll()
         self.close()
         return
+    def getPoint(self,setx,sety):
+        self.counter=0
+        self.mousposition=list()
+        pntThread = threading.Thread(target=self.mouseMove)
+        pntThread.start()
+        self.setXpoint=setx
+        self.setYpoint=sety
+
+
+    def mouseMove(self):
+        myMouse=mouse
+        oPos=0
+        while True:
+            time.sleep(1)
+            nPos=myMouse.position()
+            if oPos == nPos:
+                self.counter+=1
+                print(self.counter)
+                if self.counter>4:
+                    self.mousposition=nPos
+                    x,y=self.mousposition
+                    self.setXpoint(str(x))
+                    self.setYpoint(str(y))
+                    return
+            else:
+                oPos=nPos
+                self.counter=0

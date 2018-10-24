@@ -62,6 +62,7 @@ class playControls(mainPagebuttonBluePrint):
         def stop():
             rec.stopRecording()
             player.stop()
+
         self.stop=stop
         hotkey.playhotkeys.playmethod = playrec
         hotkey.rechotkeys.playmethod=startrec
