@@ -1,6 +1,7 @@
 from autoGrind.controlers.pageBluePrint import mainPagebuttonBluePrint
-
-
+import threading
+import  pyautogui as mouse
+import time
 class editCon(mainPagebuttonBluePrint):
     def __init__(self):
         object.__init__(self)
@@ -63,3 +64,29 @@ class editCon(mainPagebuttonBluePrint):
         self.showAll()
         self.close()
         return
+    def getPoint(self,setx,sety):
+        self.counter=0
+        self.mousposition=list()
+        pntThread = threading.Thread(target=self.mouseMove)
+        pntThread.start()
+        self.setXpoint=setx
+        self.setYpoint=sety
+
+    def mouseMove(self):
+        myMouse=mouse
+        oPos=0
+        while True:
+            time.sleep(1)
+            nPos=myMouse.position()
+            if oPos == nPos:
+                self.counter+=1
+                print(self.counter)
+                if self.counter>4:
+                    self.mousposition=nPos
+                    x,y=self.mousposition
+                    self.setXpoint(str(x))
+                    self.setYpoint(str(y))
+                    return
+            else:
+                oPos=nPos
+                self.counter=0

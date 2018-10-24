@@ -17,6 +17,7 @@ class RecPlayer(mainPagebuttonBluePrint):
         self.pause = False
         self.end=False
         self.secondes = time.time()
+
         myThread=Thread(target=self.player)
         myThread.start()
         self.looping=False

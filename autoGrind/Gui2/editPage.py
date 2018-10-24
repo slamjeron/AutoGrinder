@@ -41,10 +41,23 @@ class editPage(tkinter.Frame):
         pointXEnt.config(width=6)
         lbl3 = tkinter.Label(pntFrame, text='Point y')
         lbl3.grid(row=0, column=2)
+
         pointYEnt = myEnt(pntFrame, 'Same')
+
+
         pointYEnt.grid(row=0, column=3)
         pointYEnt.config(width=6)
-        getpointbtn = tkinter.Button(pntFrame, text='   get point   ')
+        def setYpoint(ypoint):
+            pointYEnt.delete(0,'end')
+            pointYEnt.insert(0,ypoint)
+        def setXpoint(xpoint):
+            pointXEnt.delete(0,'end')
+            pointXEnt.insert(0,xpoint)
+
+        def getPoint():
+            self.editcon.getPoint(setXpoint,setYpoint)
+
+        getpointbtn = tkinter.Button(pntFrame, text='   get point   ',command=getPoint)
         getpointbtn.grid(row=1, column=0,rowspan=4,columnspan=2)
         keyframe=tkinter.Frame(self)
         keyframe.grid(row=1,column=5,rowspan=2)
