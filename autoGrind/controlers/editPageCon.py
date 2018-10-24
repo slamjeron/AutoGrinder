@@ -1,15 +1,32 @@
+from autoGrind.controlers.editPageBluePrint import bluePrint
 from autoGrind.controlers.pageBluePrint import mainPagebuttonBluePrint
 import threading
 import  pyautogui as mouse
 import time
-class editCon(mainPagebuttonBluePrint):
+class editCon(mainPagebuttonBluePrint,bluePrint):
+
+
     def __init__(self):
-        object.__init__(self)
+
         self.recording=list()
         self.linesToEdit=list()
         self.enterlines=None
         self.close=None
         self.update=None
+
+    def delete_act(self):
+        lines=''
+        lines =self.getlines()
+        super().delete_act()
+        self.recording= self.getRecording()
+        for item in lines.split(','):
+            print(item)
+            self.linesToEdit.append(int(item))
+        for line in self.linesToEdit:
+            if len(self.recording)>line:
+                del self.recording[line]
+        self.showAll()
+        self.close()
 
     def showEditLines(self):
         strin=','.join(map(str,self.linesToEdit))
@@ -71,6 +88,7 @@ class editCon(mainPagebuttonBluePrint):
         pntThread.start()
         self.setXpoint=setx
         self.setYpoint=sety
+
 
     def mouseMove(self):
         myMouse=mouse
