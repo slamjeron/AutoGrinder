@@ -71,14 +71,27 @@ class RecPlayer(mainPagebuttonBluePrint):
                         sec=time.time() - self.secondes
                         sec =round(sec,2)
                         if sec >= self.recording[self.index][1]:
-
-                            if self.recording[self.index][0] == 0:
+                            action=self.recording[self.index][0]
+                            if action == 0:
                                 click(self.recording[self.index][2][0], self.recording[self.index][2][1])
                                 self.index += 1
-                            if self.recording[self.index][0] == 4:
+
+                            if action == 4:
                                 press(self.recording[self.index][3])
                                 self.index += 1
+
+                            if action == 5:
+
+                                if pixelMatchesColor(self.recording[self.index][2][0], self.recording[self.index][2][1],self.recording[self.index][3])==self.recording[self.index][4]:
+                                    self.index+=1
+                                else:
+                                    pass
+
+
+
+
                             self.secondes = time.time()
+
                     except:
                         try:
                             int(self.loopAmount)

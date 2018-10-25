@@ -22,6 +22,7 @@ class editPage(tkinter.Frame):
         lbl1 = tkinter.Label(self, text='action')
         lbl1.grid(row=1, column=0)
         self.recVar=tkinter.StringVar()
+
         actionDrop=tkinter.OptionMenu(self, self.recVar, 'Same', 'Left Click', 'Right Click', 'Drag Start',
                            'Drag Stop', 'Type', 'Color Stall', 'Color Condition','name groop')
 
@@ -71,7 +72,7 @@ class editPage(tkinter.Frame):
         lbl4 = tkinter.Label(keyframe, text='key event')
         lbl4.grid(row=0, column=0)
 
-        keyEnt = tkinter.Entry(keyframe)
+        keyEnt = myEnt(keyframe)
         keyEnt.insert(0,'Same')
         keyEnt.grid(row=0, column=1)
         keyEnt.config(width=7)

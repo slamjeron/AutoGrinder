@@ -1,4 +1,4 @@
-from tkinter import  filedialog
+from tkinter import filedialog
 from autoGrind.controlers.pageBluePrint import mainPagebuttonBluePrint
 import pickle
 
@@ -42,39 +42,50 @@ class MenueControler(mainPagebuttonBluePrint):
             return filedialog.asksaveasfile(defaultextension='.grind',filetypes=[('Auto Grinder file','.grind')])
 
         if self.curentRecord ==None:
-            self.curentRecord=savediologue()
+            self.curentRecord=savediologue().name
         if self.curentRecord is not None:
-            print(self.curentRecord.name)
-            with open(self.curentRecord.name, 'wb') as handle:
+            with open(self.curentRecord, 'wb') as handle:
                 pickle.dump(self.getRecording(), handle, protocol=pickle.HIGHEST_PROTOCOL)
             handle.close()
-        if self.curentRecord.name not in self.resentMacros:
-            self.resentMacros.append(self.curentRecord.name)
-            self.addResentFile(self.curentRecord.name,self.curentRecord.name)
+
+
+        if self.curentRecord not in self.resentMacros:
+            self.resentMacros.append(self.curentRecord)
+            rec=self.curentRecord
+            self.addResentFile(self.curentRecord,lambda :self.openrecent(rec))
             with open('./profiles.grind', 'wb') as handle:
                 pickle.dump(self.resentMacros, handle, protocol=pickle.HIGHEST_PROTOCOL)
             handle.close()
+
+    def openrecent(self,filename):
+        self.curentRecord= filename
+        self.open()
     def open(self):
         def openDiologue():
             return filedialog.askopenfile(filetypes=[('Auto Grinder file','.grind')])
         if self.curentRecord ==None:
-            self.curentRecord=openDiologue()
+            self.curentRecord=openDiologue().name
         if self.curentRecord is not None:
-            print(self.curentRecord.name)
-            with open(self.curentRecord.name, 'rb') as handle:
+            with open(self.curentRecord, 'rb') as handle:
                 self.setRecording(pickle.load(handle))
 
             handle.close()
             self.showAll()
-        if self.curentRecord.name not in self.resentMacros:
-            self.resentMacros.append(self.curentRecord.name)
-            self.addResentFile(self.curentRecord.name,self.curentRecord.name)
+        if self.curentRecord not in self.resentMacros:
+            self.resentMacros.append(self.curentRecord)
+            rec=self.curentRecord
+            self.addResentFile(self.curentRecord,lambda :self.openrecent(rec))
             with open('./profiles.grind', 'wb') as handle:
                 pickle.dump(self.resentMacros, handle, protocol=pickle.HIGHEST_PROTOCOL)
             handle.close()
+
     def openProHistory(self):
-        with open(self.curentRecord.name, 'rb') as handle:
-            self.setRecording(pickle.load(handle))
+        with open('./profiles.grind', 'rb') as handle:
+            self.resentMacros=pickle.load(handle)
+            handle.close()
+        for recentmacro in  self.resentMacros:
+            self.addResentFile(recentmacro,lambda :self.openrecent(recentmacro))
+
     def __init__(self):
         object.__init__(self)
         self.curentRecord=None
