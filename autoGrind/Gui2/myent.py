@@ -11,7 +11,8 @@ class myEnt(tkinter.Entry):
         return
 
     def emptytext(self,event):
-        self.delete(0, 'end')
+        if self.get()==self.text:
+            self.delete(0, 'end')
 
     def lostFocus(self,event):
         try:

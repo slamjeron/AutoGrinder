@@ -34,6 +34,8 @@ class MyMenu():
         editMenue= tkinter.Menu(self.menuBar)
         editMenue.add_command(label="edit all", command=self.con.editAll)
 
+
         def addResentFile(label, command):
             openResentMb.add_command(label=label, command=command)
         self.con.addResentFile = addResentFile
+        self.con.openProHistory()

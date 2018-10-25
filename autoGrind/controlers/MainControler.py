@@ -27,7 +27,6 @@ class playControls(mainPagebuttonBluePrint):
         self.main = None
         rec=recorder()
         self.recInfo=None
-        record=rec.record
         rec.getRecording=self.getRecording
         rec.setRecording=self.setRecording
         rec.showLine=self.showLine
@@ -150,11 +149,8 @@ class playControls(mainPagebuttonBluePrint):
     def editselect(self, selected):
         # open the editing page
         print('editing selected')
-        selectedIndex = list()
-        for index in selected:
-            var = int(str(index).split('|')[0])
-            selectedIndex.append(var)
-            print(var)
+        selectedIndex = selected
+
         self.newWindow = Toplevel(self.main)
         self.edit = ed(self.newWindow)
         editcon=self.edit.editcon
@@ -165,3 +161,11 @@ class playControls(mainPagebuttonBluePrint):
         editcon.setRecording=self.setRecording
         self.edit.pack()
         return
+
+    def insert(self,index):
+        if len(index)>0:
+            index=list(index)
+            index=[int(index[-1])]
+            self.recordList.insert(index[0],[0,0,['',''],''])
+            self.showAll()
+            self.editselect(index)

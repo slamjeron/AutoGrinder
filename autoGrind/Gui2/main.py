@@ -23,7 +23,7 @@ class mainPage(tkinter.Tk):
         myMenue.con.showAll = self.playcon.showAll
         myMenue.set()
         self.addTopButtons()
-        self.config(height=200, width=400)
+        self.config(height=200, width=450)
         self.pack_propagate(0)
         self.recordingBox.config(selectmode=tkinter.EXTENDED)
         scrollbar = tkinter.Scrollbar(self.recordingBox, orient="vertical")
@@ -73,9 +73,9 @@ class mainPage(tkinter.Tk):
         playcon.getStartBTNText = getStartBTNText
         var=tkinter.BooleanVar()
         loopCheck = tkinter.Checkbutton(btnPane,variable=var)
-        loopCheck.grid(row=0,column=5)
+        loopCheck.grid(row=0,column=6)
         loopent=myEnt(btnPane,'loop')
-        loopent.grid(row=0, column=6)
+        loopent.grid(row=0, column=7)
         loopent.config(width=6)
         def checkLoopStatus():
             return var.get(),loopent.get()
@@ -85,9 +85,13 @@ class mainPage(tkinter.Tk):
         stopBtn.grid(row=0, column=1)
         delBtn = tkinter.Button(btnPane, text='delete', command=self.playcon.delete)
         delBtn.grid(row=0, column=3)
-        delBtn = tkinter.Button(btnPane, text='edit selected', command=lambda: playcon.editselect(
-            [self.recordingBox.get(idx) for idx in self.recordingBox.curselection()]))
-        delBtn.grid(row=0, column=4)
+        editBtn = tkinter.Button(btnPane, text='edit selected', command=lambda: playcon.editselect(
+             self.recordingBox.curselection()))
+        editBtn.grid(row=0, column=4)
+
+        insertBtn = tkinter.Button(btnPane, text='insert', command=lambda: playcon.insert(self.recordingBox.curselection()))
+        insertBtn.grid(row=0, column=5)
+
 
     def bottomPage(self):
         bottomframe = tkinter.Frame(self)
