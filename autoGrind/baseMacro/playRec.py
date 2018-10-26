@@ -72,6 +72,7 @@ class RecPlayer(mainPagebuttonBluePrint):
                         sec =round(sec,2)
                         if sec >= self.recording[self.index][1]:
                             action=self.recording[self.index][0]
+                            self.curentsec=0
                             if action == 0:
                                 click(self.recording[self.index][2][0], self.recording[self.index][2][1])
                                 self.index += 1
@@ -97,6 +98,7 @@ class RecPlayer(mainPagebuttonBluePrint):
                             int(self.loopAmount)
                         except:
                             self.loopAmount=1
+
                         if self.loopAmount==-1:
                             self.index=0
                             self.curentsec=0
@@ -109,14 +111,13 @@ class RecPlayer(mainPagebuttonBluePrint):
                         else:
                             self.isplaying = False
                             self.loops=0
-                    if self.curentsec<sec:
-                        self.displayCurentInfo(str(sec)+'next action time='+str(self.recording[self.index][1]))
-                        self.curentsec+=1
+                    if len(self.recording)>self.index:
+                        if self.curentsec<=sec:
+                            self.displayCurentInfo(str(sec)+'next action time='+str(self.recording[self.index][1]))
+                            self.curentsec+=1
 
 
 
-                    if self.index > len(self.recording) - 1:
-                        self.isplaying = False
             else:
                 self.index = 0
                 self.milsec2=0

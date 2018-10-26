@@ -108,3 +108,6 @@ class editCon(mainPagebuttonBluePrint,bluePrint):
             else:
                 oPos=nPos
                 self.counter=0
+
+    def actionDrop(self):
+        pass

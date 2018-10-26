@@ -1,7 +1,7 @@
-from pynput import keyboard, mouse
-from threading import Thread
+
 import time
 from autoGrind.controlers.pageBluePrint import mainPagebuttonBluePrint
+import pyautogui as mouse
 '''
 to record we need to have a key and mouse hook
 i will also need to be able to have the user create hot keys
@@ -61,7 +61,13 @@ class recorder(mainPagebuttonBluePrint):
         return
 
     def recordKey(self,key_code):
-        self.addToRecord(4, '', key_code)
+        if key_code=='+':
+            # open the other comand view
+
+            #self.addToRecord(5,[x,y],mouse.pixel(x,y))
+            pass
+        else:
+            self.addToRecord(4, '', key_code)
 
     def stopRecording(self):
         print('stoping')
@@ -96,3 +102,5 @@ class recorder(mainPagebuttonBluePrint):
             key_code = '{0}'.format(key_code)
         key = str(key_code).replace('Key.', '')
         return key
+
+

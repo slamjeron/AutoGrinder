@@ -24,7 +24,7 @@ class editPage(tkinter.Frame):
         self.recVar=tkinter.StringVar()
 
         actionDrop=tkinter.OptionMenu(self, self.recVar, 'Same', 'Left Click', 'Right Click', 'Drag Start',
-                           'Drag Stop', 'Type', 'Color Stall', 'Color Condition','name groop')
+                           'Drag Stop', 'Type', 'Color Stall', 'Color Condition','name groop',command=self.editcon.actionDrop)
 
 
         actionDrop.grid(row=1, column=1)
