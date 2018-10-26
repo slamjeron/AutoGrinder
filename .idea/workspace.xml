@@ -4,16 +4,8 @@
     <bookmark url="file://$PROJECT_DIR$/autoGrind/controlers/editPageCon.py" line="32" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be9a65c8-232a-4c34-bc57-48d4da3f644f" name="Default Changelist" comment="save and open files works i use a file type caled .grind to hold my information i still need to add the open recent.">
+    <list default="true" id="be9a65c8-232a-4c34-bc57-48d4da3f644f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autoGrind/Gui2/editPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoGrind/Gui2/editPage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autoGrind/Gui2/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoGrind/Gui2/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autoGrind/Gui2/menue.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoGrind/Gui2/menue.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autoGrind/Gui2/myent.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoGrind/Gui2/myent.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autoGrind/Gui2/profiles.grind" beforeDir="false" afterPath="$PROJECT_DIR$/autoGrind/Gui2/profiles.grind" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autoGrind/baseMacro/playRec.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoGrind/baseMacro/playRec.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autoGrind/controlers/MainControler.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoGrind/controlers/MainControler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autoGrind/controlers/menueControler.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoGrind/controlers/menueControler.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <ignored path="$PROJECT_DIR$/venv1/" />
@@ -604,7 +596,14 @@
       <option name="project" value="LOCAL" />
       <updated>1540401851104</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="save and open files works i use a file type caled .grind to hold my information i still need to add the open recent.">
+      <created>1540489923811</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1540489923811</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
