@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be9a65c8-232a-4c34-bc57-48d4da3f644f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/autoGrind/Gui2/otherComand.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/linux-AutoGrinder.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/linux-AutoGrinder.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autoGrind/Gui2/editPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoGrind/Gui2/editPage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autoGrind/baseMacro/playRec.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoGrind/baseMacro/playRec.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autoGrind/baseMacro/recordingAction.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoGrind/baseMacro/recordingAction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autoGrind/controlers/editPageCon.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoGrind/controlers/editPageCon.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <ignored path="$PROJECT_DIR$/venv1/" />
@@ -89,10 +82,11 @@
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.10" value="2" />
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.10" value="3" />
+          <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -109,7 +103,7 @@
         <entry file="file://$PROJECT_DIR$/autoGrind/Gui2/otherComand.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
-              <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -117,8 +111,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/autoGrind/Gui2/editPage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="26" column="126" lean-forward="true" selection-start-line="25" selection-start-column="8" selection-end-line="26" selection-end-column="126" />
+            <state relative-caret-position="345">
+              <caret line="26" column="126" selection-start-line="25" selection-start-column="8" selection-end-line="26" selection-end-column="126" />
               <folding>
                 <marker date="1540544060297" expanded="true" signature="1832:1842" ph="..." />
                 <marker date="1540544060297" expanded="true" signature="1909:1919" ph="..." />
@@ -186,11 +180,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="96" />
-    <option name="y" value="36" />
-    <option name="width" value="926" />
-    <option name="height" value="1048" />
+  <component name="ProjectFrameBounds" extendedState="4">
+    <option name="x" value="672" />
+    <option name="y" value="24" />
+    <option name="width" value="928" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -273,7 +267,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.otherComand">
+  <component name="RunManager" selected="Python.main">
     <configuration name="MainControler (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="linux-AutoGrinder" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -542,7 +536,14 @@
       <option name="project" value="LOCAL" />
       <updated>1540521619600</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="save and open files works i use a file type caled .grind to hold my information i still need to add the open recent.">
+      <created>1540585948161</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1540585948161</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -558,7 +559,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.26882845" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.26847827" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32885906" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
@@ -639,9 +640,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
           <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -649,9 +647,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1245">
           <caret line="85" column="31" selection-start-line="85" selection-start-column="31" selection-end-line="85" selection-end-column="31" />
-          <folding>
-            <marker date="1540481912610" expanded="true" signature="1191:1201" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -659,9 +654,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1275">
           <caret line="85" column="84" lean-forward="true" selection-start-line="85" selection-start-column="84" selection-end-line="85" selection-end-column="84" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -683,9 +675,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="874">
           <caret line="111" column="23" selection-start-line="111" selection-start-column="19" selection-end-line="111" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#60#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -693,9 +682,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="67" column="16" selection-start-line="67" selection-start-column="16" selection-end-line="67" selection-end-column="16" />
-          <folding>
-            <element signature="e#1#12#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -703,29 +689,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="740">
           <caret line="114" column="43" selection-start-line="114" selection-start-column="43" selection-end-line="114" selection-end-column="43" />
-          <folding>
-            <element signature="e#1#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autoGrind/Gui2/editPage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="26" column="126" lean-forward="true" selection-start-line="25" selection-start-column="8" selection-end-line="26" selection-end-column="126" />
-          <folding>
-            <marker date="1540544060297" expanded="true" signature="1832:1842" ph="..." />
-            <marker date="1540544060297" expanded="true" signature="1909:1919" ph="..." />
-            <marker date="1540544060297" expanded="true" signature="2151:2216" ph="..." />
-            <marker date="1540544060297" expanded="true" signature="3673:3717" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/autoGrind/Gui2/otherComand.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoGrind/Gui2/editPage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="26" column="126" selection-start-line="25" selection-start-column="8" selection-end-line="26" selection-end-column="126" />
+          <folding>
+            <marker date="1540544060297" expanded="true" signature="1832:1842" ph="..." />
+            <marker date="1540544060297" expanded="true" signature="1909:1919" ph="..." />
+            <marker date="1540544060297" expanded="true" signature="2151:2216" ph="..." />
+            <marker date="1540544060297" expanded="true" signature="3673:3717" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
