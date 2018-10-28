@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/autoGrind/controlers/editPageCon.py" line="32" />
+    <bookmark url="file://$PROJECT_DIR$/autoGrind/controlers/editPageCon.py" line="33" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be9a65c8-232a-4c34-bc57-48d4da3f644f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/autoGrind/controlers/otherComand.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/linux-AutoGrinder.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/linux-AutoGrinder.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoGrind/Gui2/editPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoGrind/Gui2/editPage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autoGrind/Gui2/otherComand.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoGrind/Gui2/otherComand.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoGrind/baseMacro/playRec.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoGrind/baseMacro/playRec.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoGrind/baseMacro/recordingAction.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoGrind/baseMacro/recordingAction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoGrind/controlers/MainControler.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoGrind/controlers/MainControler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoGrind/controlers/editPageCon.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoGrind/controlers/editPageCon.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <ignored path="$PROJECT_DIR$/venv1/" />
@@ -85,10 +91,11 @@
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.10" value="2" />
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.10" value="3" />
+          <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -98,25 +105,35 @@
         </counts>
       </usages-collector>
     </session>
-    <session id="767527619">
+    <session id="-1077387478">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="1" />
+          <entry key="py" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="1" />
+          <entry key="Python" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="208" />
+          <entry key="dummy" value="27" />
+          <entry key="py" value="2976" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="208" />
+          <entry key="PLAIN_TEXT" value="27" />
+          <entry key="Python" value="2976" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
     </session>
@@ -126,8 +143,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/autoGrind/controlers/editPageCon.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1350">
-              <caret line="94" column="14" selection-start-line="94" selection-start-column="14" selection-end-line="94" selection-end-column="14" />
+            <state relative-caret-position="595">
+              <caret line="107" column="26" lean-forward="true" selection-start-line="107" selection-start-column="26" selection-end-line="107" selection-end-column="26" />
               <folding>
                 <element signature="e#0#60#0" expanded="true" />
               </folding>
@@ -136,57 +153,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/autoGrind/Gui2/editPage.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1065">
-              <caret line="74" column="22" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/autoGrind/Gui2/myent.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/autoGrind/controlers/MainControler.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="654">
-              <caret line="164" column="27" selection-start-line="164" selection-start-column="27" selection-end-line="164" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/autoGrind/Gui2/otherComand.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="27" column="28" lean-forward="true" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/autoGrind/baseMacro/recordingAction.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/autoGrind/Gui2/menue.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+            <state relative-caret-position="-140">
+              <caret line="49" column="32" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
+                <marker date="1540697754793" expanded="true" signature="325:364" ph="..." />
+                <marker date="1540697754793" expanded="true" signature="1427:1512" ph="..." />
+                <marker date="1540697754793" expanded="true" signature="2070:2627" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/autoGrind/controlers/otherComand.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="41" lean-forward="true" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+              <folding>
+                <element signature="e#0#16#0" expanded="true" />
+                <marker date="1540697833755" expanded="true" signature="133:385" ph="..." />
               </folding>
             </state>
           </provider>
@@ -195,8 +183,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/autoGrind/baseMacro/playRec.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1170">
-              <caret line="81" column="47" selection-start-line="81" selection-start-column="47" selection-end-line="81" selection-end-column="47" />
+            <state relative-caret-position="135">
+              <caret line="69" column="24" lean-forward="true" selection-start-line="69" selection-start-column="24" selection-end-line="69" selection-end-column="24" />
               <folding>
                 <element signature="e#1#24#0" expanded="true" />
               </folding>
@@ -205,22 +193,44 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/autoGrind/controlers/menueControler.py">
+        <entry file="file://$PROJECT_DIR$/autoGrind/baseMacro/hotkeys.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1245">
-              <caret line="85" column="31" selection-start-line="85" selection-start-column="31" selection-end-line="85" selection-end-column="31" />
+            <state relative-caret-position="270">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/autoGrind/Gui2/main.py">
+        <entry file="file://$PROJECT_DIR$/autoGrind/controlers/MainControler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1230">
-              <caret line="88" column="47" selection-start-line="88" selection-start-column="47" selection-end-line="88" selection-end-column="47" />
+            <state relative-caret-position="450">
+              <caret line="30" column="42" lean-forward="true" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
               <folding>
-                <element signature="e#0#14#0" expanded="true" />
+                <element signature="e#0#28#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/autoGrind/baseMacro/recordingAction.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="416">
+              <caret line="108" column="22" selection-start-line="108" selection-start-column="22" selection-end-line="108" selection-end-column="22" />
+              <folding>
+                <element signature="e#1#12#0" expanded="true" />
+                <marker date="1540743730446" expanded="true" signature="1991:2261" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/autoGrind/controlers/pageBluePrint.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="293">
+              <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -273,20 +283,21 @@
         <option value="$PROJECT_DIR$/autoGrind/controlers/menueControler.py" />
         <option value="$PROJECT_DIR$/autoGrind/Gui2/myent.py" />
         <option value="$PROJECT_DIR$/autoGrind/Gui2/main.py" />
-        <option value="$PROJECT_DIR$/autoGrind/controlers/MainControler.py" />
-        <option value="$PROJECT_DIR$/autoGrind/controlers/editPageCon.py" />
         <option value="$PROJECT_DIR$/autoGrind/Gui2/editPage.py" />
         <option value="$PROJECT_DIR$/autoGrind/baseMacro/playRec.py" />
-        <option value="$PROJECT_DIR$/autoGrind/baseMacro/recordingAction.py" />
+        <option value="$PROJECT_DIR$/autoGrind/controlers/editPageCon.py" />
         <option value="$PROJECT_DIR$/autoGrind/Gui2/otherComand.py" />
+        <option value="$PROJECT_DIR$/autoGrind/controlers/otherComand.py" />
+        <option value="$PROJECT_DIR$/autoGrind/controlers/MainControler.py" />
+        <option value="$PROJECT_DIR$/autoGrind/baseMacro/recordingAction.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="96" />
-    <option name="y" value="36" />
-    <option name="width" value="926" />
-    <option name="height" value="1048" />
+    <option name="x" value="72" />
+    <option name="y" value="50" />
+    <option name="width" value="1188" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -318,6 +329,12 @@
               <item name="AutoGrinder" type="b2602c69:ProjectViewProjectNode" />
               <item name="AutoGrinder" type="462c0819:PsiDirectoryNode" />
               <item name="autoGrind" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AutoGrinder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AutoGrinder" type="462c0819:PsiDirectoryNode" />
+              <item name="autoGrind" type="462c0819:PsiDirectoryNode" />
+              <item name="baseMacro" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AutoGrinder" type="b2602c69:ProjectViewProjectNode" />
@@ -363,7 +380,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.otherComand">
+  <component name="RunManager" selected="Python.main">
     <configuration name="MainControler (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="linux-AutoGrinder" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -406,27 +423,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="editPageCon" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="linux-AutoGrinder" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/autoGrind/controlers" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/autoGrind/controlers/editPageCon.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python">
       <module name="linux-AutoGrinder" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -461,6 +457,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/autoGrind/controlers/menueControler.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="otherComand (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="linux-AutoGrinder" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/autoGrind/controlers" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/autoGrind/controlers/otherComand.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -516,17 +533,17 @@
       <item itemvalue="Python.main" />
       <item itemvalue="Python.MainControler (1)" />
       <item itemvalue="Python.playRec" />
-      <item itemvalue="Python.editPageCon" />
       <item itemvalue="Python.editPage" />
       <item itemvalue="Python.otherComand" />
+      <item itemvalue="Python.otherComand (1)" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.otherComand" />
+        <item itemvalue="Python.otherComand (1)" />
         <item itemvalue="Python.playRec" />
         <item itemvalue="Python.editPage" />
         <item itemvalue="Python.MainControler (1)" />
-        <item itemvalue="Python.editPageCon" />
       </list>
     </recent_temporary>
   </component>
@@ -632,23 +649,30 @@
       <option name="project" value="LOCAL" />
       <updated>1540521619600</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="save and open files works i use a file type caled .grind to hold my information i still need to add the open recent.">
+      <created>1540585948161</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1540585948161</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="973" extended-state="6" />
+    <frame x="72" y="50" width="1188" height="1047" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12743549" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25193465" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32925585" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3297414" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.46538025" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32897604" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.37799564" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.2678774" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.26688454" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32885906" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
@@ -688,26 +712,11 @@
     <entry file="file://$PROJECT_DIR$/autoGrind/Gui/menue.py" />
     <entry file="file://$PROJECT_DIR$/autoGrind/Gui/main.py" />
     <entry file="file:///usr/lib/python3.6/threading.py" />
-    <entry file="file:///usr/lib/python3.6/tkinter/__init__.py" />
     <entry file="file://$PROJECT_DIR$/autoGrind/Gui2/__init__.py" />
     <entry file="file://$PROJECT_DIR$/autoGrind/properClose/mainController.py" />
-    <entry file="file://$PROJECT_DIR$/autoGrind/baseMacro/globalHook.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/autogrinder2/AdvancedAutoGrinder.py" />
     <entry file="file:///usr/lib/python3.6/tkinter/commondialog.py" />
     <entry file="file:///usr/lib/python3.6/tkinter/filedialog.py" />
-    <entry file="file://$PROJECT_DIR$/autoGrind/controlers/pageBluePrint.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="36" column="8" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/autoGrind/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -718,92 +727,145 @@
     <entry file="file://$PROJECT_DIR$/autoGrind/controlers/editPageBluePrint.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/autoGrind/baseMacro/hotkeys.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/autoGrind/Gui2/menue.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
           <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/autoGrind/controlers/menueControler.py">
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/pyautogui/_pyautogui_x11.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1245">
-          <caret line="85" column="31" selection-start-line="85" selection-start-column="31" selection-end-line="85" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autoGrind/Gui2/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1230">
-          <caret line="88" column="47" selection-start-line="88" selection-start-column="47" selection-end-line="88" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="90">
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/autoGrind/Gui2/myent.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+        <state relative-caret-position="60">
+          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/autoGrind/controlers/MainControler.py">
+    <entry file="file://$PROJECT_DIR$/autoGrind/controlers/menueControler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="654">
-          <caret line="164" column="27" selection-start-line="164" selection-start-column="27" selection-end-line="164" selection-end-column="27" />
+        <state relative-caret-position="495">
+          <caret line="85" column="31" selection-start-line="85" selection-start-column="31" selection-end-line="85" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoGrind/baseMacro/globalHook.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoGrind/Gui2/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="71" column="21" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3.6/tkinter/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="2295" selection-start-line="2295" selection-end-line="2295" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoGrind/Gui2/editPage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1635">
+          <caret line="112" column="14" selection-start-line="112" selection-start-column="14" selection-end-line="112" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/pyscreeze/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="409" column="4" selection-start-line="409" selection-start-column="4" selection-end-line="409" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/autoGrind/controlers/editPageCon.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="94" column="14" selection-start-line="94" selection-start-column="14" selection-end-line="94" selection-end-column="14" />
+        <state relative-caret-position="595">
+          <caret line="107" column="26" lean-forward="true" selection-start-line="107" selection-start-column="26" selection-end-line="107" selection-end-column="26" />
           <folding>
             <element signature="e#0#60#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/autoGrind/baseMacro/recordingAction.py">
+    <entry file="file://$PROJECT_DIR$/autoGrind/controlers/otherComand.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+        <state relative-caret-position="105">
+          <caret line="7" column="41" lean-forward="true" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+            <marker date="1540697833755" expanded="true" signature="133:385" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/autoGrind/baseMacro/playRec.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1170">
-          <caret line="81" column="47" selection-start-line="81" selection-start-column="47" selection-end-line="81" selection-end-column="47" />
+        <state relative-caret-position="135">
+          <caret line="69" column="24" lean-forward="true" selection-start-line="69" selection-start-column="24" selection-end-line="69" selection-end-column="24" />
           <folding>
             <element signature="e#1#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/autoGrind/Gui2/editPage.py">
+    <entry file="file://$PROJECT_DIR$/autoGrind/Gui2/otherComand.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1065">
-          <caret line="74" column="22" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
+        <state relative-caret-position="-140">
+          <caret line="49" column="32" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1540697754793" expanded="true" signature="325:364" ph="..." />
+            <marker date="1540697754793" expanded="true" signature="1427:1512" ph="..." />
+            <marker date="1540697754793" expanded="true" signature="2070:2627" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/autoGrind/Gui2/otherComand.py">
+    <entry file="file://$PROJECT_DIR$/autoGrind/controlers/pageBluePrint.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="27" column="28" lean-forward="true" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+        <state relative-caret-position="293">
+          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoGrind/baseMacro/hotkeys.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoGrind/controlers/MainControler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="42" lean-forward="true" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoGrind/baseMacro/recordingAction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="108" column="22" selection-start-line="108" selection-start-column="22" selection-end-line="108" selection-end-column="22" />
+          <folding>
+            <element signature="e#1#12#0" expanded="true" />
+            <marker date="1540743730446" expanded="true" signature="1991:2261" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

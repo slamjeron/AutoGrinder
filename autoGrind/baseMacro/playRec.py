@@ -82,8 +82,9 @@ class RecPlayer(mainPagebuttonBluePrint):
                                 self.index += 1
 
                             if action == 5:
-
-                                if pixelMatchesColor(self.recording[self.index][2][0], self.recording[self.index][2][1],self.recording[self.index][3])==self.recording[self.index][4]:
+                                print('clr',self.recording[self.index])
+                                if pixelMatchesColor(self.recording[self.index][2][0],self.recording[self.index][2][1],tuple(self.recording[self.index][3]))==self.recording[self.index][4]:
+                                    print(self.index)
                                     self.index+=1
                                 else:
                                     pass

@@ -19,6 +19,7 @@ class editCon(mainPagebuttonBluePrint,bluePrint):
         lines =self.getlines()
         super().delete_act()
         self.recording= self.getRecording()
+        self.linesToEdit=list()
         for item in lines.split(','):
             print(item)
             self.linesToEdit.append(int(item))
