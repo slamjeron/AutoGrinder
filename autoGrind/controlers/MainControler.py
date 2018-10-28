@@ -4,6 +4,7 @@ from autoGrind.baseMacro.globalHook import myHook
 from autoGrind.baseMacro.hotkeys import HotKeys
 from autoGrind.baseMacro.recordingAction import recorder
 from autoGrind.baseMacro.playRec import RecPlayer
+import tkinter as tk
 
 from autoGrind.controlers.pageBluePrint import mainPagebuttonBluePrint
 
@@ -75,8 +76,7 @@ class playControls(mainPagebuttonBluePrint):
         self.player=player
 
     def showLine(self,line):
-        print('should show')
-        self.taskBox.insert(self.curline, self.formatItem(self.curline, line))
+        self.taskBox.insert(tk.END, self.formatItem(self.curline, line))
         self.curline+=1
     def close(self):
         self.hook.mouse_listener.stop()
@@ -94,6 +94,8 @@ class playControls(mainPagebuttonBluePrint):
         except AttributeError:
             key_code = '{0}'.format(key_code)
         key = str(key_code).replace('Key.', '')
+        key = str(key).replace('_r', '')
+        key = str(key).replace('_l', '')
         return key
     def recPress(self,key):
         return
@@ -119,10 +121,20 @@ class playControls(mainPagebuttonBluePrint):
         actions = ['Left Click', 'Right Click', 'Drag Start',
                    'Drag Stop', 'Type', 'Color Stall', 'Color Condition', 'name groop']
         act = actions[int(l)]
+        if 5==int(l):
+            if list[4]:
+                checstr='repeat till equal'
+            else:
+                checstr='repeat till not equal'
+            return str(index) + '| act =' + act + '| delay = ' + str(list[1]) + '| pnt = ' + str(
+                list[2]) + '|color = ' + str(list[3])+"| "+checstr
 
+        if 4 == int(l):
+            return str(index) + '| act =' + act + '| delay = ' + str(list[1]) + '|Key = ' + str(list[3])
 
-        return str(index) + '| act =' + act + '| delay = ' + str(list[1]) + '| pnt = ' + str(
-            list[2]) + '|Key = ' + list[3]
+        if 0 == int(l):
+            return str(index) + '| act =' + act + '| delay = ' + str(list[1]) + '| pnt = ' + str(
+                list[2])
 
     def showAll(self):
         self.taskBox.delete(0, 'end')

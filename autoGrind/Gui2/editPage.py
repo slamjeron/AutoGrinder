@@ -95,7 +95,6 @@ class editPage(tkinter.Frame):
 
         self.pack()
         self.parent = parent
-        self.line = tkinter.StringVar()
 
         parent.protocol("WM_DELETE_WINDOW", self.onclose)
         self.pageUp = True
