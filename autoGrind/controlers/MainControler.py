@@ -7,7 +7,6 @@ from autoGrind.baseMacro.playRec import RecPlayer
 import tkinter as tk
 
 from autoGrind.controlers.pageBluePrint import mainPagebuttonBluePrint
-from autoGrind.dataTypes.namedActions import nameAct
 
 
 class playControls(mainPagebuttonBluePrint):
@@ -26,7 +25,6 @@ class playControls(mainPagebuttonBluePrint):
     def __init__(self):
         self.recordList = list()
         self.recentFiles = list()
-        self.namedActions =nameAct()
 
         self.main = None
         rec=recorder()
@@ -36,15 +34,6 @@ class playControls(mainPagebuttonBluePrint):
         rec.showLine=self.showLine
         rec.displayCurentInfo=self.displayCurentInfo
 
-        def getNamedAction(self):
-            return self.namedActions
-            pass
-
-        def setNamedAction(self,namedAct):
-            self.namedActions=namedAct
-            pass
-        rec.comandPage.controler.getNamedAction = getNamedAction
-        rec.comandPage.controler.setNamedAction = setNamedAction
 
         self.myMenue = object()
         self.editkey = rec.on_key_press

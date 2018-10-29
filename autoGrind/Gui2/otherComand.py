@@ -12,11 +12,14 @@ class AddComPage(tkinter.Frame):
         recVar = tkinter.StringVar()
         controler = OtherComandControler()
 
+
         def close():
-            controler.sendInfo(0,1,[0,0],[0,0,0],True)
             parent.destroy()
 
-        parent.protocol("WM_DELETE_WINDOW", close)
+        def parproto():
+            close()
+
+        parent.protocol("WM_DELETE_WINDOW", parproto)
         actionDrop = tkinter.OptionMenu(self, recVar, 'Same', 'Left Click', 'Right Click', 'Drag Start',
                                         'Drag Stop', 'Type', 'Color Stall', 'Color Condition', 'name groop')
 

@@ -78,6 +78,7 @@ class recorder(mainPagebuttonBluePrint):
 
             def savecomand( actNum, delay, position, color, checked):
                 lis = [actNum, delay, position, color, checked]
+                print('save ',lis)
                 self.recording.append(lis)
                 self.index += 1
                 self.showLine(lis)
