@@ -76,3 +76,9 @@ class OtherComandControler(object):
     def namechanged(self,event):
         self.name.set(self.namedrop.get())
         pass
+
+    def getNamedAction(self):
+        pass
+
+    def setNamedAction(self):
+        pass

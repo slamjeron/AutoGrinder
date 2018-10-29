@@ -95,30 +95,34 @@ class recorder(mainPagebuttonBluePrint):
         print('stoping')
         self.setRecording(self.recording)
         self.isRecording=False
+    def bmcrec(self,key,diff):
+        if self.goBTN == False and self.bmcstart:
+            if mouse.pixelMatchesColor(792, 716, (143, 216, 35)):
+                lis = [5, 3, [791, 711], [143, 216, 35], True]
+                print('ready for next round')
+                self.recording.append(lis)
+                self.index += 1
+                self.showLine(lis)
+                self.secondes = time.time()
+                self.secondes -= 0.3
+                self.goBTN = True
+        if self.bmcstart and key == 'space':
+            self.goBTN = False
+
+        if self.goBTN:
+            if mouse.pixelMatchesColor(809, 685, (5, 146, 239)):
+                self.goBTN = False
+
+            if diff > 3:
+                diff = 3
+                return diff
+        return diff
+
 
     def addToRecord(self,action,pnt,key):
         if self.isRecording:
             diff=  time.time()-self.secondes
-            if self.goBTN == False and self.bmcstart:
-                if mouse.pixelMatchesColor(792, 716, (143, 216, 35)):
-                    lis = [5, 3, [791, 711], [143, 216, 35], True]
-                    print('ready for next round')
-                    self.recording.append(lis)
-                    self.index += 1
-                    self.showLine(lis)
-                    self.secondes = time.time()
-                    self.secondes -= 0.3
-                    self.goBTN=True
-            if self.bmcstart and key == 'space':
-                self.goBTN=False
 
-
-            if self.goBTN:
-                if mouse.pixelMatchesColor(809, 685, (5, 146, 239)):
-                    self.goBTN=False
-
-                if diff>3:
-                    diff=3
 
             diff = round(diff,2)
             if diff>0:

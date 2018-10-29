@@ -10,7 +10,10 @@ class AddComPage(tkinter.Frame):
         self.pack()
 
         recVar = tkinter.StringVar()
+        controler = OtherComandControler()
+
         def close():
+            controler.sendInfo(0,1,[0,0],[0,0,0],True)
             parent.destroy()
 
         parent.protocol("WM_DELETE_WINDOW", close)
@@ -29,7 +32,7 @@ class AddComPage(tkinter.Frame):
         delayAmount = tkinter.Spinbox(delayFrame, from_=0, to=100000)
         delayAmount.grid(row=1, column=0)
         delayAmount.config(width=10)
-        controler = OtherComandControler()
+
         controler.close = close
         controler.getAction = recVar.get
         pntClrbtn = tkinter.Button(self, text='get pnt clr', command=controler.getPntCLR)
@@ -65,7 +68,7 @@ class AddComPage(tkinter.Frame):
         # actions.append(cline)
         # actionList.append(actions)
         check=tkinter.Checkbutton(self,text= 'if pnt color = stored color move on',variable=checked)
-        check.grid(row=4, column=0,columnspan=2)
+        check.grid(row=4, column=0, columnspan=2)
         checked.set(True)
 
         def setInfo(text):
