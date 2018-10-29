@@ -21,6 +21,7 @@ class recorder(mainPagebuttonBluePrint):
             print(time.time() - self.secondes)
             self.secondes = time.time()
             self.recording=self.getRecording()
+            self.goBTN = False
 
     def __init__(self):
         object.__init__(self)
@@ -32,7 +33,7 @@ class recorder(mainPagebuttonBluePrint):
         self.secondes = time.time()
         self.index=0
         self.bmcstart=True
-
+        self.goBTN=False
         self.comandWindow= tk.Toplevel
         self.comandPage=AddComPage
 
@@ -87,14 +88,7 @@ class recorder(mainPagebuttonBluePrint):
             pass
 
         else:
-            if self.bmcstart and key_code == 'space' and mouse.pixelMatchesColor(1780, 710, (143, 216, 35)):
-                lis = [5, 3, [1780, 710], [143, 216, 35], True]
-                print('ready for next round')
-                self.recording.append(lis)
-                self.index += 1
-                self.showLine(lis)
-                self.secondes = time.time()
-                self.secondes -= 0.3
+
             self.addToRecord(4, '', key_code)
 
     def stopRecording(self):
@@ -105,8 +99,27 @@ class recorder(mainPagebuttonBluePrint):
     def addToRecord(self,action,pnt,key):
         if self.isRecording:
             diff=  time.time()-self.secondes
-            if mouse.pixelMatchesColor(1780, 710, (143, 216, 35)):
-                diff=3
+            if self.goBTN == False and self.bmcstart:
+                if mouse.pixelMatchesColor(792, 716, (143, 216, 35)):
+                    lis = [5, 3, [791, 711], [143, 216, 35], True]
+                    print('ready for next round')
+                    self.recording.append(lis)
+                    self.index += 1
+                    self.showLine(lis)
+                    self.secondes = time.time()
+                    self.secondes -= 0.3
+                    self.goBTN=True
+            if self.bmcstart and key == 'space':
+                self.goBTN=False
+
+
+            if self.goBTN:
+                if mouse.pixelMatchesColor(809, 685, (5, 146, 239)):
+                    self.goBTN=False
+
+                if diff>3:
+                    diff=3
+
             diff = round(diff,2)
             if diff>0:
                 milSec = diff

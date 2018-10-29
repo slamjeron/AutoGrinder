@@ -64,7 +64,10 @@ class MenueControler(mainPagebuttonBluePrint):
         def openDiologue():
             return filedialog.askopenfile(filetypes=[('Auto Grinder file','.grind')])
         if self.curentRecord ==None:
-            self.curentRecord=openDiologue().name
+            self.curentRecord=openDiologue()
+            self.curentRecord = self.curentRecord.name
+
+
         if self.curentRecord is not None:
             with open(self.curentRecord, 'rb') as handle:
                 self.setRecording(pickle.load(handle))
