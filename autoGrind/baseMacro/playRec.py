@@ -114,7 +114,8 @@ class RecPlayer(mainPagebuttonBluePrint):
                             self.loops=0
                     if len(self.recording)>self.index:
                         if self.curentsec<=sec:
-                            self.displayCurentInfo(str(sec)+'next action time='+str(self.recording[self.index][1]))
+                            self.displayCurentInfo(str(sec)+'next action time='+str(self.recording[self.index][1])+
+                                                   'index ='+str(self.index))
                             self.curentsec+=1
 
 
