@@ -3,6 +3,9 @@ from pyautogui import *
 from threading import Thread
 from autoGrind.controlers.pageBluePrint import mainPagebuttonBluePrint
 import time
+
+from autoGrind.dataTypes.dataTypes import Mouse,KeyBoard,Color
+
 """ 
 use key comands to control actions
 """
@@ -27,7 +30,7 @@ class RecPlayer(mainPagebuttonBluePrint):
     def play(self,redy):
         if redy:
             self.recording=self.getRecording()
-            print(self.recording)
+            print(str(self.recording))
             self.secondes = time.time()
             self.index=0
             self.curentsec=1
@@ -39,7 +42,6 @@ class RecPlayer(mainPagebuttonBluePrint):
             else:
                 self.loopAmount=1
             self.loops = 1
-            self.recording[self.index][1]
         self.isplaying = True
         self.pause = False
 
@@ -66,35 +68,42 @@ class RecPlayer(mainPagebuttonBluePrint):
                     sec = time.time() - self.secondes
                     sec = round(sec, 2)
 
-
-                    try:
+                    if len(self.recording) > self.index:
                         sec=time.time() - self.secondes
                         sec =round(sec,2)
-                        if sec >= self.recording[self.index][1]:
-                            action=self.recording[self.index][0]
+                        if sec >= self.recording[self.index].secondDelay:
+
+                            myobject=self.recording[self.index].object
+
                             self.curentsec=0
-                            if action == 0:
-                                click(self.recording[self.index][2][0], self.recording[self.index][2][1])
+                            if myobject == Mouse.object:
+                                act=Mouse(*self.recording[self.index].get())
+
+                                if act.event== act.leftClick:
+                                    print('trying to click')
+                                    click(*act.position)
                                 self.index += 1
 
-                            if action == 4:
-                                press(self.recording[self.index][3])
+
+                            if myobject == KeyBoard.object:
+                                act=KeyBoard(*self.recording[self.index].get())
+                                if act.event== act.Type:
+                                    press(act.key)
                                 self.index += 1
 
-                            if action == 5:
-                                print('clr',self.recording[self.index])
-                                if pixelMatchesColor(self.recording[self.index][2][0],self.recording[self.index][2][1],tuple(self.recording[self.index][3]))==self.recording[self.index][4]:
-                                    print(self.index)
-                                    self.index+=1
-                                else:
-                                    pass
+                            if myobject == Color.object:
+                                print(self.recording[self.index].event)
+                                act=Color(*self.recording[self.index].get())
+                                if act.event== act.delay:
+                                    if pixelMatchesColor(*act.position,tuple(act.color))==act.onTrue:
+                                        self.index += 1
 
 
 
 
                             self.secondes = time.time()
 
-                    except:
+                    else:
                         try:
                             int(self.loopAmount)
                         except:
@@ -112,9 +121,10 @@ class RecPlayer(mainPagebuttonBluePrint):
                         else:
                             self.isplaying = False
                             self.loops=0
+
                     if len(self.recording)>self.index:
                         if self.curentsec<=sec:
-                            self.displayCurentInfo(str(sec)+'next action time='+str(self.recording[self.index][1])+
+                            self.displayCurentInfo(str(sec)+'next action time='+str(self.recording[self.index].secondDelay)+
                                                    'index ='+str(self.index))
                             self.curentsec+=1
 

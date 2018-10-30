@@ -21,7 +21,7 @@ class AddComPage(tkinter.Frame):
 
         parent.protocol("WM_DELETE_WINDOW", parproto)
         actionDrop = tkinter.OptionMenu(self, recVar, 'Same', 'Left Click', 'Right Click', 'Drag Start',
-                                        'Drag Stop', 'Type', 'Color Stall', 'Color Condition', 'name groop')
+                                        'Drag Stop', 'Type', 'Color Stall', 'Color Condition',command=controler.actionChanged)
 
         recVar.set('Color Stall')
         # there will be a dellay entry for the second
