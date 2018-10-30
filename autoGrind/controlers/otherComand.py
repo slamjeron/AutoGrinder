@@ -80,5 +80,8 @@ class OtherComandControler(object):
     def getNamedAction(self):
         pass
 
-    def setNamedAction(self,namedAction):
+    def setNamedAction(self):
+        pass
+
+    def actionChanged(self):
         pass

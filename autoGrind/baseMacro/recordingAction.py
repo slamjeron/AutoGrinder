@@ -5,6 +5,9 @@ from autoGrind.Gui2.otherComand import AddComPage
 from autoGrind.controlers.pageBluePrint import mainPagebuttonBluePrint
 import pyautogui as mouse
 import tkinter as tk
+
+from autoGrind.dataTypes.dataTypes import Color,KeyBoard,Mouse
+
 '''
 to record we need to have a key and mouse hook
 i will also need to be able to have the user create hot keys
@@ -77,11 +80,13 @@ class recorder(mainPagebuttonBluePrint):
             self.isRecording=False
 
             def savecomand( actNum, delay, position, color, checked):
-                lis = [actNum, delay, position, color, checked]
-                print('save ',lis)
-                self.recording.append(lis)
+                delayColor = None
+                if actNum==5:
+                    delayColor=Color(delay,0,position,color,checked)
+                    print(str(delayColor))
+                self.recording.append(delayColor)
                 self.index += 1
-                self.showLine(lis)
+                self.showLine(str(delayColor))
                 self.isRecording=True
                 self.secondes = time.time()
 
@@ -135,15 +140,15 @@ class recorder(mainPagebuttonBluePrint):
 
             diff = round(diff,2)
             if diff>0:
-                milSec = diff
-
-                lis = [action, milSec, pnt, key]
+                if action == 4:
+                    lis=KeyBoard(diff,0,key)
+                if action==0:
+                    lis=Mouse(diff,Mouse.leftClick,pnt)
                 self.recording.append(lis)
 
                 # self.addRecTtem(self.index,lis)
                 self.index+=1
-                print(lis)
-                self.showLine(lis)
+                self.showLine(str(lis))
                 self.secondes = time.time()
 
 

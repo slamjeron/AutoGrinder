@@ -2,7 +2,12 @@ from autoGrind.controlers.editPageBluePrint import bluePrint
 from autoGrind.controlers.pageBluePrint import mainPagebuttonBluePrint
 import threading
 import  pyautogui as mouse
+
 import time
+
+from autoGrind.dataTypes.dataTypes import typerReader
+
+
 class editCon(mainPagebuttonBluePrint,bluePrint):
 
 
@@ -46,10 +51,11 @@ class editCon(mainPagebuttonBluePrint,bluePrint):
             self.linesToEdit.append(int(item))
 
         if action =='Same':
-            print('')
+            pass
         else:
             for line in self.linesToEdit:
                 if line < len(self.recording):
+                    typerReader.getType()
                     print(actions[action])
                     self.recording[line][0]=int(actions[action])
         if timeDelay == 'Same':

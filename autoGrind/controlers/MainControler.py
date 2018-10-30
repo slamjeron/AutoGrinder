@@ -78,7 +78,7 @@ class playControls(mainPagebuttonBluePrint):
         self.player=player
 
     def showLine(self,line):
-        self.taskBox.insert(tk.END, self.formatItem(self.curline, line))
+        self.taskBox.insert(self.curline,str(self.curline)+' |'+line)
         self.curline+=1
     def close(self):
         self.hook.mouse_listener.stop()
@@ -142,8 +142,9 @@ class playControls(mainPagebuttonBluePrint):
         self.taskBox.delete(0, 'end')
         lineNum = 0
         for line in self.recordList:
-            self.taskBox.insert(lineNum, self.formatItem(lineNum, line))
+            self.taskBox.insert(lineNum, str(lineNum)+' |'+ str(line))
             lineNum += 1
+        self.curline=lineNum
 
     def play(self):
         pltext = self.getStartBTNText()
