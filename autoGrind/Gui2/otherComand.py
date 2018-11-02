@@ -9,7 +9,7 @@ class AddComPage(tkinter.Frame):
         tkinter.Frame.__init__(self, parent)
         self.pack()
 
-        recVar = tkinter.StringVar()
+        rec_var = tkinter.StringVar()
         controler = OtherComandControler()
 
 
@@ -20,10 +20,10 @@ class AddComPage(tkinter.Frame):
             close()
 
         parent.protocol("WM_DELETE_WINDOW", parproto)
-        actionDrop = tkinter.OptionMenu(self, recVar, 'Same', 'Left Click', 'Right Click', 'Drag Start',
-                                        'Drag Stop', 'Type', 'Color Stall', 'Color Condition',command=controler.actionChanged)
+        actionDrop = tkinter.OptionMenu(self, rec_var, 'Same','mouse move', 'Left Click', 'Right Click', 'Drag Start',
+                                        'Drag Stop', 'Type', 'Color Stall', 'Color Condition',command=lambda _:controler.actionChanged(rec_var.get()))
 
-        recVar.set('Color Stall')
+        rec_var.set('Color Stall')
         # there will be a dellay entry for the second
         actionDrop.grid(row=0, column=0)
         actionDrop.config(width=20)
@@ -37,8 +37,9 @@ class AddComPage(tkinter.Frame):
         delayAmount.config(width=10)
 
         controler.close = close
-        controler.getAction = recVar.get
-        pntClrbtn = tkinter.Button(self, text='get pnt clr', command=controler.getPntCLR)
+        controler.getAction = rec_var.get
+        pntClrbtn = tkinter.Button(self, textvariable = controler.editButtonTxt, command=controler.getPntCLR)
+        controler.editButtonTxt.set('get Clr and Pixel')
         pntClrbtn.grid(row=1, column=1)
 
         def getDelay():

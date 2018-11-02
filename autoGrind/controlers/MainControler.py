@@ -4,9 +4,11 @@ from autoGrind.baseMacro.globalHook import myHook
 from autoGrind.baseMacro.hotkeys import HotKeys
 from autoGrind.baseMacro.recordingAction import recorder
 from autoGrind.baseMacro.playRec import RecPlayer
+
 import tkinter as tk
 
 from autoGrind.controlers.pageBluePrint import mainPagebuttonBluePrint
+from autoGrind.dataTypes.dataTypes import NamedEvents
 
 
 class playControls(mainPagebuttonBluePrint):
@@ -33,6 +35,12 @@ class playControls(mainPagebuttonBluePrint):
         rec.setRecording=self.setRecording
         rec.showLine=self.showLine
         rec.displayCurentInfo=self.displayCurentInfo
+
+        named=NamedEvents()
+        def getNamedEvents():
+            return named
+        def setNamed(namedEvents):
+            named=namedEvents
 
 
         self.myMenue = object()
