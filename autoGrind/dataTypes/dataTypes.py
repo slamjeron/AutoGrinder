@@ -8,6 +8,7 @@ class typerReader():
 
         if item.object==Color.object:
             return Color(item.get())
+
 class Mouse():
     move = 0
 
@@ -18,6 +19,7 @@ class Mouse():
     rightDown = 5
     rightUp = 6
     object = 'mouse'
+
 
     def __init__(self, secondDelay=None, event=None, position=None):
         self.eventTypes = ['move', 'Left Click', 'Left Down', 'Left Up', 'Right Click', 'Right Down', 'Right Up']

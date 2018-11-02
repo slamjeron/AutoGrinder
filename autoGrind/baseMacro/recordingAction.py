@@ -71,26 +71,33 @@ class recorder(mainPagebuttonBluePrint):
     def showRecordedItem(self,list):
         return
 
+    def savecomand(self, actNum, delay, position=None, color=None, checked=None, keypresses=None):
+        action = None
+
+        if actNum == 6:
+            action = Color(delay, 0, position, color, checked)
+            print(str(action))
+        if actNum == 7:
+            action = Color(delay, 1, color, position, checked)
+        if actNum < 5:
+            action = Mouse(delay, actNum,position)
+        self.recording.append(action)
+        self.index += 1
+        self.showLine(str(action))
+        self.isRecording = True
+        self.secondes = time.time()
+
     def recordKey(self,key_code):
         if key_code=='+':
+            self.recording = self.getRecording()
             # open the other comand view
             self.comandWindow = tk.Toplevel()
             self.comandPage=AddComPage(self.comandWindow)
             self.comandPage.pack()
             self.isRecording=False
 
-            def savecomand( actNum, delay, position, color, checked):
-                delayColor = None
-                if actNum==5:
-                    delayColor=Color(delay,0,position,color,checked)
-                    print(str(delayColor))
-                self.recording.append(delayColor)
-                self.index += 1
-                self.showLine(str(delayColor))
-                self.isRecording=True
-                self.secondes = time.time()
 
-            self.comandPage.controler.sendInfo=savecomand
+            self.comandPage.controler.sendInfo=self.savecomand
             pass
 
         else:

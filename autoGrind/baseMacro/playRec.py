@@ -1,10 +1,10 @@
-
+import pyautogui
 from pyautogui import *
 from threading import Thread
 from autoGrind.controlers.pageBluePrint import mainPagebuttonBluePrint
 import time
 
-from autoGrind.dataTypes.dataTypes import Mouse,KeyBoard,Color
+from autoGrind.dataTypes.dataTypes import Mouse,KeyBoard,Color,typerReader
 
 """ 
 use key comands to control actions
@@ -78,10 +78,14 @@ class RecPlayer(mainPagebuttonBluePrint):
                             self.curentsec=0
                             if myobject == Mouse.object:
                                 act=Mouse(*self.recording[self.index].get())
-
+                                pos= act.position
+                                if act.event==act.move:
+                                    position(*pos)
                                 if act.event== act.leftClick:
                                     print('trying to click')
-                                    click(*act.position)
+                                    click(*pos)
+                                if act.event==act.leftDown:
+                                    mouseDown(*pos,'right')
                                 self.index += 1
 
 
