@@ -93,3 +93,9 @@ class MenueControler(mainPagebuttonBluePrint):
         object.__init__(self)
         self.curentRecord=None
         self.resentMacros=list()
+
+    def copy(self):
+        pass
+
+    def past(self):
+        pass

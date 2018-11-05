@@ -32,8 +32,9 @@ class MyMenu():
         viewMenu.add_command(label='Hot keys', command= self.con.onHotKeyPage)
         viewMenu.add_command(label='record settings', command= self.con.onRecordSettings)
         editMenue= tkinter.Menu(self.menuBar)
-        editMenue.add_command(label="edit all", command=self.con.editAll)
-
+        self.menuBar.add_cascade(label = 'Edit',menu= editMenue)
+        editMenue.add_command(label='Copy',command= self.con.copy)
+        editMenue.add_command(label='Past', command=self.con.past)
 
         def addResentFile(label, command):
             openResentMb.add_command(label=label, command=command)

@@ -20,6 +20,8 @@ class mainPage(tkinter.Tk):
         myMenue=MyMenu(self)
         myMenue.con.getRecording = self.playcon.getRecording
         myMenue.con.setRecording = self.playcon.setRecording
+        myMenue.con.copy=self.playcon.copyselected
+        myMenue.con.past=self.playcon.paste
         myMenue.con.showAll = self.playcon.showAll
         myMenue.set()
         self.addTopButtons()
@@ -80,7 +82,7 @@ class mainPage(tkinter.Tk):
         def checkLoopStatus():
             return var.get(),loopent.get()
         playcon.checkLoopStatus=checkLoopStatus
-
+        playcon.getSelection=self.recordingBox.curselection
         stopBtn = tkinter.Button(btnPane, text='stop', command=self.playcon.stop)
         stopBtn.grid(row=0, column=1)
         delBtn = tkinter.Button(btnPane, text='delete', command=self.playcon.delete)

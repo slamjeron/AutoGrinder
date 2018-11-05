@@ -23,8 +23,8 @@ class editPage(tkinter.Frame):
         lbl1.grid(row=1, column=0)
         self.recVar=tkinter.StringVar()
 
-        actionDrop=tkinter.OptionMenu(self, self.recVar, 'Same', 'Left Click', 'Right Click', 'Drag Start',
-                           'Drag Stop', 'Type', 'Color Stall', 'Color Condition','name groop',command=self.editcon.actionDrop)
+        actionDrop=tkinter.OptionMenu(self, self.recVar, 'Same','Move cursor', 'Left Click', 'Right Click', 'Drag Start',
+                           'Drag Stop', 'Type', 'Color Stall', 'Color Condition','name groop')
 
 
         actionDrop.grid(row=1, column=1)
@@ -91,6 +91,9 @@ class editPage(tkinter.Frame):
         delbtn = tkinter.Button(botonCenter, text='Delete',command=self.editcon.delete_act)
         delbtn.pack(side=tkinter.LEFT)
 
+        dataLable=tkinter.Label(self,textvariable=self.editcon.dataTxt)
+        self.editcon.dataTxt.set('info')
+        dataLable.grid(row=6,column=0)
         self.editcon.close=self.onclose
 
         self.pack()

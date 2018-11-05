@@ -1,3 +1,5 @@
+import tkinter
+
 from autoGrind.controlers.editPageBluePrint import bluePrint
 from autoGrind.controlers.pageBluePrint import mainPagebuttonBluePrint
 import threading
@@ -10,7 +12,6 @@ from autoGrind.dataTypes.dataTypes import typerReader
 
 class editCon(mainPagebuttonBluePrint,bluePrint):
 
-
     def __init__(self):
 
         self.recording=list()
@@ -18,6 +19,7 @@ class editCon(mainPagebuttonBluePrint,bluePrint):
         self.enterlines=None
         self.close=None
         self.update=None
+        self.dataTxt = tkinter.StringVar()
 
     def delete_act(self):
         lines=''
@@ -41,8 +43,8 @@ class editCon(mainPagebuttonBluePrint,bluePrint):
 
 
     def saveComand(self,action,timeDelay,point,keyevent,linsEdit):
-        actions={'Left Click':'1', 'Right Click':'2', 'Drag Start':'3',
-                           'Drag Stop':'4', 'Type':'5', 'Color Stall':'6', 'Color Condition':'7','name groop':'8'}
+        actions=['Same','Move cursor', 'Left Click', 'Drag Start',
+                           'Drag Stop', 'Right Click', 'Type', 'Color Stall', 'Color Condition','name groop']
         self.linesToEdit = list()
         self.recording=self.getRecording()
         for item in linsEdit.split(','):
@@ -55,28 +57,28 @@ class editCon(mainPagebuttonBluePrint,bluePrint):
         else:
             for line in self.linesToEdit:
                 if line < len(self.recording):
-                    typerReader.getType()
-                    print(actions[action])
-                    self.recording[line][0]=int(actions[action])
+                    self.recording[line]=typerReader.setObject(self,num=actions.index(action))
         if timeDelay == 'Same':
             print('')
         else:
             for line in self.linesToEdit:
                 if line<len(self.recording):
-                    self.recording[line][1]=float(timeDelay)
+                    self.recording[line].secondDelay=float(timeDelay)
 
         if point[0] =='Same':
             pass
         else:
             for line in self.linesToEdit:
                 if line < len(self.recording):
-                    self.recording[line][2][0]=int(point[0])
+                    if self.recording[line].object == 'mouse':
+                        self.recording[line].position[0]=int(point[0])
         if point[1] =='Same':
             pass
         else:
             for line in self.linesToEdit:
                 if line < len(self.recording):
-                    self.recording[line][2][1]=int(point[1])
+                    if self.recording[line].object == 'mouse':
+                        self.recording[line].position[1]=int(point[1])
 
         if keyevent=='Same':
             pass
@@ -105,13 +107,15 @@ class editCon(mainPagebuttonBluePrint,bluePrint):
             nPos=myMouse.position()
             if oPos == nPos:
                 self.counter+=1
-                print(self.counter)
-                if self.counter>4:
+
+                if self.counter>5:
                     self.mousposition=nPos
                     x,y=self.mousposition
                     self.setXpoint(str(x))
                     self.setYpoint(str(y))
+                    self.dataTxt.set('capturing in ' + str(6 - self.counter))
                     return
+                self.dataTxt.set('capturing in ' + str(6 - self.counter))
             else:
                 oPos=nPos
                 self.counter=0

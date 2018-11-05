@@ -8,7 +8,7 @@ from autoGrind.baseMacro.playRec import RecPlayer
 import tkinter as tk
 
 from autoGrind.controlers.pageBluePrint import mainPagebuttonBluePrint
-from autoGrind.dataTypes.dataTypes import NamedEvents
+from autoGrind.dataTypes.dataTypes import NamedEvents, Mouse
 
 
 class playControls(mainPagebuttonBluePrint):
@@ -27,7 +27,7 @@ class playControls(mainPagebuttonBluePrint):
     def __init__(self):
         self.recordList = list()
         self.recentFiles = list()
-
+        self.copyedAction= list()
         self.main = None
         rec=recorder()
         self.recInfo=None
@@ -185,10 +185,27 @@ class playControls(mainPagebuttonBluePrint):
         self.edit.pack()
         return
 
+    def copyselected(self):
+        selected= self.getSelection()
+        print(selected)
+        self.copyedAction=list()
+        for index in selected:
+            self.copyedAction.append(self.recordList[index])
+
+    def paste(self):
+        index=self.getSelection()
+        index=list(index)
+        cpIndex=0
+        for item in self.copyedAction:
+            print(item)
+            self.recordList.insert(index[-1]+cpIndex,item)
+            cpIndex+=1
+        self.showAll()
+
     def insert(self,index):
         if len(index)>0:
             index=list(index)
             index=[int(index[-1])]
-            self.recordList.insert(index[0],[0,0,['',''],''])
+            self.recordList.insert(index[0],Mouse(0.5,Mouse.move,[1,1]))
             self.showAll()
             self.editselect(index)
