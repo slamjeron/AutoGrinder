@@ -38,3 +38,7 @@ class mainPagebuttonBluePrint():
         return
     def displayCurentInfo(self,text):
         return
+
+    @classmethod
+    def getSelection(cls):
+        pass

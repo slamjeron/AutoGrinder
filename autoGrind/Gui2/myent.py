@@ -16,7 +16,7 @@ class myEnt(tkinter.Entry):
 
     def lostFocus(self,event):
         try:
-            int(self.get())
+            float(self.get())
         except ValueError:
             self.delete(0, 'end')
             self.insert(0, self.text)

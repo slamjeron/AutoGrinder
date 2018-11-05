@@ -9,6 +9,16 @@ class typerReader():
         if item.object==Color.object:
             return Color(item.get())
 
+    def setObject(self,num):
+        actions = ['Same', 'Move cursor', 'Left Click', 'Right Click', 'Drag Start',
+                   'Drag Stop', 'Type', 'Color Stall', 'Color Condition', 'name groop']
+        if num>0 and num<6:
+            return Mouse(0.5,num-1,[1,1])
+        elif num==6:
+            return KeyBoard(KeyBoard.Type)
+        elif num>6:
+            return Color(0.5,num-7)
+
 class Mouse():
     move = 0
 
@@ -22,7 +32,7 @@ class Mouse():
 
 
     def __init__(self, secondDelay=None, event=None, position=None):
-        self.eventTypes = ['move', 'Left Click', 'Left Down', 'Left Up', 'Right Click', 'Right Down', 'Right Up']
+        self.eventTypes = ['move', 'Left Click', 'Left Down', 'Left Up', 'Right Click']
         self.event = event
         self.strEvent = self.eventTypes[event]
         self.position = position
