@@ -35,7 +35,7 @@ class playControls(mainPagebuttonBluePrint):
         rec.setRecording=self.setRecording
         rec.showLine=self.showLine
         rec.displayCurentInfo=self.displayCurentInfo
-
+        #named events with the same name will 
         named=NamedEvents()
         def getNamedEvents():
             return named
@@ -55,8 +55,11 @@ class playControls(mainPagebuttonBluePrint):
         player.getRecording=self.getRecording
         player.displayCurentInfo=self.displayCurentInfo
         def delete():
-            del self.recordList[:]
-            self.curline=0
+            select= self.getSelection()
+            select.sort(key=int,reverse=True)
+            for item in select:
+                del self.recordList[(item)]
+                self.curline-=1
             self.showAll()
         self.delete=delete
 

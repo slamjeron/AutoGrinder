@@ -96,7 +96,6 @@ class RecPlayer(mainPagebuttonBluePrint):
                                 self.index += 1
 
                             if myobject == Color.object:
-                                print(self.recording[self.index].event)
                                 act=Color(*self.recording[self.index].get())
                                 if act.event== act.delay:
                                     if pixelMatchesColor(*act.position,tuple(act.color))==act.onTrue:

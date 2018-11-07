@@ -15,9 +15,12 @@ class typerReader():
         if num>0 and num<6:
             return Mouse(0.5,num-1,[1,1])
         elif num==6:
-            return KeyBoard(KeyBoard.Type)
+            return KeyBoard(0.1,KeyBoard.Type,'')
+        elif num ==10:
+            return ''
         elif num>6:
             return Color(0.5,num-7)
+
 
 class Mouse():
     move = 0

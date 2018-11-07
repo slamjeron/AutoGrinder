@@ -40,12 +40,8 @@ class mainPage(tkinter.Tk):
         bottomControls.pack()
         bottomControlsIner = tkinter.Frame(bottomControls)
         bottomControlsIner.pack()
-        prevPage = tkinter.Button(bottomControlsIner, text='Previous')
-        prevPage.grid(row=2, column=0)
         prevPage = tkinter.Button(bottomControlsIner, text='show Info')
         prevPage.grid(row=2, column=1)
-        nextPage = tkinter.Button(bottomControlsIner, text='next')
-        nextPage.grid(row=2, column=2)
 
 
         self.bottomPage()

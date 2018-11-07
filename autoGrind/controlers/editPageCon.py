@@ -23,21 +23,22 @@ class editCon(mainPagebuttonBluePrint,bluePrint):
 
     def delete_act(self):
         lines=''
+
         lines =self.getlines()
         super().delete_act()
         self.recording= self.getRecording()
         self.linesToEdit=list()
-        for item in lines.split(','):
-            print(item)
-            self.linesToEdit.append(int(item))
-        for line in self.linesToEdit:
-            if len(self.recording)>line:
-                del self.recording[line]
+        lines=(list(map(int,lines.split(','))))
+        lines.sort(key=int,reverse=True)
+        print(lines)
+        for item in lines:
+            del self.recording[item]
         self.showAll()
         self.close()
 
     def showEditLines(self):
         strin=','.join(map(str,self.linesToEdit))
+
         if strin is not None:
             self.enterlines(strin)
 
