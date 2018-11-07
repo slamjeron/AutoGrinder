@@ -68,7 +68,7 @@ class OtherComandControler(object):
 
     def Save(self):
         if self.index == 6 or self.index==7:
-            self.sendInfo(self.index, int(self.getDelay()), list(self.position), list(self.color), self.getChecked())
+            self.sendInfo(self.index, int(self.getDelay()), list(self.color), list(self.position), self.getChecked())
         elif self.index<5:
             self.sendInfo(self.index, int(self.getDelay()), list(self.position))
         elif self.index==5:
