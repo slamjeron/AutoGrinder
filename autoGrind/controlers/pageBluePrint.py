@@ -42,3 +42,7 @@ class mainPagebuttonBluePrint():
     @classmethod
     def getSelection(cls):
         pass
+
+    @classmethod
+    def btnStartKey(self,key):
+        pass

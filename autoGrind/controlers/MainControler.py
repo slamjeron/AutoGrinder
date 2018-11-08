@@ -6,6 +6,7 @@ from autoGrind.baseMacro.recordingAction import recorder
 from autoGrind.baseMacro.playRec import RecPlayer
 
 import tkinter as tk
+import copy
 
 from autoGrind.controlers.pageBluePrint import mainPagebuttonBluePrint
 from autoGrind.dataTypes.dataTypes import NamedEvents, Mouse
@@ -35,7 +36,7 @@ class playControls(mainPagebuttonBluePrint):
         rec.setRecording=self.setRecording
         rec.showLine=self.showLine
         rec.displayCurentInfo=self.displayCurentInfo
-        #named events with the same name will 
+        #named events with the same name will
         named=NamedEvents()
         def getNamedEvents():
             return named
@@ -55,12 +56,14 @@ class playControls(mainPagebuttonBluePrint):
         player.getRecording=self.getRecording
         player.displayCurentInfo=self.displayCurentInfo
         def delete():
-            select= self.getSelection()
-            select.sort(key=int,reverse=True)
-            for item in select:
-                del self.recordList[(item)]
-                self.curline-=1
-            self.showAll()
+            select= list(self.getSelection())
+            if len(select)>0:
+                select.sort(key=int,reverse=True)
+                for item in select:
+                    del self.recordList[(item)]
+                    self.curline-=1
+                self.showAll()
+
         self.delete=delete
 
         def startrec():
@@ -193,7 +196,7 @@ class playControls(mainPagebuttonBluePrint):
         print(selected)
         self.copyedAction=list()
         for index in selected:
-            self.copyedAction.append(self.recordList[index])
+            self.copyedAction.append(copy.deepcopy(self.recordList[index]))
 
     def paste(self):
         index=self.getSelection()

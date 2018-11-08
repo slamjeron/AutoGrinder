@@ -1,6 +1,7 @@
 from tkinter import filedialog
 from autoGrind.controlers.pageBluePrint import mainPagebuttonBluePrint
 import pickle
+from pathlib import Path
 
 class MenueControler(mainPagebuttonBluePrint):
     def onExit(self):
@@ -86,8 +87,13 @@ class MenueControler(mainPagebuttonBluePrint):
         with open('./profiles.grind', 'rb') as handle:
             self.resentMacros=pickle.load(handle)
             handle.close()
+        templist=list()
         for recentmacro in  self.resentMacros:
-            self.addResentFile(recentmacro,lambda :self.openrecent(recentmacro))
+            mac=Path(recentmacro)
+            if mac.is_file():
+                templist.append(recentmacro)
+                self.addResentFile(recentmacro,lambda :self.openrecent(recentmacro))
+        self.resentMacros=templist
 
     def __init__(self):
         object.__init__(self)
