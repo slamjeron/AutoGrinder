@@ -58,16 +58,21 @@ class mainPage(tkinter.Tk):
         btnPane.pack()
         recordBtn = tkinter.Button(btnPane, text='record', command=self.playcon.record)
         recordBtn.grid(row=0, column=0)
+
+        def btnRecordKey(key):
+            recordBtn['text'] = 'Record' + key
+        btnRecordKey('(ctrl, R)')
         startBtn = tkinter.Button(btnPane, text=test, command=self.playcon.play)
         startBtn.grid(row=0, column=2)
 
-        def setStartBTNText(text):
-            startBtn["text"] = text
+        def btnStartKey(key):
+            startBtn['text']='Play'+key
 
+        btnStartKey('(F11)')
         def getStartBTNText():
             return startBtn['text']
         playcon=self.playcon
-        playcon.setStartBTNText = setStartBTNText
+        playcon.btnStartKey=btnStartKey
         playcon.getStartBTNText = getStartBTNText
         var=tkinter.BooleanVar()
         loopCheck = tkinter.Checkbutton(btnPane,variable=var)
@@ -80,9 +85,13 @@ class mainPage(tkinter.Tk):
         playcon.checkLoopStatus=checkLoopStatus
         playcon.getSelection=self.recordingBox.curselection
         stopBtn = tkinter.Button(btnPane, text='stop', command=self.playcon.stop)
+        stopBtn['text']='Stop (F8)'
+        def btnStopKey(key):
+            startBtn['text']='Stop'+key
         stopBtn.grid(row=0, column=1)
         delBtn = tkinter.Button(btnPane, text='delete', command=self.playcon.delete)
         delBtn.grid(row=0, column=3)
+
         editBtn = tkinter.Button(btnPane, text='edit selected', command=lambda: playcon.editselect(
              self.recordingBox.curselection()))
         editBtn.grid(row=0, column=4)
