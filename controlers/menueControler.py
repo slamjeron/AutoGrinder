@@ -1,5 +1,5 @@
 from tkinter import filedialog
-from autoGrind.controlers.pageBluePrint import mainPagebuttonBluePrint
+from controlers.pageBluePrint import mainPagebuttonBluePrint
 import pickle
 from pathlib import Path
 
@@ -84,16 +84,19 @@ class MenueControler(mainPagebuttonBluePrint):
             handle.close()
 
     def openProHistory(self):
-        with open('./profiles.grind', 'rb') as handle:
-            self.resentMacros=pickle.load(handle)
-            handle.close()
-        templist=list()
-        for recentmacro in  self.resentMacros:
-            mac=Path(recentmacro)
-            if mac.is_file():
-                templist.append(recentmacro)
-                self.addResentFile(recentmacro,lambda :self.openrecent(recentmacro))
-        self.resentMacros=templist
+        try:
+            with open('./profiles.grind', 'rb') as handle:
+                self.resentMacros=pickle.load(handle)
+                handle.close()
+            templist=list()
+            for recentmacro in  self.resentMacros:
+                mac=Path(recentmacro)
+                if mac.is_file():
+                    templist.append(recentmacro)
+                    self.addResentFile(recentmacro,lambda :self.openrecent(recentmacro))
+            self.resentMacros=templist
+        except:
+            pass
 
     def __init__(self):
         object.__init__(self)

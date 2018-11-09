@@ -1,7 +1,7 @@
 import tkinter
 
-from autoGrind.Gui2.myent import LblEnt
-from autoGrind.controlers.otherComand import OtherComandControler
+from Gui2.myent import LblEnt
+from controlers.otherComand import OtherComandControler
 
 
 class AddComPage(tkinter.Frame):

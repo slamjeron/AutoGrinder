@@ -1,13 +1,13 @@
 import tkinter
 
-from autoGrind.controlers.editPageBluePrint import bluePrint
-from autoGrind.controlers.pageBluePrint import mainPagebuttonBluePrint
+from controlers.editPageBluePrint import bluePrint
+from controlers.pageBluePrint import mainPagebuttonBluePrint
 import threading
 import pyautogui as mouse
 
 import time
 
-from autoGrind.dataTypes.dataTypes import typerReader
+from dataTypes.dataTypes import typerReader
 
 
 class editCon(mainPagebuttonBluePrint,bluePrint):

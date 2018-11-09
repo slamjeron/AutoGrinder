@@ -1,5 +1,5 @@
 
-from autoGrind.Gui2.main import playControls,mainPage,threading
+from Gui2.main import playControls,mainPage,threading
 
 if __name__ == '__main__':
     playcon = playControls()

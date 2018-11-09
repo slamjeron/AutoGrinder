@@ -1,5 +1,5 @@
 import tkinter
-from autoGrind.controlers.menueControler import MenueControler
+from controlers.menueControler import MenueControler
 class MyMenu():
     def onExit(self):
         self.main.quit()
@@ -27,7 +27,7 @@ class MyMenu():
         fileMenu.add_command(label="Exit", command= self.con.onExit)
 
 
-        self.menuBar.add_cascade(label='View', menu=viewMenu)
+        # self.menuBar.add_cascade(label='View', menu=viewMenu)
         viewMenu.add_command(label='Editing page', command= self.con.onEditingPage)
         viewMenu.add_command(label='Hot keys', command= self.con.onHotKeyPage)
         viewMenu.add_command(label='record settings', command= self.con.onRecordSettings)
