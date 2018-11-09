@@ -23,7 +23,7 @@ class mainPage(tkinter.Tk):
         myMenue.con.copy=self.playcon.copyselected
         myMenue.con.past=self.playcon.paste
         myMenue.con.showAll = self.playcon.showAll
-        myMenue.set()
+
         self.addTopButtons()
         self.config(height=200, width=450)
         self.pack_propagate(0)
@@ -51,7 +51,8 @@ class mainPage(tkinter.Tk):
             playcon.close()
         self.protocol("WM_DELETE_WINDOW", close)
         playcon.showAll()
-
+        myMenue.con.onExit=close
+        myMenue.set()
     def addTopButtons(self):
         test = "play"
         btnPane = tkinter.Frame(self)
@@ -76,9 +77,9 @@ class mainPage(tkinter.Tk):
         playcon.getStartBTNText = getStartBTNText
         var=tkinter.BooleanVar()
         loopCheck = tkinter.Checkbutton(btnPane,variable=var)
-        loopCheck.grid(row=0,column=6)
+        loopCheck.grid(row=1,column=3)
         loopent=myEnt(btnPane,'loop')
-        loopent.grid(row=0, column=7)
+        loopent.grid(row=1, column=4)
         loopent.config(width=6)
         def checkLoopStatus():
             return var.get(),loopent.get()
@@ -87,17 +88,19 @@ class mainPage(tkinter.Tk):
         stopBtn = tkinter.Button(btnPane, text='stop', command=self.playcon.stop)
         stopBtn['text']='Stop (F8)'
         def btnStopKey(key):
-            startBtn['text']='Stop'+key
+            stopBtn['text']='Stop'+key
+        btnStopKey(' (F8)')
         stopBtn.grid(row=0, column=1)
         delBtn = tkinter.Button(btnPane, text='delete', command=self.playcon.delete)
-        delBtn.grid(row=0, column=3)
+        delBtn.grid(row=1, column=0)
 
         editBtn = tkinter.Button(btnPane, text='edit selected', command=lambda: playcon.editselect(
              self.recordingBox.curselection()))
-        editBtn.grid(row=0, column=4)
+        editBtn.grid(row=1, column=1)
 
         insertBtn = tkinter.Button(btnPane, text='insert', command=lambda: playcon.insert(self.recordingBox.curselection()))
-        insertBtn.grid(row=0, column=5)
+        insertBtn.grid(row=1, column=2)
+
 
 
     def bottomPage(self):

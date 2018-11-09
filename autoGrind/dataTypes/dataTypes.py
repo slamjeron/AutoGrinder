@@ -76,7 +76,7 @@ class Color():
     eventTypes = ['delay', 'if Condition']
     object = 'color'
 
-    def __init__(self, secondDelay=None, event=None, color=None, position=None, onTrue=False, trueIndex=None,
+    def __init__(self, secondDelay=None, event=None, color=None, position=None, onTrue=False,times=1, trueIndex=None,
                  falseIndex=None):
         self.event = event
         print(event)
@@ -87,11 +87,12 @@ class Color():
         self.onTrue = onTrue
         self.trueIndex = trueIndex
         self.falseIndex = falseIndex
+        self.times=times
 
     def __str__(self):
         if self.event == 0:
             return self.eventTypes[self.event] + ' |delay = ' + str(self.secondDelay) + '| Color ' + str(
-                self.color) + '| position ' + str(self.position) + '|next when = ' + str(self.onTrue)
+                self.color) + '| position ' + str(self.position) + '|next when = ' + str(self.onTrue)+'| times = '+str(self.times)
         else:
             return self.eventTypes[self.event] + ' |delay = ' + str(self.secondDelay) + '| Color ' + str(
                 self.color) + '| position ' + str(self.position) + 'on true index = ' + str(
