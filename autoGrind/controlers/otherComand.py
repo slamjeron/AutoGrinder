@@ -68,16 +68,17 @@ class OtherComandControler(object):
 
     def Save(self):
         if self.index == 6 or self.index==7:
-            self.sendInfo(self.index, int(self.getDelay()), list(self.color), list(self.position), self.getChecked())
+            print(self.getTrueTimes())
+            self.sendInfo(self.index, float(self.getDelay()), list(self.color), list(self.position), self.getChecked(),'',int(self.getTrueTimes()))
         elif self.index<5:
-            self.sendInfo(self.index, int(self.getDelay()), list(self.position))
+            self.sendInfo(self.index, float(self.getDelay()), list(self.position))
         elif self.index==5:
-            self.sendInfo(self.index,int(self.getDelay()), keypresses=list(self.KeyPreses))
+            self.sendInfo(self.index,float(self.getDelay()), keypresses=list(self.KeyPreses))
         self.close()
         pass
 
-    def sendInfo(self, actNum, delay, position=None, color=None, checked=None,keypresses=None):
-        print(actNum, delay, position, color, checked,keypresses)
+    def sendInfo(self, actNum, delay, position=None, color=None, checked=None,keypresses=None,timesTrue=0):
+        print(actNum, delay, position, color, checked,keypresses,timesTrue)
         pass
 
     def close(self):
@@ -111,3 +112,6 @@ class OtherComandControler(object):
             elif self.index==5:
                 self.editButtonTxt.set('get keys')
             pass
+
+    def getTrueTimes(self):
+        return '1'
