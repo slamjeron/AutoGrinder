@@ -71,11 +71,11 @@ class recorder(mainPagebuttonBluePrint):
     def showRecordedItem(self,list):
         return
 
-    def savecomand(self, actNum, delay, position=None, color=None, checked=None, keypresses=None):
+    def savecomand(self, actNum, delay, position=None, color=None, checked=None, keypresses=None,repeatTimes=0):
         action = None
 
         if actNum == 6:
-            action = Color(delay, 0, position, color, checked)
+            action = Color(delay, 0, position, color, checked,repeatTimes)
             print(str(action))
         if actNum == 7:
             action = Color(delay, 1, color, position, checked)

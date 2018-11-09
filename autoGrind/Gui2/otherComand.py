@@ -1,6 +1,6 @@
 import tkinter
 
-from autoGrind.controlers.editPageCon import editCon
+from autoGrind.Gui2.myent import LblEnt
 from autoGrind.controlers.otherComand import OtherComandControler
 
 
@@ -19,6 +19,11 @@ class AddComPage(tkinter.Frame):
         def parproto():
             close()
 
+        def getTrueTimes():
+            return reptimes.ent.get()
+
+        controler.getTrueTimes = getTrueTimes
+
         parent.protocol("WM_DELETE_WINDOW", parproto)
         actionDrop = tkinter.OptionMenu(self, rec_var, 'Same','mouse move', 'Left Click', 'Right Click', 'Drag Start',
                                         'Drag Stop', 'Type', 'Color Stall', 'Color Condition',command=lambda _:controler.actionChanged(rec_var.get()))
@@ -30,11 +35,16 @@ class AddComPage(tkinter.Frame):
         delayFrame = tkinter.Frame(self)
         delayFrame.grid(row=0, column=1)
         delaylab = tkinter.Label(delayFrame, text='stall time ')
+
         delaylab.grid(row=0, column=0)
         vari = tkinter.StringVar()
         delayAmount = tkinter.Spinbox(delayFrame, from_=0, to=100000)
         delayAmount.grid(row=1, column=0)
         delayAmount.config(width=10)
+        reptimes=LblEnt(delayFrame,'check times','spin')
+        reptimes.ent.config(width=10)
+
+        reptimes.grid(row=2,column=0)
 
         controler.close = close
         controler.getAction = rec_var.get

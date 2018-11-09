@@ -19,6 +19,7 @@ class RecPlayer(mainPagebuttonBluePrint):
         self.isplaying = False
         self.pause = False
         self.end=False
+        self.test=False
         self.secondes = time.time()
 
         myThread=Thread(target=self.player)
@@ -26,11 +27,12 @@ class RecPlayer(mainPagebuttonBluePrint):
         self.looping=False
         self.loopAmount=1
         self.loops = 0
+        self.colorChecks=0
 
     def play(self,redy):
         if redy:
             self.recording=self.getRecording()
-            print(str(self.recording))
+
             self.secondes = time.time()
             self.index=0
             self.curentsec=1
@@ -62,8 +64,12 @@ class RecPlayer(mainPagebuttonBluePrint):
             time.sleep(0.001)
             if self.isplaying:
                 if self.pause is False:
+                    if self.test:
 
-                    if len(self.recording) <= 1:
+                        print(len(self.recording))
+                    if len(self.recording) < 1:
+                        if self.test:
+                            print(len(self.recording))
                         self.isplaying = False
                     sec = time.time() - self.secondes
                     sec = round(sec, 2)
@@ -98,8 +104,14 @@ class RecPlayer(mainPagebuttonBluePrint):
                             if myobject == Color.object:
                                 act=Color(*self.recording[self.index].get())
                                 if act.event== act.delay:
+
                                     if pixelMatchesColor(*act.position,tuple(act.color))==act.onTrue:
-                                        self.index += 1
+                                        if self.colorChecks >= act.times:
+                                            self.colorChecks=0
+                                            self.index += 1
+                                        self.colorChecks+=1
+                                    else:
+                                        self.colorChecks=0
 
 
 
