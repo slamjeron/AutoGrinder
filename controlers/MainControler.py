@@ -1,15 +1,14 @@
 from tkinter import Toplevel
-from autoGrind.Gui2.editPage import editPage as ed
-from autoGrind.baseMacro.globalHook import myHook
-from autoGrind.baseMacro.hotkeys import HotKeys
-from autoGrind.baseMacro.recordingAction import recorder
-from autoGrind.baseMacro.playRec import RecPlayer
+from Gui2.editPage import editPage as ed
+from baseMacro.globalHook import myHook
+from baseMacro.hotkeys import HotKeys
+from baseMacro.recordingAction import recorder
+from baseMacro.playRec import RecPlayer
 
-import tkinter as tk
 import copy
 
-from autoGrind.controlers.pageBluePrint import mainPagebuttonBluePrint
-from autoGrind.dataTypes.dataTypes import NamedEvents, Mouse
+from controlers.pageBluePrint import mainPagebuttonBluePrint
+from dataTypes.dataTypes import NamedEvents, Mouse
 
 
 class playControls(mainPagebuttonBluePrint):
@@ -96,6 +95,7 @@ class playControls(mainPagebuttonBluePrint):
         self.curline+=1
     def close(self):
         self.hook.mouse_listener.stop()
+        self.hook.close()
         self.player.kill()
         self.rec.kill()
 

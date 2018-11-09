@@ -1,12 +1,12 @@
 
 import time
 
-from autoGrind.Gui2.otherComand import AddComPage
-from autoGrind.controlers.pageBluePrint import mainPagebuttonBluePrint
+from Gui2.otherComand import AddComPage
+from controlers.pageBluePrint import mainPagebuttonBluePrint
 import pyautogui as mouse
 import tkinter as tk
 
-from autoGrind.dataTypes.dataTypes import Color,KeyBoard,Mouse
+from dataTypes.dataTypes import Color,KeyBoard,Mouse
 
 '''
 to record we need to have a key and mouse hook
@@ -108,6 +108,7 @@ class recorder(mainPagebuttonBluePrint):
         print('stoping')
         self.setRecording(self.recording)
         self.isRecording=False
+        self.removePositoin=mouse.position()
     def bmcrec(self,key,diff):
         if self.goBTN == False and self.bmcstart:
             if mouse.pixelMatchesColor(792, 716, (143, 216, 35)):

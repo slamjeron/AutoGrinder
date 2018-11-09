@@ -1,10 +1,9 @@
-import pyautogui
 from pyautogui import *
 from threading import Thread
-from autoGrind.controlers.pageBluePrint import mainPagebuttonBluePrint
+from controlers.pageBluePrint import mainPagebuttonBluePrint
 import time
 
-from autoGrind.dataTypes.dataTypes import Mouse,KeyBoard,Color,typerReader
+from dataTypes.dataTypes import Mouse,KeyBoard,Color
 
 """ 
 use key comands to control actions
@@ -106,12 +105,7 @@ class RecPlayer(mainPagebuttonBluePrint):
                                 if act.event== act.delay:
 
                                     if pixelMatchesColor(*act.position,tuple(act.color))==act.onTrue:
-                                        if self.colorChecks >= act.times:
-                                            self.colorChecks=0
-                                            self.index += 1
-                                        self.colorChecks+=1
-                                    else:
-                                        self.colorChecks=0
+                                        self.index += 1
 
 
 

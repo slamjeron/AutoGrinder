@@ -1,10 +1,10 @@
 import tkinter
 
-from autoGrind.controlers.MainControler import playControls
+from controlers.MainControler import playControls
 import threading
-from autoGrind.Gui2.menue import MyMenu
-from autoGrind.Gui2.myent import myEnt
-from autoGrind.controlers.pageBluePrint import mainPagebuttonBluePrint
+from Gui2.menue import MyMenu
+from Gui2.myent import myEnt
+from controlers.pageBluePrint import mainPagebuttonBluePrint
 
 
 # menu bar
@@ -48,6 +48,7 @@ class mainPage(tkinter.Tk):
         self.title('Auto Grinder')
         def close():
             self.destroy()
+            print('closing win')
             playcon.close()
         self.protocol("WM_DELETE_WINDOW", close)
         playcon.showAll()

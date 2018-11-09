@@ -1,7 +1,7 @@
 import tkinter
 
-from autoGrind.Gui2.myent import myEnt
-from autoGrind.controlers.editPageCon import editCon
+from Gui2.myent import myEnt
+from controlers.editPageCon import editCon
 
 
 class editPage(tkinter.Frame):
