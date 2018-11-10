@@ -48,6 +48,9 @@ class editCon(mainPagebuttonBluePrint,bluePrint):
                            'Drag Stop', 'Right Click', 'Type', 'Color Stall', 'Color Condition','name groop']
         self.linesToEdit = list()
         self.recording=self.getRecording()
+        if linsEdit =='':
+            self.close()
+            return
         for item in linsEdit.split(','):
 
             print(item)
