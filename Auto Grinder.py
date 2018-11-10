@@ -7,3 +7,4 @@ if __name__ == '__main__':
     thread= threading.Thread(target=playcon.hook.startHook)
     thread.start()
     main.mainloop()
+
