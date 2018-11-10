@@ -1,0 +1,52 @@
+
+This file lists modules PyInstaller was not able to find. This does not
+necessarily mean this module is required for running you program. Python and
+Python 3rd-party packages include a lot of conditional or optional module. For
+example the module 'ntpath' only exists on Windows, whereas the module
+'posixpath' only exists on Posix systems.
+
+Types if import:
+* top-level: imported at the top-level - look at these first
+* conditional: imported within an if-statement
+* delayed: imported from within a function
+* optional: imported within a try-except-statement
+
+IMPORTANT: Do NOT post this list to the issue-tracker. Use it as a basis for
+           yourself tracking down the missing module. Thanks!
+
+missing module named org - imported by pickle (optional), /home/coding/PycharmProjects/AutoGrinder/__init__.py (top-level)
+excluded module named _frozen_importlib - imported by importlib (optional), importlib.abc (optional), /home/coding/PycharmProjects/AutoGrinder/__init__.py (top-level)
+missing module named _frozen_importlib_external - imported by importlib._bootstrap (delayed), importlib (optional), importlib.abc (optional), /home/coding/PycharmProjects/AutoGrinder/__init__.py (top-level)
+missing module named _winreg - imported by platform (delayed, optional), /home/coding/PycharmProjects/AutoGrinder/__init__.py (top-level)
+missing module named _scproxy - imported by urllib.request (conditional)
+missing module named java - imported by platform (delayed), /home/coding/PycharmProjects/AutoGrinder/__init__.py (top-level)
+missing module named 'java.lang' - imported by platform (delayed, optional), /home/coding/PycharmProjects/AutoGrinder/__init__.py (top-level), xml.sax._exceptions (conditional)
+missing module named vms_lib - imported by platform (delayed, conditional, optional), /home/coding/PycharmProjects/AutoGrinder/__init__.py (top-level)
+missing module named winreg - imported by platform (delayed, optional), mimetypes (optional), /home/coding/PycharmProjects/AutoGrinder/__init__.py (top-level), urllib.request (delayed, conditional, optional)
+missing module named nt - imported by os (conditional, optional), ntpath (conditional, optional), shutil (conditional), pathlib (conditional), /home/coding/PycharmProjects/AutoGrinder/__init__.py (top-level)
+missing module named msvcrt - imported by subprocess (conditional), /home/coding/PycharmProjects/AutoGrinder/__init__.py (top-level), getpass (optional)
+missing module named _winapi - imported by subprocess (conditional), /home/coding/PycharmProjects/AutoGrinder/__init__.py (top-level)
+missing module named _dummy_threading - imported by dummy_threading (optional), /home/coding/PycharmProjects/AutoGrinder/__init__.py (top-level)
+missing module named 'org.python' - imported by copy (optional), /home/coding/PycharmProjects/AutoGrinder/__init__.py (top-level), xml.sax (delayed, conditional)
+missing module named StringIO - imported by six (conditional)
+missing module named FCNTL - imported by Xlib.support.unix_connect (conditional)
+runtime module named six.moves - imported by pynput._util (top-level), Xlib.threaded (top-level)
+missing module named AppKit - imported by pyautogui._pyautogui_osx (top-level), pynput.mouse._darwin (top-level)
+missing module named Quartz - imported by pyautogui._pyautogui_osx (optional), pynput.keyboard._darwin (top-level), pynput._util.darwin (top-level), pynput.mouse._darwin (top-level)
+missing module named PIL._imagingagg - imported by PIL (delayed, conditional, optional), PIL.ImageDraw (delayed, conditional, optional)
+missing module named numpy - imported by PIL.ImageFilter (optional), pyscreeze (optional)
+missing module named cv2 - imported by pyscreeze (optional)
+missing module named olefile - imported by PIL.FpxImagePlugin (top-level), PIL.MicImagePlugin (top-level)
+missing module named Tkinter - imported by pymsgbox (conditional, optional), PIL.ImageTk (conditional)
+missing module named UserDict - imported by PIL.PdfParser (optional)
+missing module named 'PySide.QtCore' - imported by PIL.ImageQt (conditional, optional)
+missing module named 'PyQt4.QtCore' - imported by PIL.ImageQt (conditional, optional)
+missing module named 'PySide2.QtCore' - imported by PIL.ImageQt (conditional, optional)
+missing module named PySide2 - imported by PIL.ImageQt (conditional, optional)
+missing module named 'PyQt5.QtCore' - imported by PIL.ImageQt (conditional, optional)
+missing module named pathlib2 - imported by PIL.Image (optional)
+missing module named cffi - imported by PIL.Image (optional), PIL.PyAccess (top-level), PIL.ImageTk (delayed, conditional, optional)
+missing module named __builtin__ - imported by PIL.Image (optional)
+missing module named CoreFoundation - imported by pynput._util.darwin (top-level)
+missing module named objc - imported by pynput._util.darwin (top-level)
+missing module named 'ctypes.macholib' - imported by ctypes.util (conditional)
