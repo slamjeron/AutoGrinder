@@ -59,7 +59,7 @@ class mainPage(tkinter.Tk):
 
 
         self.bottomPage()
-        self.title('Auto Grinder')
+        self.title('AutoGrinder')
         def close():
             self.destroy()
             print('closing win')

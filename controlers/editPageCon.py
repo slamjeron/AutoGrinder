@@ -83,7 +83,6 @@ class editCon(mainPagebuttonBluePrint,bluePrint):
                 if line < len(self.recording):
                     if self.recording[line].object == 'mouse':
                         self.recording[line].position[1]=int(point[1])
-
         if keyevent=='Same':
             pass
         else:

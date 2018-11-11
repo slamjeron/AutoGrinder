@@ -40,7 +40,7 @@ class MenueControler(mainPagebuttonBluePrint):
         return
     def save(self):
         def savediologue():
-            return filedialog.asksaveasfile(defaultextension='.grind',filetypes=[('Auto Grinder file','.grind')])
+            return filedialog.asksaveasfile(defaultextension='.grind',filetypes=[('AutoGrinder file','.grind')])
 
         if self.curentRecord ==None:
             self.curentRecord=savediologue().name
@@ -63,7 +63,7 @@ class MenueControler(mainPagebuttonBluePrint):
         self.open()
     def open(self):
         def openDiologue():
-            return filedialog.askopenfile(filetypes=[('Auto Grinder file','.grind')])
+            return filedialog.askopenfile(filetypes=[('AutoGrinder file','.grind')])
         if self.curentRecord ==None:
             self.curentRecord=openDiologue()
             self.curentRecord = self.curentRecord.name
