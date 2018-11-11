@@ -1,4 +1,7 @@
 from tkinter import Toplevel
+
+import pyautogui
+
 from Gui2.editPage import editPage as ed
 from baseMacro.globalHook import myHook
 from baseMacro.hotkeys import HotKeys
@@ -8,7 +11,7 @@ from baseMacro.playRec import RecPlayer
 import copy
 
 from controlers.pageBluePrint import mainPagebuttonBluePrint
-from dataTypes.dataTypes import NamedEvents, Mouse
+from dataTypes.dataTypes import NamedEvents, Mouse, typerReader
 
 
 class playControls(mainPagebuttonBluePrint):
@@ -82,6 +85,8 @@ class playControls(mainPagebuttonBluePrint):
         hotkey.playhotkeys.playmethod = playrec
         hotkey.rechotkeys.playmethod=startrec
         hotkey.stophotkeys.playmethod=stop
+        self.pause=player.mpause
+        hotkey.pausehotkeys.playmethod = self.pause
         self.hotkeyPress=hotkey.hotkeys
         self.hotkeyRelease=hotkey.hotkeyrel
         self.record=startrec
@@ -93,6 +98,7 @@ class playControls(mainPagebuttonBluePrint):
     def showLine(self,line):
         self.taskBox.insert(self.curline,str(self.curline)+' |'+line)
         self.curline+=1
+
     def close(self):
         self.hook.mouse_listener.stop()
         self.hook.close()
@@ -104,6 +110,7 @@ class playControls(mainPagebuttonBluePrint):
         self.recPress(nkey)
         self.hotkeyPress(nkey)
         self.editkey(nkey)
+
     def formatKeyIn(self,key_code):
         try:
             key_code='{0}'.format(key_code.char)
@@ -113,6 +120,7 @@ class playControls(mainPagebuttonBluePrint):
         key = str(key).replace('_r', '')
         key = str(key).replace('_l', '')
         return key
+
     def recPress(self,key):
         return
 
@@ -132,6 +140,7 @@ class playControls(mainPagebuttonBluePrint):
 
     def hotkeyRelease(self, key):
         return
+
     def formatItem(self, index, list):
         l = list[0]
         actions = ['Left Click', 'Right Click', 'Drag Start',
@@ -202,10 +211,32 @@ class playControls(mainPagebuttonBluePrint):
         index=self.getSelection()
         index=list(index)
         cpIndex=0
-        for item in self.copyedAction:
-            print(item)
-            self.recordList.insert(index[-1]+cpIndex,item)
-            cpIndex+=1
+        if index[-1]>len(self.recordList):
+            for item in self.copyedAction:
+                self.recordList.append(item)
+        else:
+            for item in self.copyedAction:
+                print(item)
+                self.recordList.insert(index[-1]+1+cpIndex,item)
+                cpIndex+=1
+        self.showAll()
+
+    def replace(self):
+        ## not realy working
+        index=self.getSelection()
+        index=list(index)
+        cpIndex=0
+
+        for item in index:
+            del self.recordList[item]
+        if index[-1] > len(self.recordList):
+            for item in self.copyedAction:
+                self.recordList.append(item)
+        else:
+            for item in self.copyedAction:
+                print(item)
+                self.recordList.insert(index[-1]+cpIndex,item)
+                cpIndex+=1
         self.showAll()
 
     def insert(self,index):
@@ -215,3 +246,15 @@ class playControls(mainPagebuttonBluePrint):
             self.recordList.insert(index[0],Mouse(0.5,Mouse.move,[1,1]))
             self.showAll()
             self.editselect(index)
+
+
+    def cursorPosition(self):
+        index = self.getSelection()
+        if index is not None:
+            index = list(index)
+            index = int(index[-1])
+            print(index)
+            if self.recordList[index].object==Mouse.object:
+                m= self.recordList[index]
+                print(m.position)
+                pyautogui.moveTo(*m.position)

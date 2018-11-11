@@ -26,7 +26,7 @@ class HotKeys():
         self.heldKey=''
         self.playhotkeys=hotkeycon("","f11")
         self.stophotkeys = hotkeycon("", "f8")
-        self.pausehotkeys = hotkeycon("ctrl", "w")
+        self.pausehotkeys = hotkeycon( "","f7")
         self.rechotkeys = hotkeycon("ctrl", "r")
 
 
