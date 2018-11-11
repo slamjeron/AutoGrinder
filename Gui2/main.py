@@ -5,13 +5,12 @@ from controlers.MainControler import playControls
 import threading
 from Gui2.menue import MyMenu
 from Gui2.myent import myEnt
-from controlers.pageBluePrint import mainPagebuttonBluePrint
 
 
 # menu bar
 
 class mainPage(tkinter.Tk):
-    def __init__(self, playcon=mainPagebuttonBluePrint):
+    def __init__(self, playcon=playControls):
         tkinter.Tk.__init__(self)
         self.recordingBox = tkinter.Listbox(self)
         self.playcon=playcon
@@ -24,11 +23,26 @@ class mainPage(tkinter.Tk):
         myMenue.con.past=self.playcon.paste
         myMenue.con.showAll = self.playcon.showAll
 
+        popup_menu=tkinter.Menu(self.recordingBox, tearoff=0)
+        popup_menu.add_command(label='cursor to position', command=self.playcon.cursorPosition)
+        popup_menu.add_command(label='Copy',command=self.playcon.copyselected)
+        popup_menu.add_command(label='Paste',command=self.playcon.paste)
+
+        popup_menu.add_command(label='Delete',command = self.playcon.delete)
+
+        def popup(event):
+            try:
+                popup_menu.tk_popup(event.x_root, event.y_root+20, 0)
+            finally:
+                popup_menu.grab_release()
+
+        self.recordingBox.bind("<Button-3>", popup)
         self.addTopButtons()
         self.config(height=200, width=450)
         self.pack_propagate(0)
         self.recordingBox.config(selectmode=tkinter.EXTENDED)
-        scrollbar = ttk.Scrollbar(self.recordingBox, orient="vertical")
+
+        scrollbar = tkinter.Scrollbar(self.recordingBox, orient="vertical")
         self.recordingBox.config(yscrollcommand=scrollbar.set)
         scrollbar.config(command=self.recordingBox.yview)
         scrollbar.pack(side="right", fill="y")
@@ -88,6 +102,9 @@ class mainPage(tkinter.Tk):
         playcon.getSelection=self.recordingBox.curselection
         stopBtn = ttk.Button(btnPane, text='stop', command=self.playcon.stop)
         stopBtn['text']='Stop (F8)'
+
+        pauseBtn = ttk.Button(btnPane, text='stop', command=self.playcon.pause)
+        pauseBtn['text'] = 'Pause (F7)'
         def btnStopKey(key):
             stopBtn['text']='Stop'+key
         btnStopKey(' (F8)')

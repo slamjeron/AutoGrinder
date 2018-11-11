@@ -28,6 +28,8 @@ class RecPlayer(mainPagebuttonBluePrint):
         self.loops = 0
         self.colorChecks=0
 
+    def mpause(self):
+        self.pause=True
     def play(self,redy):
         if redy:
             self.recording=self.getRecording()
