@@ -120,23 +120,31 @@ class recorder(mainPagebuttonBluePrint):
                 self.secondes = time.time()
                 self.secondes -= 0.3
                 self.goBTN = True
-        if self.bmcstart and key == 'space':
-            self.goBTN = False
+
 
         if self.goBTN:
             if mouse.pixelMatchesColor(809, 685, (5, 146, 239)):
                 self.goBTN = False
+            des=round(diff)-diff
+            if key=='' or key =='space' or key == ',' or key == '.':
+                if diff > 1:
+                    diff = 1+des
 
-            if diff > 3:
-                diff = 3
                 return diff
+            else:
+                if diff > 4:
+                    diff = 4+des
+                return diff
+        if key == 'space':
+
+            self.goBTN = False
         return diff
 
 
     def addToRecord(self,action,pnt,key):
         if self.isRecording:
             diff=  time.time()-self.secondes
-
+            diff=self.bmcrec(key,diff)
 
             diff = round(diff,2)
             if diff>0:
