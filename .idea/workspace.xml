@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be9a65c8-232a-4c34-bc57-48d4da3f644f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/linux-AutoGrinder.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/linux-AutoGrinder.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autoGrind/baseMacro/recordingAction.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoGrind/baseMacro/recordingAction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autoGrind/controlers/otherComand.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoGrind/controlers/otherComand.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <ignored path="$PROJECT_DIR$/venv1/" />
@@ -143,47 +139,26 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-1406399610">
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="xml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="XML" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/autoGrind/Gui2/editPage.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/autoGrind/baseMacro/recordingAction.py">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-274">
-              <caret line="72" column="40" selection-start-line="72" selection-start-column="40" selection-end-line="72" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/autoGrind/baseMacro/playRec.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="41" selection-start-line="41" selection-end-line="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/autoGrind/Gui2/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="90">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -275,6 +250,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -282,34 +258,10 @@
               <item name="AutoGrinder" type="b2602c69:ProjectViewProjectNode" />
               <item name="AutoGrinder" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="AutoGrinder" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoGrinder" type="462c0819:PsiDirectoryNode" />
-              <item name="autoGrind" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoGrinder" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoGrinder" type="462c0819:PsiDirectoryNode" />
-              <item name="autoGrind" type="462c0819:PsiDirectoryNode" />
-              <item name="baseMacro" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoGrinder" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoGrinder" type="462c0819:PsiDirectoryNode" />
-              <item name="autoGrind" type="462c0819:PsiDirectoryNode" />
-              <item name="controlers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoGrinder" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoGrinder" type="462c0819:PsiDirectoryNode" />
-              <item name="autoGrind" type="462c0819:PsiDirectoryNode" />
-              <item name="Gui2" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -631,9 +583,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="48" y="28" width="935" height="1052" extended-state="0" />
+    <frame x="968" y="50" width="915" height="1052" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26483518" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27017936" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -643,9 +595,9 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.26413044" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49887893" weight="0.2635575" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32885906" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="9" sideWeight="0.5011211" side_tool="true" visible="true" weight="0.2635575" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -824,9 +776,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -841,9 +790,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -851,6 +797,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-274">
           <caret line="72" column="40" selection-start-line="72" selection-start-column="40" selection-end-line="72" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
