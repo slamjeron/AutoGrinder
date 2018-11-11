@@ -3,22 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="be9a65c8-232a-4c34-bc57-48d4da3f644f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gui2/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gui2/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__init__.spec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseMacro/hotkeys.py" beforeDir="false" afterPath="$PROJECT_DIR$/baseMacro/hotkeys.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseMacro/playRec.py" beforeDir="false" afterPath="$PROJECT_DIR$/baseMacro/playRec.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/__init__/Analysis-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/__init__/EXE-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/__init__/PKG-00.pkg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/__init__/PKG-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/__init__/PYZ-00.pyz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/__init__/PYZ-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/__init__/Tree-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/__init__/Tree-01.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/__init__/base_library.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/__init__/warn-__init__.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/__init__/xref-__init__.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controlers/MainControler.py" beforeDir="false" afterPath="$PROJECT_DIR$/controlers/MainControler.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <ignored path="$PROJECT_DIR$/venv1/" />
@@ -304,8 +288,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Auto Grinder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+            <state relative-caret-position="150">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
@@ -430,11 +414,6 @@
             <path>
               <item name="AutoGrinder" type="b2602c69:ProjectViewProjectNode" />
               <item name="AutoGrinder" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoGrinder" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoGrinder" type="462c0819:PsiDirectoryNode" />
-              <item name="baseMacro" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -798,7 +777,7 @@
   <component name="ToolWindowManager">
     <frame x="968" y="50" width="915" height="1052" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27017936" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27017936" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -809,7 +788,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49712643" weight="0.18980478" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49521074" visible="true" weight="0.3275488" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49521074" visible="true" weight="0.3275488" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50287354" side_tool="true" weight="0.28363228" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -1074,8 +1053,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Auto Grinder.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        <state relative-caret-position="150">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
