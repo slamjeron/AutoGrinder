@@ -1,6 +1,6 @@
 ### linux-AutoGrinder
 
-##how to use
+how to use
 
 during recording typ the plus button to record difrent comands note a few of the options will not work at the moment. so far left click and color delay will for sure work
 
