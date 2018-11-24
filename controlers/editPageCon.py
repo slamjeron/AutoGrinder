@@ -43,7 +43,7 @@ class editCon(mainPagebuttonBluePrint,bluePrint):
             self.enterlines(strin)
 
 
-    def saveComand(self,action,timeDelay,point,keyevent,linsEdit):
+    def saveComand(self,action,timeDelay,point,keyevent,linsEdit,named):
         actions=['Same','Move cursor', 'Left Click', 'Drag Start',
                            'Drag Stop', 'Right Click', 'Type', 'Color Stall', 'Color Condition','name groop']
         self.linesToEdit = list()
@@ -56,39 +56,45 @@ class editCon(mainPagebuttonBluePrint,bluePrint):
             print(item)
             self.linesToEdit.append(int(item))
 
-        if action =='Same':
-            pass
-        else:
-            for line in self.linesToEdit:
-                if line < len(self.recording):
-                    self.recording[line]=typerReader.setObject(self,num=actions.index(action))
-        if timeDelay == 'Same':
-            print('')
-        else:
-            for line in self.linesToEdit:
-                if line<len(self.recording):
-                    self.recording[line].secondDelay=float(timeDelay)
 
-        if point[0] =='Same':
-            pass
-        else:
+        if action==actions[9]:
             for line in self.linesToEdit:
-                if line < len(self.recording):
-                    if self.recording[line].object == 'mouse':
-                        self.recording[line].position[0]=int(point[0])
-        if point[1] =='Same':
-            pass
+                del(self.recording[self.linesToEdit[0]])
+            self.recording.insert(self.linesToEdit[0],named)
         else:
-            for line in self.linesToEdit:
-                if line < len(self.recording):
-                    if self.recording[line].object == 'mouse':
-                        self.recording[line].position[1]=int(point[1])
-        if keyevent=='Same':
-            pass
-        else:
-            for line in self.linesToEdit:
-                if line < len(self.recording):
-                    self.recording[line][3]=keyevent
+            if action == 'Same':
+                pass
+            else:
+                for line in self.linesToEdit:
+                    if line < len(self.recording):
+                        self.recording[line] = typerReader.setObject(self, num=actions.index(action))
+            if timeDelay == 'Same':
+                print('')
+            else:
+                for line in self.linesToEdit:
+                    if line<len(self.recording):
+                        self.recording[line].secondDelay=float(timeDelay)
+
+            if point[0] =='Same':
+                pass
+            else:
+                for line in self.linesToEdit:
+                    if line < len(self.recording):
+                        if self.recording[line].object == 'mouse':
+                            self.recording[line].position[0]=int(point[0])
+            if point[1] =='Same':
+                pass
+            else:
+                for line in self.linesToEdit:
+                    if line < len(self.recording):
+                        if self.recording[line].object == 'mouse':
+                            self.recording[line].position[1]=int(point[1])
+            if keyevent=='Same':
+                pass
+            else:
+                for line in self.linesToEdit:
+                    if line < len(self.recording):
+                        self.recording[line][3]=keyevent
         self.setRecording(self.recording)
         self.showAll()
         self.close()
@@ -123,5 +129,4 @@ class editCon(mainPagebuttonBluePrint,bluePrint):
                 oPos=nPos
                 self.counter=0
 
-    def actionDrop(self):
-        pass
+

@@ -8,6 +8,7 @@ class editPage(tkinter.Frame):
     def __init__(self, parent):
         tkinter.Frame.__init__(self, parent)
         self.editcon=editCon()
+
         lbl=tkinter.Label(self,text='editing lines')
         lbl.grid(row=0,column=0)
         editlines = tkinter.Entry(self)
@@ -23,13 +24,20 @@ class editPage(tkinter.Frame):
         lbl1.grid(row=1, column=0)
         self.recVar=tkinter.StringVar()
 
-        actionDrop=tkinter.OptionMenu(self, self.recVar, 'Same','Move cursor', 'Left Click', 'Right Click', 'Drag Start',
-                           'Drag Stop', 'Type', 'Color Stall', 'Color Condition','name groop')
 
-
-        actionDrop.grid(row=1, column=1)
-        actionDrop.config(width=10)
         keyMouseFrame = tkinter.Frame(self)
+
+        hideKeyMouseEdit =  keyMouseFrame.grid_remove
+        showKeyMouseEdit = lambda: keyMouseFrame.grid(row=1, column=2)
+
+        def dropMenue( value):
+            if value == "name groop":
+                print("you picked name groop")
+                hideKeyMouseEdit()
+            else:
+                showKeyMouseEdit()
+            pass
+
         keyMouseFrame.grid(row=1, column=2)
         self.recVar.set('Same')
         lbl2 = tkinter.Label(keyMouseFrame, text='time delay')
@@ -53,7 +61,12 @@ class editPage(tkinter.Frame):
         pointYEnt.grid(row=0, column=3)
         pointYEnt.config(width=6)
 
+        actionDrop = tkinter.OptionMenu(self, self.recVar, 'Same', 'Move cursor', 'Left Click', 'Right Click',
+                                        'Drag Start',
+                                        'Drag Stop', 'Type', 'Color Stall', 'Color Condition', 'name groop',command=ladropMenue)
 
+        actionDrop.grid(row=1, column=1)
+        actionDrop.config(width=10)
 
         def setYpoint(ypoint):
             pointYEnt.delete(0,'end')
@@ -105,6 +118,7 @@ class editPage(tkinter.Frame):
         def getlines(self):
             return editlines.get()
         editCon.getlines =getlines
+
 
     def setInfo(self,line,mlist):
         self.line.set(str(line))
